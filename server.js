@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// routing to main page, login page, calendar page, profile page
+// Routing from server to Home, Login, SignUp, About
 app.get('/', (req, res) => {
     res.render('home', { 
         title: 'Recess' 
@@ -37,6 +37,21 @@ app.get('/signup', (req, res) => {
         title: 'Sign Up' 
     });
 })
+
+// Dashboard
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard', { 
+        title: 'Welcome' 
+    });
+})
+// Activities route
+app.get('/activities', (req, res) => {
+    res.render('activities', { 
+        title: 'Activities' 
+    });
+})
+
+
 
 
 // set server -- delete when merging
