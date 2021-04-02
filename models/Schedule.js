@@ -15,19 +15,41 @@ Schedule.init(
       allowNull: false,
       autoIncrement: true,
     },
-    schedule_type: {
+    day: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    schedule_time: {
-      type: DataTypes.INTEGER,
+    working: {
+      type: DataTypes.STRING,
       defaultValue: 0,
       validate: {
         isNumeric: true,
       },
     },
-    user_id: {
-      type: DataTypes.INTEGER,
+    work_start: {
+      type: DataTypes.STRING,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    work_end: {
+      type: DataTypes.STRING,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+
+    sleep_start: {
+      type: DataTypes.STRING,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    sleep_end: {
+      type: DataTypes.STRING,
       references: {
         model: "user",
         key: "id",
