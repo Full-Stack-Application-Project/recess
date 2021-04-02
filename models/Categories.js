@@ -9,7 +9,7 @@ const sequelize = require("../config/connection");
 class Category extends Model {}
 
 // set up fields and rules for Product model
-Activity.init(
+Category.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,23 +17,9 @@ Activity.init(
       allowNull: false,
       autoIncrement: true,
     },
-    activity_name: {
+    category_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    activity_time: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        isNumeric: true,
-      },
-    },
-    category_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "category",
-        key: "id",
-      },
     },
   },
   {
@@ -41,7 +27,7 @@ Activity.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "activity",
+    modelName: "category",
   }
 );
 
