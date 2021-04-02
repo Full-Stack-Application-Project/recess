@@ -3,10 +3,10 @@ const router = require('express').Router();
 
 const userRoutes = require('./user-routes.js');
 const activityRoutes = require('./activity-routes');
-const categoryRoutes = require('./category-routes');
+const scheduleRoutes = require('./schedule-routes');
 
 router.use('/users', userRoutes);
 router.use('/activities', activityRoutes);
-router.use('/categories', categoryRoutes);
+router.use('/schedules', scheduleRoutes);
 
 module.exports = router;
