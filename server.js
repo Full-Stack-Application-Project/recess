@@ -1,5 +1,6 @@
 // const path = require('path');
 const express = require('express');
+// const session = require('express-session');
 const routes = require('./controllers');
 // const session = require('express-session');
 // const exphbs = require('express-handlebars');
@@ -24,7 +25,7 @@ const PORT = process.env.PORT || 3006;
 // app.use(session(sess));
 
 
-// app.engine('handlebars', hbs.engine);
+// app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 // app.set('view engine', 'handlebars');
 
 app.use(express.json());
