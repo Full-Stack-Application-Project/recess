@@ -11,13 +11,14 @@ router.get("/", (req, res) => {
       "activity_name",
       "activity_length",
       "user_id",
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["user_email"],
-      },
-    ],
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
   })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
@@ -37,13 +38,14 @@ router.get("/:id", (req, res) => {
       "activity_name",
       "activity_length",
       "user_id",
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["user_email"],
-      },
-    ],
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -61,9 +63,9 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Activity.create({
     activity_category: req.body.activity_category,
-    activity_name: req.body.actrivity_name,
-    activity_length: req.session.activity_length,
-    user_id: req.session.user_id,
+    activity_name: req.body.activity_name,
+    activity_length: req.body.activity_length,
+    user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -76,8 +78,8 @@ router.put("/:id", (req, res) => {
   Activity.update(
     {
       activity_category: req.body.activity_category,
-      activity_name: req.body.actrivity_name,
-      activity_length: req.session.activity_length,
+      activity_name: req.body.activity_name,
+      activity_length: req.body.activity_length,
     },
     {
       where: {

@@ -14,13 +14,14 @@ router.get("/", (req, res) => {
       "sleep_start",
       "sleep_end",
       "user_id"
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["user_email"],
-      },
     ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ]
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -43,13 +44,14 @@ router.get("/:id", (req, res) => {
       "sleep_start",
       "sleep_end",
       "user_id",
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["user_email"],
-      },
-    ],
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -72,7 +74,7 @@ router.post("/", (req, res) => {
     work_end: req.body.work_end,
     sleep_start: req.body.sleep_start,
     sleep_end: req.body.sleep_end,
-    user_id: req.session.user_id,
+    user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
