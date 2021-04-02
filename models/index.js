@@ -1,5 +1,7 @@
 const Category = require("./Categories");
 const Tag = require("./Activity");
+const User = require('./User');
+
 
 // Products belongsTo Category
 Product.belongsTo(Category, {
@@ -21,6 +23,7 @@ Tag.belongsToMany(Product, {
 });
 
 module.exports = {
+  User, 
   Product,
   Activity,
 };
