@@ -16,22 +16,23 @@ Activity.init(
       allowNull: false,
       autoIncrement: true,
     },
-    activity_name: {
+    activity_category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    activity_time: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        isNumeric: true,
-      },
+    activity_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    category_id: {
+    activity_length: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "category",
-        key: "id",
+        model: "user",
+        key: "id"
       },
     },
   },

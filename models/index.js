@@ -1,26 +1,25 @@
-const Category = require("./Categories");
-const Tag = require("./Activity");
+const Activity = require("./Activities");
+const Schedule = require("./Schedule");
+const User = require("./User");
 
-// Activities belongsTo Category
-Activity.belongsTo(Category, {
-  foreignKey: "category_id",
+User.hasMany(Schedule, {
+  foreignKey: "user_id",
 });
-// Categories have many Products
-Category.hasMany(Activity, {
-  foreignKey: "category_id",
+
+Schedule.belongsTo(User, {
+  foreignKey: "user_id",
 });
-// Activities belongToMany Tags (through ActivityTag)
-Product.belongsToMany(Tag, {
-  through: ProductTag,
-  foreignKey: "product_id",
+
+User.hasMany(Activity, {
+  foreignKey: "user_id",
 });
-// Tags belongToMany activities (through ActivityTag)
-Tag.belongsToMany(Product, {
-  through: ProductTag,
-  foreignKey: "tag_id",
+
+Activity.belongsTo(User, {
+  foreignKey: "user_id",
 });
 
 module.exports = {
-  Product,
+  User,
+  Schedule,
   Activity,
 };
