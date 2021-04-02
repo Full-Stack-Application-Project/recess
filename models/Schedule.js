@@ -1,15 +1,13 @@
-// initial setup
-// initial setup
 // import important parts of sequelize library
 const { Model, DataTypes } = require("sequelize");
 // import our database connection from config.js
 const sequelize = require("../config/connection");
 
 // Initialize Product model (table) by extending off Sequelize Model class
-class Category extends Model {}
+class Schedule extends Model {}
 
-// set up fields and rules for Product model
-Activity.init(
+// set up fields and rules for Schedule model
+Schedule.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,21 +15,21 @@ Activity.init(
       allowNull: false,
       autoIncrement: true,
     },
-    activity_name: {
+    schedule_type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    activity_time: {
+    schedule_time: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
       validate: {
         isNumeric: true,
       },
     },
-    category_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "category",
+        model: "user",
         key: "id",
       },
     },
@@ -41,8 +39,8 @@ Activity.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "activity",
+    modelName: "schedule",
   }
 );
 
-module.exports = Category;
+module.exports = Schedule;
