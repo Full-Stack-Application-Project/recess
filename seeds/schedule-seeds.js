@@ -2,14 +2,61 @@ const { Schedule } = require("../models");
 
 const scheduleData = [
   {
-    id: 1,
     day: "Monday",
     working: "yes",
-    work_start: "8:00 AM",
-    work_end: "5:00 PM",
-    sleep_start: "9:00 PM",
-    sleep_end: "6:00 AM",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 22,
+    sleep_end: 6,
   },
+  {
+    day: "Tuesday",
+    working: "yes",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 22,
+    sleep_end: 6,
+  },
+  {
+    day: "Wednesday",
+    working: "yes",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 22,
+    sleep_end: 6,
+  },
+  {
+    day: "Thursday",
+    working: "yes",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 22,
+    sleep_end: 6,
+  },
+  {
+    day: "Friday",
+    working: "yes",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 22,
+    sleep_end: 6,
+  },
+  {
+    day: "Saturday",
+    working: "no",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 23,
+    sleep_end: 7,
+  },
+  {
+    day: "Sunday",
+    working: "no",
+    work_start: 8,
+    work_end: 5,
+    sleep_start: 24,
+    sleep_end: 8,
+  }
 ];
 
 const seedSchedule = () => Schedule.bulkCreate(scheduleData);
