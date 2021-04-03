@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       "activity_category",
       "activity_name",
       "activity_length",
-      "user_id",
+      "user_id"
     ]
     // ,
     // include: [
@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
       "activity_category",
       "activity_name",
       "activity_length",
-      "user_id",
+      "user_id"
     ]
     // ,
     // include: [
