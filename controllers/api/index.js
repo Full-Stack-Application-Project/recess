@@ -9,4 +9,6 @@ router.use('/users', userRoutes);
 router.use('/activities', activityRoutes);
 router.use('/schedules', scheduleRoutes);
 
+router.get('/', (req, res) => res.send('welcome to the api folder'));
+
 module.exports = router;
