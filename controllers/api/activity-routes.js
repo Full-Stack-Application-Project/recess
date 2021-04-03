@@ -1,93 +1,123 @@
-const router = require('express').Router();
-const { User, Category, Activity } = require('../../models');
-const sequelize = require('../../config/connection');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { User, Activity } = require("../../models");
+// const sequelize = require("../../config/connection");
+// const withAuth = require("../../utils/auth");
 
-router.get('/', (req, res) => {
-    Comment.findAll()
-      .then(dbCommentData => res.json(dbCommentData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+router.get("/", (req, res) => {
+  Activity.findAll({
+    attributes: [
+      "id",
+      "activity_category",
+      "activity_name",
+      "activity_length",
+      "user_id",
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
+  })
+    .then((dbCommentData) => res.json(dbCommentData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-  router.get('/:id', (req, res) => {
-    Post.findOne({
-      where: {
-        id: req.params.id
+router.get("/:id", (req, res) => {
+  Activity.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      "id",
+      "activity_category",
+      "activity_name",
+      "activity_length",
+      "user_id",
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
       }
+      res.json(dbPostData);
     })
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
-          return;
-        }
-        res.json(dbPostData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-  router.post('/', withAuth, (req, res) => {
-    Post.create({
-      title: req.body.title,
-      description: req.body.post_url,
-      user_id: req.session.user_id,
-      category_id: req.session.category_id
-    })
-      .then(dbPostData => res.json(dbPostData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+router.post("/", (req, res) => {
+  Activity.create({
+    activity_category: req.body.activity_category,
+    activity_name: req.body.activity_name,
+    activity_length: req.body.activity_length,
+    user_id: req.body.user_id,
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-  router.put('/:id', withAuth, (req, res) => {
-    Post.update(
-      {
-        title: req.body.title,
-        description: req.body.post_url
+router.put("/:id", (req, res) => {
+  Activity.update(
+    {
+      activity_category: req.body.activity_category,
+      activity_name: req.body.activity_name,
+      activity_length: req.body.activity_length,
+    },
+    {
+      where: {
+        id: req.params.id,
       },
-      {
-        where: {
-          id: req.params.id
-        }
+    }
+  )
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
       }
-    )
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
-          return;
-        }
-        res.json(dbPostData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-  router.delete('/:id', withAuth, (req, res) => {
-    console.log('id', req.params.id);
-    Post.destroy({
-      where: {
-        id: req.params.id
-      }
+      res.json(dbPostData);
     })
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
-          return;
-        }
-        res.json(dbPostData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-  
-  module.exports = router;
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.delete("/:id", (req, res) => {
+  console.log("id", req.params.id);
+  Activity.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+module.exports = router;

@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { User, Schedule } = require("../../models");
 // const sequelize = require('../../config/connection');
+const { User, Schedule } = require("../../models");
 // const withAuth = require('../../utils/auth');
 
 router.get("/", (req, res) => {
-  Post.findAll({
+  Schedule.findAll({
     attributes: [
       "id",
       "day",
@@ -13,14 +13,15 @@ router.get("/", (req, res) => {
       "work_end",
       "sleep_start",
       "sleep_end",
-      "user_id",
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["user_email"],
-      },
-    ],
+      "user_id"
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ]
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -30,7 +31,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Post.findOne({
+  Schedule.findOne({
     where: {
       id: req.params.id,
     },
@@ -43,13 +44,14 @@ router.get("/:id", (req, res) => {
       "sleep_start",
       "sleep_end",
       "user_id",
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["user_email"],
-      },
-    ],
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -64,15 +66,15 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", withAuth, (req, res) => {
-  Post.create({
+router.post("/", (req, res) => {
+  Schedule.create({
     day: req.body.day,
     working: req.body.working,
     work_start: req.body.work_start,
     work_end: req.body.work_end,
     sleep_start: req.body.sleep_start,
     sleep_end: req.body.sleep_end,
-    user_id: req.session.user_id,
+    user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -81,8 +83,8 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-router.put("/:id", withAuth, (req, res) => {
-  Post.update(
+router.put("/:id", (req, res) => {
+  Schedule.update(
     {
       day: req.body.day,
       working: req.body.working,
@@ -110,9 +112,9 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/:id", (req, res) => {
   console.log("id", req.params.id);
-  Post.destroy({
+  Schedule.destroy({
     where: {
       id: req.params.id,
     },

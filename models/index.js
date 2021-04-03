@@ -21,5 +21,5 @@ Activity.belongsTo(User, {
 module.exports = {
   User,
   Schedule,
-  Activity,
+  Activity
 };
