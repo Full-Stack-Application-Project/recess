@@ -1,10 +1,25 @@
 const router = require("express").Router();
-const { User, Category, Activity } = require("../../models");
-const sequelize = require("../../config/connection");
+const { User, Activity } = require("../../models");
+// const sequelize = require("../../config/connection");
 // const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
-  Comment.findAll()
+  Activity.findAll({
+    attributes: [
+      "id",
+      "activity_category",
+      "activity_name",
+      "activity_length",
+      "user_id"
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
+  })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
       console.log(err);
@@ -13,10 +28,24 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Post.findOne({
+  Activity.findOne({
     where: {
       id: req.params.id,
     },
+    attributes: [
+      "id",
+      "activity_category",
+      "activity_name",
+      "activity_length",
+      "user_id"
+    ]
+    // ,
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ["user_email"],
+    //   },
+    // ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -32,11 +61,11 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Post.create({
-    title: req.body.title,
-    description: req.body.post_url,
-    user_id: req.session.user_id,
-    category_id: req.session.category_id,
+  Activity.create({
+    activity_category: req.body.activity_category,
+    activity_name: req.body.activity_name,
+    activity_length: req.body.activity_length,
+    user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -46,10 +75,11 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Post.update(
+  Activity.update(
     {
-      title: req.body.title,
-      description: req.body.post_url,
+      activity_category: req.body.activity_category,
+      activity_name: req.body.activity_name,
+      activity_length: req.body.activity_length,
     },
     {
       where: {
@@ -72,7 +102,7 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   console.log("id", req.params.id);
-  Post.destroy({
+  Activity.destroy({
     where: {
       id: req.params.id,
     },

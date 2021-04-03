@@ -14,11 +14,11 @@ Activity.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
-      autoIncrement: true,
+      autoIncrement: true
     },
     activity_category: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     activity_name: {
       type: DataTypes.STRING,
@@ -33,8 +33,8 @@ Activity.init(
       references: {
         model: "user",
         key: "id"
-      },
-    },
+      }
+    }
   },
   {
     sequelize,

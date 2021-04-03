@@ -1,5 +1,6 @@
 // import important parts of sequelize library
 const { Model, DataTypes } = require("sequelize");
+
 // import our database connection from config.js
 const sequelize = require("../config/connection");
 
@@ -13,55 +14,47 @@ Schedule.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
-      autoIncrement: true,
+      autoIncrement: true
     },
     day: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     working: {
       type: DataTypes.STRING,
-      // defaultValue: 0,
-      // validate: {
-      //   isNumeric: true,
-      // },
+      allowNull: false
     },
     work_start: {
-      type: DataTypes.STRING,
-      // references: {
-      //   model: "user",
-      //   // key: "id",
-      // },
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     work_end: {
-      type: DataTypes.STRING,
-      // references: {
-      //   model: "user",
-      //   key: "id",
-      // },
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
 
     sleep_start: {
-      type: DataTypes.STRING,
-      // references: {
-      //   model: "user",
-      //   key: "id",
-      // },
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     sleep_end: {
-      type: DataTypes.STRING,
-      // references: {
-      //   model: "user",
-      //   key: "id",
-      // },
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id"
+      }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "schedule",
+    modelName: "schedule"
   }
 );
 
