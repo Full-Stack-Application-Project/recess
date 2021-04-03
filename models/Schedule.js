@@ -22,40 +22,40 @@ Schedule.init(
     },
     working: {
       type: DataTypes.STRING,
-      defaultValue: 0,
-      validate: {
-        isNumeric: true,
-      },
+      // defaultValue: 0,
+      // validate: {
+      //   isNumeric: true,
+      // },
     },
     work_start: {
       type: DataTypes.STRING,
-      references: {
-        model: "user",
-        key: "id",
-      },
+      // references: {
+      //   model: "user",
+      //   // key: "id",
+      // },
     },
     work_end: {
       type: DataTypes.STRING,
-      references: {
-        model: "user",
-        key: "id",
-      },
+      // references: {
+      //   model: "user",
+      //   key: "id",
+      // },
     },
 
     sleep_start: {
       type: DataTypes.STRING,
-      references: {
-        model: "user",
-        key: "id",
-      },
+      // references: {
+      //   model: "user",
+      //   key: "id",
+      // },
     },
     sleep_end: {
       type: DataTypes.STRING,
-      references: {
-        model: "user",
-        key: "id"
-      }
-    }
+      // references: {
+      //   model: "user",
+      //   key: "id",
+      // },
+    },
   },
   {
     sequelize,
