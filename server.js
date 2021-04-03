@@ -44,6 +44,15 @@ app.get('/dashboard', (req, res) => {
         title: 'Welcome' 
     });
 })
+
+// Dashboard
+app.get('/schedule', (req, res) => {
+    res.render('schedule', { 
+        title: 'Your Schedule' 
+    });
+})
+
+
 // Activities route
 app.get('/activities', (req, res) => {
     res.render('activities', { 
