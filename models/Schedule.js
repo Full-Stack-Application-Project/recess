@@ -24,20 +24,35 @@ Schedule.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    work_start: {
+    work_start_hour: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    work_start_minute: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    work_end_hour: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    work_end_minute: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    sleep_start_hour: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    work_end: {
+    sleep_start_minute: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-
-    sleep_start: {
+    sleep_end_hour: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    sleep_end: {
+    sleep_end_minute: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
