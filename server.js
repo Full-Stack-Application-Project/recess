@@ -45,7 +45,7 @@ app.get('/dashboard', (req, res) => {
     });
 })
 
-// Dashboard
+// schedule
 app.get('/schedule', (req, res) => {
     res.render('schedule', { 
         title: 'Your Schedule' 
@@ -53,13 +53,19 @@ app.get('/schedule', (req, res) => {
 })
 
 
-// Activities route
-app.get('/activities', (req, res) => {
-    res.render('activities', { 
-        title: 'Activities' 
+// categories route
+app.get('/categories', (req, res) => {
+    res.render('categories', { 
+        title: 'Categories' 
     });
 })
 
+// sleep route
+app.get('/sleepwork', (req, res) => {
+    res.render('sleepwork', { 
+        title: 'Sleep & Work Schedule' 
+    });
+})
 
 
 
