@@ -4,4 +4,13 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+body a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  color: whitesmoke;
+  font-size: larger;
+  margin-bottom: 500px;
+  margin-left: 335px;
+}
 /*# sourceMappingURL=main.css.map */
