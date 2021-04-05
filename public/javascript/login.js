@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
@@ -24,7 +24,6 @@ async function loginFormHandler(event) {
 
 async function signupFormHandler(event) {
   event.preventDefault();
-
   const firstName = document.querySelector("#first-name").value.trim();
   const lastName = document.querySelector("#last-name").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
@@ -34,15 +33,18 @@ async function signupFormHandler(event) {
     const response = await fetch("/api/users", {
       method: "post",
       body: JSON.stringify({
-        username,
+        firstname,
+        lastname,
         email,
-        password,
+        password
       }),
       headers: { "Content-Type": "application/json" },
     });
 
+    console.log("user posted");
+
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
