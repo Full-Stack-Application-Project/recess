@@ -46,7 +46,7 @@ async function signupFormHandler(event) {
         firstname,
         lastname,
         email,
-        password,
+        password
       }),
       headers: { "Content-Type": "application/json" },
     });
@@ -65,6 +65,6 @@ document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
 
-// document
-//   .querySelector(".signup-form")
-//   .addEventListener("submit", signupFormHandler);
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);

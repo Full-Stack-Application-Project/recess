@@ -106,7 +106,6 @@ router.post("/login", (req, res) => {
       return;
     }
     console.log("hit line 108 in user-routes");
-    res.json({ user: dbUserData, message: "You are now logged in!" });
 
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
