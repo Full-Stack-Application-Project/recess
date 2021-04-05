@@ -1,14 +1,22 @@
-<!DOCTYPE html>
+{{>signupcss}}
+
+
 <html>
-<head>
-     <link rel='stylesheet' type='text/css' media='screen' href="stylesheets/signup.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <title>Sign in</title>
-</head>
-<h2>Create your profile here</h2>
-<br>
-<form class="signup-form">
+
+
+    <div class="main" method="post" action="login">
+    <p class="sign" align="center">Create Your Account</p>
+    <form class="form1">
+          <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name">
+            <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name">
+
+      <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email">
+      <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password">
+      <a class="submit" align="center">Sign me up!</a>
+            
+                
+    </div>
+{{!-- <form class="signup-form">
     <div>
         <label for="username-signup">First Name:</label>
         <input type="text" id="first-name" />
@@ -28,7 +36,7 @@
     <div>
         <button type="submit">signup</button>
     </div>
-</form>
+</form> --}}
 
 <a class="back-arrow" href="/" alt="back arrow">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: rgb(252, 252, 252);"
