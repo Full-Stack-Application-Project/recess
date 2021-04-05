@@ -9,7 +9,7 @@ async function loginFormHandler(event) {
       method: "post",
       body: JSON.stringify({
         email,
-        password
+        password,
       }),
       headers: { "Content-Type": "application/json" },
     });
@@ -19,6 +19,10 @@ async function loginFormHandler(event) {
     } else {
       alert(response.statusText);
     }
+    req.session.user_id;
+    req.session.email;
+    req.session.loggedIn;
+    console.log("above is lines 22-24 of login.js");
   }
 }
 

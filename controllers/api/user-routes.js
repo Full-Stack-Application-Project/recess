@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { User, Activity, Schedule } = require("../../models");
 // const sequelize = require('../../config/connection');
 
-
 // get all users with /api/users
 router.get("/", (req, res) => {
   User.findAll({
@@ -24,12 +23,29 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Schedule,
-        attributes: ["id", "day", "working", "work_start_hour", "work_start_minute", "work_end_hour", "work_end_minute", "sleep_start_hour", "sleep_start_minute", "sleep_end_hour", "sleep_end_minute"]
+        attributes: [
+          "id",
+          "day",
+          "working",
+          "work_start_hour",
+          "work_start_minute",
+          "work_end_hour",
+          "work_end_minute",
+          "sleep_start_hour",
+          "sleep_start_minute",
+          "sleep_end_hour",
+          "sleep_end_minute",
+        ],
       },
       {
         model: Activity,
-        attributes: ["id", "activity_category", "activity_name", "activity_length"]
-      }
+        attributes: [
+          "id",
+          "activity_category",
+          "activity_name",
+          "activity_length",
+        ],
+      },
     ],
   })
     .then((dbUserData) => {
@@ -53,15 +69,15 @@ router.post("/", (req, res) => {
     email: req.body.email,
     password: req.body.password,
   })
-    .then((dbUserData) =>  res.json(dbUserData))
-    // {
-    //   req.session.save(() => {
-    //     req.session.user_id = dbUserData.id;
-    //     req.session.loggedIn = true;
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.email = dbUserData.email;
+        req.session.loggedIn = true;
 
-    //     res.json(dbUserData);
-    //   });
-    // }
+        res.json(dbUserData);
+      });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -74,7 +90,7 @@ router.post("/login", (req, res) => {
   console.log(req.body.password);
   User.findOne({
     where: {
-      email: req.body.email
+      email: req.body.email,
     },
   }).then((dbUserData) => {
     console.log(dbUserData);
@@ -89,27 +105,28 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
-    console.log('hit line 92')
+    console.log("hit line 108 in user-routes");
     res.json({ user: dbUserData, message: "You are now logged in!" });
 
-    // req.session.save(() => {
-    //   req.session.user_id = dbUserData.id;
-    //   req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.email = dbUserData.email;
+      req.session.loggedIn = true;
 
-    //   res.json({ user: dbUserData, message: "You are now logged in!" });
-    // });
+      res.json({ user: dbUserData, message: "You are now logged in!" });
+    });
   });
 });
 
-// router.post("/logout", (req, res) => {
-//   if (req.session.loggedIn) {
-//     req.session.destroy(() => {
-//       res.status(204).end();
-//     });
-//   } else {
-//     res.status(404).end();
-//   }
-// });
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 router.put("/:id", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
