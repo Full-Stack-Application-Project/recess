@@ -61,13 +61,18 @@ app.get('/categories', (req, res) => {
 })
 
 // sleep route
-app.get('/sleepwork', (req, res) => {
-    res.render('sleepwork', { 
-        title: 'Sleep & Work Schedule' 
+app.get('/presetschedule', (req, res) => {
+    res.render('presetschedule', { 
+        title: 'Your Work & Sleep Schedule' 
     });
 })
 
-
+// activityform route
+app.get('/activityform', (req, res) => {
+    res.render('activityform', { 
+        title: 'Enter Activity Details' 
+    });
+})
 
 // set server -- delete when merging
 app.listen(3001, () => {
