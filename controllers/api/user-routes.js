@@ -70,11 +70,14 @@ router.post("/", (req, res) => {
 
 router.post("/login", (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+  console.log(req.body.email);
+  console.log(req.body.password);
   User.findOne({
     where: {
-      email: req.body.email,
+      email: req.body.email
     },
   }).then((dbUserData) => {
+    console.log(dbUserData);
     if (!dbUserData) {
       res.status(400).json({ message: "No user with that email address!" });
       return;
@@ -86,7 +89,7 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
-
+    console.log('hit line 92')
     res.json({ user: dbUserData, message: "You are now logged in!" });
 
     // req.session.save(() => {
