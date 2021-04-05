@@ -1,34 +1,58 @@
-// Sign up page
-let username;
-let password;
-let lastName;
-let firstName;
-let submitBtn;
+async function loginFormHandler(event) {
+  event.preventDefault();
 
-if (window.location.pathname === '/signup') {
-    username = document.querySelector('#email');
-    password = document.querySelector('#pass');
-    lastName = document.querySelector('#lname');
-    firstName = document.querySelector('#fname');
-    submitBtn = document.querySelector('#submit');
+  const email = document.querySelector("#email-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
+
+  if (email && password) {
+    const response = await fetch("/api/users/login", {
+      method: "post",
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert(response.statusText);
+    }
+  }
 }
 
-const test = () => {
-    console.log('Success!');
+async function signupFormHandler(event) {
+  event.preventDefault();
+
+  const firstName = document.querySelector("#first-name").value.trim();
+  const lastName = document.querySelector("#last-name").value.trim();
+  const email = document.querySelector("#email-signup").value.trim();
+  const password = document.querySelector("#password-signup").value.trim();
+
+  if (firstName & lastName && email && password) {
+    const response = await fetch("/api/users", {
+      method: "post",
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert(response.statusText);
+    }
+  }
 }
 
-if (window.location.pathname === '/signup') {
-    submitBtn.addEventListener('click', test);
-}
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
 
-
-// Login page
-if (window.location.pathname === '/login') {
-    username = document.querySelector('#email');
-    password = document.querySelector('#pass');
-    submitBtn = document.querySelector('#submit');
-}
-
-if (window.location.pathname === '/login') {
-    submitBtn.addEventListener('click', test);
-}
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);
