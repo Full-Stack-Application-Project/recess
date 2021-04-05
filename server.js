@@ -1,23 +1,47 @@
-//const sequelize = require('./config/connection');
 const path = require('path');
 const express = require('express');
+<<<<<<< HEAD
 const bodyParser= require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 const routes = require('./controllers'); 
+=======
+// const session = require('express-session');
+const routes = require('./controllers');
+// const session = require('express-session');
+// const exphbs = require('express-handlebars');
 
-const exphbs = require('express-handlebars');
-//const hbs = exphbs.create({});
+const sequelize = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
+const app = express();
+const PORT = process.env.PORT || 3006;
 
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+>>>>>>> e4007943f07aeff48569bd2ae02668621b6d6197
+
+// const sess = {
+//   secret: 'Super secret secret',
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true,
+//   store: new SequelizeStore({
+//     db: sequelize
+//   })
+// };
+
+// app.use(session(sess));
+
+// app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+// app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(routes);
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
+<<<<<<< HEAD
 // routing to main page, login page, calendar page, profile page
 app.get('/', (req, res) => {
     res.render('home', { 
@@ -58,3 +82,8 @@ app.get('/signup', (req, res) => {
 app.listen(3001, () => {
     console.log('Server listening on port ', 3001);
 })
+=======
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
+>>>>>>> e4007943f07aeff48569bd2ae02668621b6d6197

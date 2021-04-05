@@ -9,22 +9,34 @@
 <h2>Create your profile here</h2>
 <br>
 <form class="signup-form">
-    <label for="fname">First Name:</label>
-    <input type="text" id="fname" name="fname" placeholder="First Name">
-    <br>
-    <label for="lname">Last Name:</label>
-    <input type="text" id="lname" name="lname" placeholder="Last Name">
-    <br>
-    <label for="email">email:</label>
-    <input type="email" id="email" name="email" placeholder="username@domain.com">
-    <br>
-    <label for="pass">Password:</label>
-    <input type="password" id="pass" name="password" placeholder="password" minlength="8" required>
-    <br>
-    <input type="button" id="submit" name="submit" value="Submit">
+    <div>
+        <label for="username-signup">First Name:</label>
+        <input type="text" id="first-name" />
+    </div>
+    <div>
+        <label for="email-signup">Last Name</label>
+        <input type="text" id="last-name" />
+    </div>
+    <div>
+        <label for="password-signup">Email:</label>
+        <input type="password" id="email-signup" />
+    </div>
+    <div>
+        <label for="password-signup">Password:</label>
+        <input type="password" id="password-signup" />
+    </div>
+    <div>
+        <button type="submit">signup</button>
+    </div>
 </form>
 
-<a href="/">ARROW BACK</a>
+<a class="back-arrow" href="/" alt="back arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: rgb(252, 252, 252);"
+        fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+    </svg>
+</a>
 
 </html>
 
