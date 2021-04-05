@@ -52,7 +52,6 @@ app.get('/schedule', (req, res) => {
     });
 })
 
-
 // categories route
 app.get('/categories', (req, res) => {
     res.render('categories', { 
@@ -67,10 +66,24 @@ app.get('/presetschedule', (req, res) => {
     });
 })
 
-// activityform route
-app.get('/activityform', (req, res) => {
-    res.render('activityform', { 
+// delete this route
+app.get('/modal', (req, res) => {
+    res.render('modal', { 
         title: 'Enter Activity Details' 
+    });
+})
+
+// calendar route
+app.get('/calendar', (req, res) => {
+    res.render('calendar', { 
+        title: 'Calendar' 
+    });
+})
+
+// delete this  route
+app.get('/form', (req, res) => {
+    res.render('activity-form', { 
+        title: 'Calendar' 
     });
 })
 

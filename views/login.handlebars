@@ -1,13 +1,14 @@
 <div class="container">
     <div class="row">
-        <!-- navigation here -->
+
         <div class="col">
-            <form class="flex-column login-form" method="post">
+            <form class="flex-column login-form" action="">
                 <div class="row">
                     <div class="col-m-12">
-                        <h3>Please login </h3>
+                        <h2>Please login </h2>
                     </div>
                 </div>
+
                 <div class="row mb-3">
                     <!--if previous schedule exist, show schedule / else prompt to create new routine -->
                     <!-- <a class="btn" href="/schedule" role="button"> -->
@@ -27,6 +28,7 @@
                         <input type="email" class="form-control" id="inputEmail3" placeholder="username@email.com">
                     </div>
                 </div>
+
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label-lg">Password</label>
                     <div class="col-sm-5">
@@ -35,9 +37,8 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary" href="/dahsboard">Login</button>
+                <button type="submit" class="btn btn-primary" href="/dashboard">Login</button>
                 
-
             </form>
             <div class="row">
                 <a href="/signup">Not a user? Create profile</a>

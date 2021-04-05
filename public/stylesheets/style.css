@@ -11,6 +11,7 @@ html, body {
 
 h2 {
   padding-top: 0.75em;
+  text-align: center;
 }
 h3{
   padding: 1em 0 1em;
@@ -32,12 +33,10 @@ form, ul, h3 {
   border: 2 solid black;
 }
 
-
-a.arrow {
-  text-align: right;
+.back {
+  padding-top: 1em;
+  text-align: center;
 }
-
-
 /*
 .icons i {
   margin-left: 15px;

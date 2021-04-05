@@ -10,23 +10,9 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Activity for {categoryselected}</h4>
-        <div class="time dropdown">
-                <h5>Select Category</h5>
-                <select class="form-select select-category form-select-lg mb-3" aria-label=".form-select-lg">
-                    <option selected>Category</option>
-                    <option value="1">Exercise</option>
-                    <option value="2">Mindfulness</option>
-                    <option value="3">Relaxation</option>
-                    <option value="4">Relaxation</option>
-                    <option value="5">Academic</option>
-                    <option value="6">Other</option>
-                </select>
-            </div>
       </div>
       <div class="modal-body">
-        <form>Some text in the modal.
-
-        </form>
+        {{>activity-form}}
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Save changes</button>
