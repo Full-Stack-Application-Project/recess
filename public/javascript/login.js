@@ -19,25 +19,15 @@ async function loginFormHandler(event) {
     } else {
       alert(response.statusText);
     }
-    req.session.user_id;
-    req.session.email;
-    req.session.loggedIn;
-    console.log("above is lines 22-24 of login.js");
   }
 }
 
 async function signupFormHandler(event) {
   event.preventDefault();
-
   const firstName = document.querySelector("#first-name").value.trim();
   const lastName = document.querySelector("#last-name").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
-
-  console.log(firstName);
-  console.log(lastName);
-  console.log(email);
-  console.log(password);
 
   if (firstName & lastName && email && password) {
     const response = await fetch("/api/users", {
