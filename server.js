@@ -21,7 +21,7 @@ app.engine('handlebars',exphbs({
 const PORT = process.env.PORT || 3006;
 
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+/* 
 const routes = require('./controllers'); 
 
 const exphbs = require('express-handlebars');
@@ -32,7 +32,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-app.listen(PORT, () => console.log('Now listening: '+PORT));
+app.listen(PORT, () => console.log('Now listening: '+PORT)); */
 /*
 sequelize.sync({ force: false }).then(() => {
   
