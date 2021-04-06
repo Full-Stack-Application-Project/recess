@@ -1,106 +1,47 @@
-//const sequelize = require('./config/connection');
 const path = require('path');
 const express = require('express');
+const routes = require('./controllers');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+
+const sequelize = require('./config/connection');
 const app = express();
 
-const routes = require('./controllers'); 
 
-const exphbs = require('express-handlebars');
-//const hbs = exphbs.create({});
-
+app.set ("view engine", "handlebars");
+app.engine('handlebars',exphbs({
+    extname:'handlebars',
+    defaultLayout:'main',
+    layoutsDir: __dirname+'/views/layouts',
+    partialsDir:  __dirname+'/views/partials',
+}));
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static(path.join(__dirname, 'public')));
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// HOME
-app.get('/', (req, res) => {
-    res.render('home', { 
-        title: 'Recess' 
-    });
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
+app.listen(PORT, () => console.log('Now listening: '+PORT));
+/*
+sequelize.sync({ force: false }).then(() => {
+  
 });
-//LOGIN
-app.get('/login', (req, res) => {
-    res.render('login', { 
-        title: 'User Login' 
-    });
-})
-//ABOUT
-app.get('/about', (req, res) => {
-    res.render('about', { 
-        title: 'About' 
-    });
-})
-//SIGN UP
-app.get('/signup', (req, res) => {
-    res.render('signup', { 
-        title: 'Sign Up' 
-    });
-})
-
-// DASHBOARD
-app.get('/dashboard', (req, res) => {
-    res.render('dashboard', { 
-        title: 'Welcome' 
-    });
-})
-// SLEEP/WORK route
-app.get('/presetschedule', (req, res) => {
-    res.render('presetschedule', { 
-        title: 'Your Work & Sleep Schedule' 
-    });
-})
-// SCHEDULE
-app.get('/schedule', (req, res) => {
-    res.render('schedule', { 
-        title: 'Your Schedule' 
-    });
-})
-
-// CATEGORIES
-app.get('/categories', (req, res) => {
-    res.render('categories', { 
-        title: 'Categories' 
-    });
-})
-
-// ACTIVITIES FORM 
-app.get('/activity-form', (req, res) => {
-    res.render('activity-form', { 
-        title: 'Enter Activity Details' 
-    });
-}) 
-
-// calendar route
-app.get('/calendar', (req, res) => {
-    res.render('calendar', { 
-        title: 'Calendar' 
-    });
-})
-
-// delete this  route
-app.get('/form', (req, res) => {
-    res.render('activity-form', { 
-        title: 'Calendar' 
-    });
-})
-// delete this route
-app.get('/modal', (req, res) => {
-    res.render('modal', { 
-        title: 'Enter Activity Details' 
-    });
-})
-
-app.get('/sevendays', (req, res) => {
-    res.render('sevendays', { 
-        title: 'weekly canlendar' 
-    });
-})
-
-// set server -- delete when merging
-app.listen(3001, () => {
-    console.log('Server listening on port ', 3001);
-})
+*/
