@@ -1,14 +1,13 @@
-  
 <!DOCTYPE html>
 <html lang="en">
 
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>{{title}}</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' type='text/css' media='screen' href="stylesheets/main.css">
-    <script src='javascript/main.js'></script>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>{{title}}</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' type='text/css' media='screen' href="stylesheets/main.css">
+{{!-- <script src='javascript/main.js'></script> --}}
 
 <body>
     <style>
@@ -18,14 +17,14 @@
             background-position: fixed;
             width: 100%;
             height: 100%;
-        }       
+        }
     </style>
-            <nav>
-                {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
-                {{/if}}
-            </nav>
+    <nav>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        {{/if}}
+    </nav>
 
     <div class="wrapper">
 
@@ -33,9 +32,9 @@
             {{{ body }}}
         </main>
 
-        <footer>
+{{!--         <footer>
            <p> Footer!</p>
-        </footer>
+        </footer> --}}
     </div>
 
   <script src="/javascript/main.js"></script>

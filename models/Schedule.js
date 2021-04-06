@@ -14,62 +14,46 @@ Schedule.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
-      autoIncrement: true
+      autoIncrement: true,
     },
     day: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     working: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
-    work_start_hour: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    work_start_minute: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    work_end_hour: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    work_end_minute: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    sleep_start_hour: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+    work_start: {
+      type: DataTypes.INTEGER, // if  it is military time we can use integer, otherwise we will have to use a string.
+      allowNull: false,
     },
     sleep_start_minute: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     sleep_end_hour: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     sleep_end_minute: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
-        key: "id"
-      }
-    }
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "schedule"
+    modelName: "schedule",
   }
 );
 

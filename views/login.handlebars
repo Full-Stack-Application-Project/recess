@@ -2,12 +2,24 @@
 
     <div class="main" method="post" action="login">
     <p class="sign" align="center">Log in</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" id="email-login" placeholder="Email">
+    {{!-- <form class="form1">
+      <input class="un" type="text" align="center" id="email-login" placeholder="Email">
       <input class="pass" type="password" align="center" id="password-login" placeholder="Password">
-      <a class="submit" align="center">Log in</a>
-            
-                
+      <button class="submit" type="submit" align="center">Log in</button>
+    </form>        --}}
+      <form class="login-form">
+                    <div>
+                        {{!-- <label for="email-login">email:</label> --}}
+                        <input class="un" type="text" align="center" id="email-login" placeholder="Email"/>
+                    </div>
+                    <div>
+                        {{!-- <label for="password-login">password:</label> --}}
+                        <input class="pass" type="password" align="center" id="password-login" placeholder="Password"/>
+                    </div>
+                    <div>
+                        <button class="submit" type="submit" align="center">login</button>
+                    </div>
+                </form>          
     </div>
    
 
@@ -16,4 +28,4 @@
 
 </html>
 
-<!-- <script src="/javascript/login.js"></script> -->
+<script src="/javascript/login.js"></script>

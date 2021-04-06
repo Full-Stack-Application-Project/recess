@@ -4,18 +4,34 @@
 <html>
 
 
-    <div class="main" method="post" action="login">
+<div class="main" method="post" action="login">
     <p class="sign" align="center">Create Your Account</p>
-    <form class="form1">
-          <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name">
-            <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name">
+    {{!-- <form class="form1">
+        <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name">
+        <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name">
 
-      <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email">
-      <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password">
-      <a class="submit" align="center">Sign me up!</a>
-            
-                
-    </div>
+        <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email">
+        <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password">
+        <a class="submit" align="center">Sign me up!</a> --}}
+        <form class="signup-form">
+            <div>
+                <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name"/>
+            </div>
+            <div>
+                <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name"/>
+            </div>
+            <div>
+                <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email"/>
+            </div>
+            <div>
+                <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password"/>
+            </div>
+            <div>
+                <button type="submit" class="submit" align="center">Sign me up!</button>
+            </div>
+        </form>
+</div>
+
 {{!-- <form class="signup-form">
     <div>
         <label for="username-signup">First Name:</label>
@@ -41,4 +57,4 @@
 {{>goback}}
 {{>footer}}
 
-<script src="/javascript/login.js"></script>
+<script src="/javascript/sign-up.js"></script>
