@@ -45,23 +45,47 @@ app.get('/dashboard', (req, res) => {
     });
 })
 
-// Dashboard
+// schedule
 app.get('/schedule', (req, res) => {
     res.render('schedule', { 
         title: 'Your Schedule' 
     });
 })
 
-
-// Activities route
-app.get('/activities', (req, res) => {
-    res.render('activities', { 
-        title: 'Activities' 
+// categories route
+app.get('/categories', (req, res) => {
+    res.render('categories', { 
+        title: 'Categories' 
     });
 })
 
+// sleep route
+app.get('/presetschedule', (req, res) => {
+    res.render('presetschedule', { 
+        title: 'Your Work & Sleep Schedule' 
+    });
+})
 
+// delete this route
+app.get('/modal', (req, res) => {
+    res.render('modal', { 
+        title: 'Enter Activity Details' 
+    });
+})
 
+// calendar route
+app.get('/calendar', (req, res) => {
+    res.render('calendar', { 
+        title: 'Calendar' 
+    });
+})
+
+// delete this  route
+app.get('/form', (req, res) => {
+    res.render('activity-form', { 
+        title: 'Calendar' 
+    });
+})
 
 // set server -- delete when merging
 app.listen(3001, () => {
