@@ -17,8 +17,7 @@ div button[aria-expanded="true"]{
 }
 
 tbody {
-    /* background: linear-gradient(47deg, rgba(227, 1, 163, 0.467) 0%, rgba(7,171,242,0.989233193277311) 49%, rgba(227,1,164,1) 100%); */
-
+    background-color: rgba(255, 255, 255, 0.138);
 }
 td.time {
     text-align: center;
@@ -36,4 +35,9 @@ div.activity{
     color: #fff;
     font-weight: lighter;
 }
-
+div.btns {
+    display: flexbox;
+    margin-top: .5em;
+    margin-left: .5em;
+    margin-bottom: 1em;
+}
