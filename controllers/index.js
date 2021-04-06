@@ -6,7 +6,9 @@ const homeRoutes = require('./home-routes.js')
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
-router.get('/', (req, res) => res.send('welcome to the api'));
+router.use('/', hbsRoutes);
+
+router.get('/', (req, res) => res.redirect("/home"));
 
 router.use((req, res) => {
   res.status(404).end();
