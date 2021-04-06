@@ -15,7 +15,7 @@ app.engine('handlebars',exphbs({
     layoutsDir: __dirname+'/views/layouts',
     partialsDir:  __dirname+'/views/partials',
 }));
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3001;
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
