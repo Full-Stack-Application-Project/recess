@@ -7,7 +7,6 @@ const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const app = express();
 
-const exphbs = require('express-handlebars');
 
 app.set ("view engine", "handlebars");
 app.engine('handlebars',exphbs({
