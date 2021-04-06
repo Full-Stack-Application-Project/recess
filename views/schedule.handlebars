@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="stylesheets/schedule.css">
 
-<div class="accordion" id="week">
+<div class="accordion accordion-flush" id="week">
 
-    <div class="accordion-item">
-    <h2 class="accordion-header" id="headingSunday">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSunday" aria-expanded="false" aria-controls="collapseSunday">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingSunday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseSunday" aria-expanded="false" aria-controls="collapseSunday">
         Sunday
       </button>
     </h2>
@@ -16,82 +17,97 @@
   </div>
 
   <div class="accordion-item">
-    <h2 class="accordion-header" id="headingMonday">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonday" aria-expanded="true" aria-controls="collapseMonday">
+    <h2 class="accordion-header" id="flush-headingMonday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseMonday" aria-expanded="false" aria-controls="collapseMonday">
         Monday
       </button>
     </h2>
-    <div id="collapseMonday" class="accordion-collapse collapse show" aria-labelledby="headingMonday" data-bs-parent="#week">
+    <div id="collapseMonday" class="accordion-collapse collapse" aria-labelledby="headingMonday" data-bs-parent="#week">
       <div class="accordion-body">
-        <strong>monday's events</strong> 
+        {{>hours}}
       </div>
     </div>
   </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTuesday">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTuesday" aria-expanded="false" aria-controls="collapseTuesday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseTuesday" aria-expanded="false" aria-controls="collapseTuesday">
         Tueday
       </button>
     </h2>
-    <div id="collapseTuesday" class="accordion-collapse collapse" aria-labelledby="headingTuesday" data-bs-parent="#week">
+    <div id="collapseTuesday" class="accordion-collapse collapse" aria-labelledby="headingTuesday"
+      data-bs-parent="#week">
       <div class="accordion-body">
-        <strong>Tuesday Events</strong> 
+        {{>hours}}
       </div>
     </div>
   </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingWednesday">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday">
         Wednesday
       </button>
     </h2>
-    <div id="collapseWednesday" class="accordion-collapse collapse" aria-labelledby="headingWednesday" data-bs-parent="#week">
+    <div id="collapseWednesday" class="accordion-collapse collapse" aria-labelledby="headingWednesday"
+      data-bs-parent="#week">
       <div class="accordion-body">
-        <strong>wednesday events</strong> 
+        {{>hours}}
       </div>
     </div>
   </div>
-  
+
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThursday">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThursday" aria-expanded="false" aria-controls="collapseThursday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseThursday" aria-expanded="false" aria-controls="collapseThursday">
         Thursday
       </button>
     </h2>
-    <div id="collapseThursday" class="accordion-collapse collapse" aria-labelledby="headingThursday" data-bs-parent="#week">
+    <div id="collapseThursday" class="accordion-collapse collapse" aria-labelledby="headingThursday"
+      data-bs-parent="#week">
       <div class="accordion-body">
-        <strong>Thurdays events</strong> 
+        {{>hours}}
       </div>
     </div>
   </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingFriday">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFriday" aria-expanded="false" aria-controls="collapseFriday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseFriday" aria-expanded="false" aria-controls="collapseFriday">
         Friday
       </button>
     </h2>
     <div id="collapseFriday" class="accordion-collapse collapse" aria-labelledby="headingFriday" data-bs-parent="#week">
       <div class="accordion-body">
-        <strong>Fridays events</strong> 
+        {{>hours}}
       </div>
     </div>
   </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSaturday">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaturday" aria-expanded="false" aria-controls="collapseSaturday">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseSaturday" aria-expanded="false" aria-controls="collapseSaturday">
         Saturday
       </button>
     </h2>
-    <div id="collapseSaturday" class="accordion-collapse collapse" aria-labelledby="headingSaturday" data-bs-parent="#week">
+    <div id="collapseSaturday" class="accordion-collapse collapse" aria-labelledby="headingSaturday"
+      data-bs-parent="#week">
       <div class="accordion-body">
-        <strong>Saturdays events</strong> 
+        {{>hours}}
       </div>
     </div>
   </div>
-
-  
+</div>
+<div class="">
+  <div class="btns">
+    <a class="btn btn-info" id="save" href="/calendar">View Calendar</a>
+    <a class="btn btn-info" id="back" href="/categories">Go Back</a>
+    <a class="btn btn-info" id="home" href="/dashboard">Go Home</a>
+  </div>
 </div>

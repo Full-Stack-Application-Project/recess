@@ -1,49 +1,39 @@
 
-table.calendar {
-    margin-bottom: 0;
+div#week {
+    margin-top: 2em;
 }
-
-td {
-    height: 20px;
+.accordion-item {
+    background-color: transparent;
 }
-
-table.calendar > tbody > tr > td > div {
-    //padding: 8px;
-    height: 40px;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-td.has-events {
-    color: white;
-    cursor: pointer;
-    padding: 0;
-    border-radius: 4px;
-}
-
-td.has-events > div {
-    background-color: rgb(138, 208, 243);
-    border-left: 1px solid white;
-}
-
-td.has-events > div:first-child {
-    border-left: 0;
-    margin-left: 1px;
-}
-
-table.calendar > tbody > tr > td.has-events > div > span {
-    display: block;
-    text-align: center;
-}
-
-span.title {
+.accordion-button {
+    font-size: 1em;
+    color: snow;
     font-weight: bold;
-}
- td {
-    border: 0;
+    background-color: rgba(252, 142, 243, 0.789);
 }
 
-.table tbody tr.hover td {
-    background-color: whiteSmoke;
+div button[aria-expanded="true"]{
+    background-color: #42DCA3;
 }
+
+tbody {
+    /* background: linear-gradient(47deg, rgba(227, 1, 163, 0.467) 0%, rgba(7,171,242,0.989233193277311) 49%, rgba(227,1,164,1) 100%); */
+
+}
+td.time {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    width: 20%;
+}
+td.has-activity {
+    background-color: rgba(31, 204, 187, 0.912);
+    color: rgb(55, 55, 55);
+    font-size: 1em;
+    font-weight: bold;
+} 
+div.activity{
+    color: #fff;
+    font-weight: lighter;
+}
+
