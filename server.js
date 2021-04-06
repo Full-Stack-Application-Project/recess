@@ -1,7 +1,26 @@
 //const sequelize = require('./config/connection');
 const path = require('path');
 const express = require('express');
+// const session = require('express-session');
+const routes = require('./controllers');
+// const session = require('express-session');
+// const exphbs = require('express-handlebars');
+
+const sequelize = require('./config/connection');
 const app = express();
+
+const exphbs = require('express-handlebars');
+
+app.set ("view engine", "handlebars");
+app.engine('handlebars',exphbs({
+    extname:'handlebars',
+    defaultLayout:'main',
+    layoutsDir: __dirname+'/views/layouts',
+    partialsDir:  __dirname+'/views/partials',
+}));
+const PORT = process.env.PORT || 3006;
+
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const routes = require('./controllers'); 
 
@@ -12,82 +31,10 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
-// Routing from server to Home, Login, SignUp, About
-app.get('/', (req, res) => {
-    res.render('home', { 
-        title: 'Recess' 
-    });
+app.use(routes);
+app.listen(PORT, () => console.log('Now listening: '+PORT));
+/*
+sequelize.sync({ force: false }).then(() => {
+  
 });
-app.get('/login', (req, res) => {
-    res.render('login', { 
-        title: 'User Login' 
-    });
-})
-app.get('/about', (req, res) => {
-    res.render('about', { 
-        title: 'About' 
-    });
-})
-app.get('/signup', (req, res) => {
-    res.render('signup', { 
-        title: 'Sign Up' 
-    });
-})
-
-// Dashboard
-app.get('/dashboard', (req, res) => {
-    res.render('dashboard', { 
-        title: 'Welcome' 
-    });
-})
-
-// schedule
-app.get('/schedule', (req, res) => {
-    res.render('schedule', { 
-        title: 'Your Schedule' 
-    });
-})
-
-// categories route
-app.get('/categories', (req, res) => {
-    res.render('categories', { 
-        title: 'Categories' 
-    });
-})
-
-// sleep route
-app.get('/presetschedule', (req, res) => {
-    res.render('presetschedule', { 
-        title: 'Your Work & Sleep Schedule' 
-    });
-})
-
-// delete this route
-app.get('/modal', (req, res) => {
-    res.render('modal', { 
-        title: 'Enter Activity Details' 
-    });
-})
-
-// calendar route
-app.get('/calendar', (req, res) => {
-    res.render('calendar', { 
-        title: 'Calendar' 
-    });
-})
-
-// delete this  route
-app.get('/form', (req, res) => {
-    res.render('activity-form', { 
-        title: 'Calendar' 
-    });
-})
-
-// set server -- delete when merging
-app.listen(3001, () => {
-    console.log('Server listening on port ', 3001);
-})
+*/

@@ -96,9 +96,14 @@ html, body {
 =======
 html, body {
   height: 100%;
-  width: auto;
- 
-  background: linear-gradient(47deg, rgba(227,1,164,0.9230288461538462) 0%, rgba(7,171,242,1) 100%);
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-image: url('./assets/gradient.png');
+  background-size:cover;
+  background-position: fixed;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
 }
 .jumbotron {
@@ -190,9 +195,14 @@ form, ul, h3 {
   cursor: pointer;
 }
 */
+<<<<<<< HEAD
 footer {
+=======
+/* footer {
+  margin-top: 5em;
+>>>>>>> 3e8fe18c97304170a0cba4906db959488186bf91
   padding-top: 2em;
   text-align: center;
-}
+} */
 
 >>>>>>> 138651a6ba12a745f6d5f1d7f5827be23abce045
