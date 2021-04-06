@@ -28,16 +28,15 @@ Schedule.init(
       type: DataTypes.INTEGER, // if  it is military time we can use integer, otherwise we will have to use a string.
       allowNull: false,
     },
-    work_end: {
+    sleep_start_minute: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-
-    sleep_start: {
+    sleep_end_hour: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    sleep_end: {
+    sleep_end_minute: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
