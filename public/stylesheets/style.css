@@ -1,6 +1,5 @@
 html, body {
   height: 100%;
-<<<<<<< HEAD
   padding: 0;
   margin: 0;
   font-family: sans-serif;
@@ -9,11 +8,6 @@ html, body {
   background-position: fixed;
   width: 100%;
   height: 100%;
-=======
-  width: auto;
- 
-  background: linear-gradient(47deg, rgba(227,1,164,0.9230288461538462) 0%, rgba(7,171,242,1) 100%);
->>>>>>> e4007943f07aeff48569bd2ae02668621b6d6197
   background-repeat: no-repeat;
 }
 .jumbotron {
@@ -107,9 +101,9 @@ a.arrow {
   cursor: pointer;
 }
 */
-footer {
+/* footer {
   margin-top: 5em;
   padding-top: 2em;
   text-align: center;
-}
+} */
 
