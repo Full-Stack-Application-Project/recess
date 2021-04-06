@@ -16,62 +16,63 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// Routing from server to Home, Login, SignUp, About
+// HOME
 app.get('/', (req, res) => {
     res.render('home', { 
         title: 'Recess' 
     });
 });
+//LOGIN
 app.get('/login', (req, res) => {
     res.render('login', { 
         title: 'User Login' 
     });
 })
+//ABOUT
 app.get('/about', (req, res) => {
     res.render('about', { 
         title: 'About' 
     });
 })
+//SIGN UP
 app.get('/signup', (req, res) => {
     res.render('signup', { 
         title: 'Sign Up' 
     });
 })
 
-// Dashboard
+// DASHBOARD
 app.get('/dashboard', (req, res) => {
     res.render('dashboard', { 
         title: 'Welcome' 
     });
 })
-
-// schedule
+// SLEEP/WORK route
+app.get('/presetschedule', (req, res) => {
+    res.render('presetschedule', { 
+        title: 'Your Work & Sleep Schedule' 
+    });
+})
+// SCHEDULE
 app.get('/schedule', (req, res) => {
     res.render('schedule', { 
         title: 'Your Schedule' 
     });
 })
 
-// categories route
+// CATEGORIES
 app.get('/categories', (req, res) => {
     res.render('categories', { 
         title: 'Categories' 
     });
 })
 
-// sleep route
-app.get('/presetschedule', (req, res) => {
-    res.render('presetschedule', { 
-        title: 'Your Work & Sleep Schedule' 
-    });
-})
-
-// delete this route
-app.get('/modal', (req, res) => {
-    res.render('modal', { 
+// ACTIVITIES FORM 
+app.get('/activity-form', (req, res) => {
+    res.render('activity-form', { 
         title: 'Enter Activity Details' 
     });
-})
+}) 
 
 // calendar route
 app.get('/calendar', (req, res) => {
@@ -84,6 +85,18 @@ app.get('/calendar', (req, res) => {
 app.get('/form', (req, res) => {
     res.render('activity-form', { 
         title: 'Calendar' 
+    });
+})
+// delete this route
+app.get('/modal', (req, res) => {
+    res.render('modal', { 
+        title: 'Enter Activity Details' 
+    });
+})
+
+app.get('/sevendays', (req, res) => {
+    res.render('sevendays', { 
+        title: 'weekly canlendar' 
     });
 })
 

@@ -1,8 +1,8 @@
-<!--move to partials when modal is done-->
+<!--MOVE TO PARTIALS WHEN MODALS WORK-->
 <form class="flex-column" action="">
     <div class="activity-form-content dropdown">
         <h5>Select Category</h5>
-        <select class="form-select select-category form-select-lg mb-3" aria-label=".form-select-lg">
+        <select class="form-select select-category form-select-lg mb-3" aria-label=".form-select-lg" required>
             <option selected>Category</option>
             <option value="1">Exercise</option>
             <option value="2">Mindfulness</option>
@@ -14,7 +14,7 @@
     </div>
     <div class="activity-form-content dropdown">
         <h5>Select Duration</h5>
-        <select class="form-select sleep-start form-select-lg mb-3" aria-label=".form-select-lg">
+        <select class="form-select sleep-start form-select-lg mb-3" aria-label=".form-select-lg" required>
             <option selected>Duration</option>
             <option value="0015">15 MIN</option>
             <option value="0030">30 MIN</option>
@@ -31,8 +31,11 @@
             <label for="activity-type" class="col-sm-2 col-form-label-lg">
                 Enter activity type:
             </label>
-            <input type="text" id="activity-type" name="activity-type" required>
+            <input type="text" id="activity-type" name="activity-type" placeholder="ex: running" required>
         </h5>
     </div>
+
+    <button type="submit" class="btn btn-primary" href="/categories" value="submit">Save Activity</button>
+    <button type="submit" class="btn btn-primary" href="/schedule" value="submit">View Schedule</button>
 
 </form>
