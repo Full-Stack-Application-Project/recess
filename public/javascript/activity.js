@@ -1,7 +1,15 @@
 // - Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 // - Conditional statement to audit whether the user has enough time to schedule.
 
+// * 1 - create variable to hold information based upon user's schedule selection (i.e. how many hours constant for that week)
+// * 2 - create function to evaluate data then generate random time
+
 let array = [];
+
+const startTime;
+const entTime;
+const totalTime;
+const timeArrayLength;
 
 // for start time to end time
 

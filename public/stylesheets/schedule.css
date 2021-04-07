@@ -1,0 +1,49 @@
+
+table.calendar {
+    margin-bottom: 0;
+}
+
+td {
+    height: 20px;
+}
+
+table.calendar > tbody > tr > td > div {
+    //padding: 8px;
+    height: 40px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+td.has-events {
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 4px;
+}
+
+td.has-events > div {
+    background-color: rgb(138, 208, 243);
+    border-left: 1px solid white;
+}
+
+td.has-events > div:first-child {
+    border-left: 0;
+    margin-left: 1px;
+}
+
+table.calendar > tbody > tr > td.has-events > div > span {
+    display: block;
+    text-align: center;
+}
+
+span.title {
+    font-weight: bold;
+}
+ td {
+    border: 0;
+}
+
+.table tbody tr.hover td {
+    background-color: whiteSmoke;
+}
