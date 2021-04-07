@@ -57,6 +57,23 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// get all users with /api/users
+router.get("/loggedIn", (req, res) => {
+  User.findAll({
+    where: {
+      loggedIn: "false"
+    }
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData + " user-routes line 69");
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post("/", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -166,3 +183,20 @@ router.delete("/:id", (req, res) => {
 });
 
 module.exports = router;
+
+// get all users with /api/users
+router.get("/loggedIn", (req, res) => {
+  User.findAll({
+    where: {
+      loggedIn: "true"
+    }
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData);
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
