@@ -23,24 +23,9 @@ router.get("/dashboard", (req, res)=>{
 router.get("/categories", (req, res)=>{
     res.render("categories", {title: "categories"});
 });
-router.get("/form1/", (req, res)=>{
-    //const formNum = parseInt(req.params.fn) ;
-    const formNum = req.params.fn;
-    const forms=['form1', 'form2'];
-   // console.log(forms[formNum]);
- //  const form = forms[formNum]+"";
-    switch (formNum){
-        case '1':
-            res.render("form1", {title:"Form "});
-            break;
-        case '2':
-            res.render("form2", {title:"Form "});
-            break;
-    }
-    
-  //  res.write ("form: "+formNum);
- 
-    //res.end();
-   // res.render("categories", {title: "categories"});
+router.get("/activity-form", (req, res)=>{
+    res.render("activity-form", {title: "Activity"});
 });
+
+    
 module.exports = router;
