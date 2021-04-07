@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 router.get("/loggedIn", (req, res) => {
   User.findAll({
     where: {
-      loggedIn: "false",
+      loggedIn: "true",
     },
   })
     .then((dbUserData) => {
@@ -158,15 +158,11 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
+router.patch("/:id", (req, res) => {
   // pass in req.body instead to only update what's passed through
   User.update(
     {
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      email: req.body.email,
-      password: req.body.password,
-      loggedIn: req.body.loggedIn,
+      loggedIn: req.body.loggedIn
     },
     {
       where: {

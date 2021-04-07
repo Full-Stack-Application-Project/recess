@@ -49,7 +49,7 @@ User.init(
     loggedIn: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "false"
+      defaultValue: "true"
     }
   },
   {
