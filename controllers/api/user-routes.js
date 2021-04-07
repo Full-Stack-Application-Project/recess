@@ -14,6 +14,23 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/loggedIn", (req, res) => {
+  User.findAll({
+    where: {
+      loggedIn: "false"
+    }
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData);
+      console.log("that is user-routes line 24");
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
@@ -49,23 +66,6 @@ router.get("/:id", (req, res) => {
         res.status(404).json({ message: "No user found with this id" });
         return;
       }
-      res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-// get all users with /api/users
-router.get("/loggedIn", (req, res) => {
-  User.findAll({
-    where: {
-      loggedIn: "false"
-    }
-  })
-    .then((dbUserData) => {
-      console.log(dbUserData + " user-routes line 69");
       res.json(dbUserData);
     })
     .catch((err) => {
