@@ -1,12 +1,14 @@
+{{>dashboardcss}}
+
 <div class="container">
     <div class="row">
         <!-- navigation here -->
         <div class="col">
             <ul class="nav flex-column">
-                <li class="nav-item">
+                <li class="profile">
                     <!--if previous schedule exist, show schedule / else prompt to create new routine -->
-                    <a class="btn" href="/schedule" role="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                    <a class="btn-p" href="/schedule" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150"
                             style="color: rgb(252, 252, 252);" fill="currentColor" class="bi bi-person-circle"
                             viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -15,20 +17,23 @@
                         </svg>
                     </a>
                 </li>
-                <li class="nav-item">
+                <div class="welcome">
                     <h2>Welcome {{user}}</h2>
+                </div>
+                <li class="nav-item">
+                    <a class="button" href="/categories" role="button">Create New Routine</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-info btn-lg mt-4" href="/activities" role="button">Create New Routine</a>
+                    <a class="button" href="/presetschedule" role="button">Edit Unavailability</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-info btn-lg mt-4" href="..." role="button">Edit Sleep/Work Times</a>
+                    <a class="button" href="/schedule" role="button">View Your Schedule</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-info btn-lg mt-4" href="/schedule" role="button">View Your Schedule</a>
+                    <a class="button" href="/calendar" role="button">View Your Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-primary btn-lg mt-4" href="/" role="button" id="logout">Log Out</a>
+                    <a class="buttonlogout" href="/" role="button" id="logout">Log Out</a>
                 </li>
             </ul>
         </div>
@@ -36,4 +41,9 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <script src="/javascript/logout.js"></script>
+=======
+{{!-- {{>footer}} --}}
+<script src="/javascript/logout.js"></script>
+>>>>>>> 494c9c0ac961d32c985fe2b65d1e6b2b8502d6a1

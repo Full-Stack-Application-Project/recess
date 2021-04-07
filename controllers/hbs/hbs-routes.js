@@ -13,10 +13,25 @@ router.get("/signup", (req, res)=>{
 router.get("/dashboard", (req, res)=>{
     res.render("dashboard", {title: "Dashboard"});
 });
-// router.get("/activity", (req, res)=>{
-//     res.render("activity", {title: "Activities"});
-// });
-// router.get("/about", (req, res)=>{
-//     res.render("about", {title: "About Us"});
-// });
+ router.get("/activity", (req, res)=>{
+    res.render("activity", {title: "Activities"});
+});
+ router.get("/about", (req, res)=>{
+    // console.log ("about");
+    res.render("about", {title: "About Us"});
+});
+router.get("/categories", (req, res)=>{
+    res.render("categories", {title: "categories"});
+});
+router.get("/activity-form", (req, res)=>{
+    res.render("activity-form", {title: "Activity"});
+});
+router.get("/schedule", (req, res)=>{
+    res.render("schedule", {title: "schedule"});
+});
+router.get("/presetschedule", (req, res)=>{
+    res.render("presetschedule", {title: "Presetschedule"});
+});
+
+    
 module.exports = router;

@@ -1,0 +1,52 @@
+div.form-body {
+    display: flex;
+   
+}
+.form-title {
+    color: snow;
+    background-color: rgb(105, 90, 205);
+    padding: 1em;
+}
+.form-content {
+    background-color: rgba(105, 90, 205, 0.59);
+}
+.days{
+    display: flex;
+    
+}
+h5,label{
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: snow;
+}
+h5 {
+    padding: 0.25em;
+}
+.checkbox {
+   width: 1em;
+   height: 1em;
+   vertical-align: -3px;
+}
+.day {
+    font-size: 1.2em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+
+}
+div.time {
+    align-content: center;
+    width: 20%;
+}
+
+button {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#save {
+    /* margin-left: 1em; */
+    font-weight: bold;
+}
+#back {
+    /* margin-left: .3em; */
+    font-weight: bold;
+}

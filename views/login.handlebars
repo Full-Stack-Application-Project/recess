@@ -1,8 +1,9 @@
 {{>logincss}}
 
-    <div class="main" method="post" action="login">
+<div class="main" method="post" action="login">
     <p class="sign" align="center">Log in</p>
     {{!-- <form class="form1">
+<<<<<<< HEAD
       <input class="un" type="text" align="center" id="email-login" placeholder="Email">
       <input class="pass" type="password" align="center" id="password-login" placeholder="Password">
       <button class="submit" type="submit" align="center">Log in</button>
@@ -22,10 +23,34 @@
                 </form>          
     </div>
    
+=======
+        <input class="un" type="text" align="center" id="email-login" placeholder="Email">
+        <input class="pass" type="password" align="center" id="password-login" placeholder="Password">
+        <button class="submit" type="submit" align="center">Log in</button>
+    </form> --}}
+    <form class="login-form">
+        <div>
+            {{!-- <label for="email-login">email:</label> --}}
+            <input class="un" type="text" align="center" id="email-login" placeholder="Email" />
+        </div>
+        <div>
+            {{!-- <label for="password-login">password:</label> --}}
+            <input class="pass" type="password" align="center" id="password-login" placeholder="Password" />
+        </div>
+        <div>
+            <button class="submit" type="submit" align="center">login</button>
+        </div>
+    </form>
+</div>
+>>>>>>> 494c9c0ac961d32c985fe2b65d1e6b2b8502d6a1
 
-    <a class= "user" href="/signup" style="margin-left: 650px;">Not a user? Create profile</a>	
-</body>
 
-</html>
+<a class="user" href="/signup" style="margin-left: 650px;">Not a user? Create profile</a>
+
+<<<<<<< HEAD
+<script src="/javascript/login.js"></script>
+=======
+{{backtodash}}
 
 <script src="/javascript/login.js"></script>
+>>>>>>> 494c9c0ac961d32c985fe2b65d1e6b2b8502d6a1
