@@ -1,4 +1,4 @@
-const path = require('path');
+/* const path = require('path');
 const express = require('express');
 const bodyParser= require('body-parser');
 const app = express();
@@ -77,8 +77,8 @@ app.get('/signup', (req, res) => {
 app.listen(3001, () => {
     console.log('Server listening on port ', 3001);
 })
-=======
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
->>>>>>> e4007943f07aeff48569bd2ae02668621b6d6197
+
+ */

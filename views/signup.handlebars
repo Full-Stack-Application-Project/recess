@@ -3,19 +3,34 @@
 
 <html>
 
-
-    <div class="main" method="post" action="login">
+<div class="main" method="post" action="login">
     <p class="sign" align="center">Create Your Account</p>
-    <form class="form1">
-          <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name">
-            <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name">
+    {{!-- <form class="form1">
+        <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name">
+        <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name">
 
-      <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email">
-      <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password">
-      <a class="submit" align="center">Sign me up!</a>
-            
-                
-    </div>
+        <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email">
+        <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password">
+        <a class="submit" align="center">Sign me up!</a> --}}
+        <form class="signup-form">
+            <div>
+                <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name"/>
+            </div>
+            <div>
+                <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name"/>
+            </div>
+            <div>
+                <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email"/>
+            </div>
+            <div>
+                <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password"/>
+            </div>
+            <div>
+                <button type="submit" class="submit" align="center">Sign me up!</button>
+            </div>
+        </form>
+</div>
+
 {{!-- <form class="signup-form">
     <div>
         <label for="username-signup">First Name:</label>
@@ -27,7 +42,7 @@
     </div>
     <div>
         <label for="password-signup">Email:</label>
-        <input type="password" id="email-signup" />
+        <input type="text" id="email-signup" />
     </div>
     <div>
         <label for="password-signup">Password:</label>
@@ -38,14 +53,8 @@
     </div>
 </form> --}}
 
-<a class="back-arrow" href="/" alt="back arrow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: rgb(252, 252, 252);"
-        fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-            d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
-    </svg>
-</a>
+{{>goback}}
+{{>footer}}
+{{backtodash}}
 
-</html>
-
-<!--  <script src="/javascript/signup.js"></script> -->
+<script src="/javascript/sign-up.js"></script>

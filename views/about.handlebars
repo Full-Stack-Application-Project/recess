@@ -2,35 +2,23 @@
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col text-center flex-column" style="margin-top: 5px;">
             <h3>About Recess</h3>
             <p>
-                Recess keeps track of your weekly availability so you can schedule your curricular activities.
+                Recess keeps track of your weekly availability so you can schedule your extra-curricular activities.
                 <br>
-                Once you create an account, you'll be prompted to enter your work hours and sleep hours to calculate
+                Once you create an account, you'll be prompted to enter your sleep and work hours to calculate
                 your free
                 time.
                 <br>
-                You will then be able to select the type of activity, lenth of the activity, frequency, and Recess will
+                You will then be able to indicate the activity category, length of the activity, the type activity , and Recess will
                 add it
                 to your calendar.
                 <br>
             </p>
+            {{>goback}}
         </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <a class="back-arrow" href="/" alt="back arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: rgb(252, 252, 252);"
-                    fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
-                </svg>
-            </a>
-        </div>
-    </div>
-
     <div class="row">
         <div class="col">
             <ul class="list flex-column">
@@ -58,7 +46,10 @@
             </ul>
         </div>
     </div>
-
-
 </div>
+
+
+
+{{>footer}}
+
 <!--  <script src="/javascript/about.js"></script> -->
