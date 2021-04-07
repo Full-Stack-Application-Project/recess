@@ -1,17 +1,7 @@
 {{>signupcss}}
 
-
-<html>
-
 <div class="main" method="post" action="login">
-    <p class="sign" align="center">Create Your Account</p>
-    {{!-- <form class="form1">
-        <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name">
-        <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name">
-
-        <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email">
-        <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password">
-        <a class="submit" align="center">Sign me up!</a> --}}
+    <p class="sign" align="center" style="margin-bottom: 30px;">Create Your Account</p>
         <form class="signup-form">
             <div>
                 <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name"/>
@@ -31,30 +21,9 @@
         </form>
 </div>
 
-{{!-- <form class="signup-form">
-    <div>
-        <label for="username-signup">First Name:</label>
-        <input type="text" id="first-name" />
-    </div>
-    <div>
-        <label for="email-signup">Last Name</label>
-        <input type="text" id="last-name" />
-    </div>
-    <div>
-        <label for="password-signup">Email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">Password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
-    </div>
-</form> --}}
 
-{{>goback}}
-{{!-- {{>footer}} --}}
-{{backtodash}}
+{{>backtohome}}
+
+
 
 <script src="/javascript/sign-up.js"></script>

@@ -1,5 +1,6 @@
 body {
   background-color: #F3EBF6;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 div.form-body {
@@ -11,7 +12,7 @@ div.form-body {
 .main {
   background-color: whitesmoke;
   width: 850px;
-  height: 450px;
+  height: 400px;
   margin: 7em auto;
   border-radius: 1.5em;
   -webkit-box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -38,6 +39,7 @@ div.form-body {
   -ms-flex-line-pack: center;
       align-content: center;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 h5, label {
@@ -91,6 +93,7 @@ button {
   color: gray;
   font-size: 20px;
   border-radius: 30%;
+  margin-left: 35px;
 }
 
 .custom-select1 {
@@ -118,4 +121,4 @@ button {
   -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
-/*# sourceMappingURL=presetschedulee.css.map */
+/*# sourceMappingURL=presetschedule.css.map */
