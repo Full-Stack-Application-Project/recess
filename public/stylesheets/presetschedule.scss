@@ -18,11 +18,12 @@ body {
   }
   
   .form-title {
-    color: snow;
-    background: -webkit-gradient(linear, left top, right top, from(#9C27B0), to(#E040FB));
-    background: linear-gradient(to right, #9C27B0, #E040FB);
+    color: #8C55AA;
+    background:whitesmoke;
     padding: 1em;
     font-family: 'Ubuntu', sans-serif;
+    border-radius: 20px;
+    margin-left: 225px;
   }
   
   .form-content {
