@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+body {
+    color: whitesmoke;
+    font-family: 'Ubuntu', sans-serif;
+}
+>>>>>>> 5b0cbb41f14836f3945593ab420bc1aa03e1e681
 div#week {
   margin-top: 2em;
 }
@@ -10,10 +17,22 @@ div#week {
   font-weight: bold;
   background-color: rgba(252, 142, 243, 0.789);
 }
+<<<<<<< HEAD
 
 div button[aria-expanded="true"] {
   background-color: #42dca3;
+=======
+header {
+    text-align: center;
+    /* padding: 1.5rem; */
+    margin: 0.7rem;
+    font-size: 1.2rem;
+    line-height: 2.3rem;
+>>>>>>> 5b0cbb41f14836f3945593ab420bc1aa03e1e681
 }
+/* div button[aria-expanded="true"]{
+    background-color: #42DCA3;
+} */
 
 tbody {
   background-color: rgba(255, 255, 255, 0.138);
@@ -25,6 +44,7 @@ td.time {
   width: 20%;
 }
 td.has-activity {
+<<<<<<< HEAD
   background-color: rgba(31, 204, 187, 0.912);
   color: rgb(55, 55, 55);
   font-size: 1em;
@@ -39,4 +59,39 @@ div.btns {
   margin-top: 0.5em;
   margin-left: 0.5em;
   margin-bottom: 1em;
+=======
+    font-size: 1em;
+    font-weight: bold;
+} 
+td.exercise {
+    color: rgb(55, 55, 55);
+    background-color: rgba(31, 204, 187, 0.912);
+}
+td.mindful {
+    color: rgb(223, 221, 221);
+    background-color: rgba(31, 115, 204, 0.912);
+}
+td.academic {
+    color: rgb(223, 221, 221);
+    background-color: rgba(169, 31, 204, 0.912);
+}
+td.relax{
+    color: rgb(55, 55, 55);
+    background-color: rgba(148, 223, 244, 0.912);
+}
+td.other {
+    color: rgb(55, 55, 55);
+    background-color: rgba(204, 149, 31, 0.912);
+}
+
+div.activity{
+    color: #fff;
+    font-weight: lighter;
+}
+div.btns {
+    display: flexbox;
+    margin-top: .5em;
+    margin-left: .5em;
+    margin-bottom: 1em;
+>>>>>>> 5b0cbb41f14836f3945593ab420bc1aa03e1e681
 }

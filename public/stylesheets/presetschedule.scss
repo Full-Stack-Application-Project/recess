@@ -1,0 +1,118 @@
+body {
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  div.form-body {
+    display: flex;
+  }
+  
+  .main {
+    background-color: whitesmoke;
+    width: 850px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    -webkit-box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  }
+  
+  .form-title {
+    color: #8C55AA;
+    background:whitesmoke;
+    padding: 1em;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 20px;
+    margin-left: 225px;
+  }
+  
+  .form-content {
+    background-color: rgba(105, 90, 205, 0.59);
+    margin-left: 10%;
+  }
+  
+  .days {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  h5, label {
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: black;
+  }
+  
+  h5 {
+    padding: 0.25em;
+  }
+  
+  .checkbox {
+    width: 1em;
+    height: 1em;
+    vertical-align: -3px;
+  }
+  
+  .day {
+    font-size: 1.2em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+  }
+  
+  div.time {
+    align-content: center;
+    width: 90%;
+  }
+  
+  button {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  #save {
+    /* margin-left: 1em; */
+    font-weight: bold;
+  }
+  
+  #back {
+    /* margin-left: .3em; */
+    font-weight: bold;
+  }
+  
+  .marginLeft10 {
+    margin-left: 10%;
+  }
+  
+  .span5 {
+    color: gray;
+    font-size: 20px;
+    border-radius: 30%;
+    margin-left: 35px;
+  }
+  
+  .custom-select1 {
+    width: 150px;
+  }
+  
+  .buttonDiv {
+    position: relative;
+  }
+  
+  .btn {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right top, from(#9C27B0), to(#E040FB));
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 10px;
+    font-size: 13px;
+    -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  }
