@@ -1,44 +1,46 @@
-<<<<<<< HEAD
+html,
+body {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    47deg,
+    rgba(227, 1, 164, 0.9230288461538462) 0%,
+    rgba(7, 171, 242, 1) 100%
+  );
+  background-repeat: no-repeat;
+}
+.jumbotron {
+  background: transparent;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h4 {
+  text-align: left;
+  padding: 2em 0;
+}
+ul {
+  text-align: center;
+  list-style: none;
+  padding-top: 2em;
+}
 
-html, body {
-    height: 100%;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(47deg, rgba(227,1,164,0.9230288461538462) 0%, rgba(7,171,242,1) 100%);
-    background-repeat: no-repeat;
-  }
-  .jumbotron {
-    background: transparent;
-  }
-  h2 {
-    padding-top: 0.5em;
-  }
-  h4 {
-    text-align: left;
-    padding: 2em 0;
-  }
-  ul {
-    text-align: center;
-    list-style: none;
-    padding-top: 2em;
-  }
-  
-  .col {
-    border: 1px, solid, black;
-  }
-  .day {
-    border: 2 solid black;
-  }
-  
-  .list {
-    text-align: left;
-    
-  }
-  a.arrow {
-    text-align: right;
-  }
-  /*
+.col {
+  border: 1px, solid, black;
+}
+.day {
+  border: 2 solid black;
+}
+
+.list {
+  text-align: left;
+}
+a.arrow {
+  text-align: right;
+}
+/*
   .icons i {
     margin-left: 15px;
     margin-right: 15px;
@@ -57,7 +59,7 @@ html, body {
     margin-top: 13px;
     font-size: 3rem;
   }*/
-  /*
+/*
   .note-title:read-only, .note-textarea:read-only {
     color: #757575;
   }
@@ -88,19 +90,20 @@ html, body {
     cursor: pointer;
   }
   */
-  footer {
-    margin-top: 5em;
-    padding-top: 2em;
-    text-align: center;
-  }
-=======
-html, body {
+footer {
+  margin-top: 5em;
+  padding-top: 2em;
+  text-align: center;
+}
+
+html,
+body {
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background-image: url('./assets/gradient.png');
-  background-size:cover;
+  background-image: url("./assets/gradient.png");
+  background-size: cover;
   background-position: fixed;
   width: 100%;
   height: 100%;
@@ -114,21 +117,20 @@ h2 {
   padding-top: 0.75em;
   text-align: center;
 }
-h3{
+h3 {
   padding: 1em 0 1em;
-
-
 }
 h4 {
   text-align: left;
   padding: 2em 0;
 }
-form, ul, h3 {
+form,
+ul,
+h3 {
   text-align: center;
   list-style: none;
   padding-top: 2em;
 }
-
 
 .day {
   border: 2 solid black;
@@ -200,10 +202,9 @@ form, ul, h3 {
   cursor: pointer;
 }
 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-footer {
-=======
+
+/* footer { */
+
 /* footer {
   margin-top: 5em;
 >>>>>>> 3e8fe18c97304170a0cba4906db959488186bf91
@@ -214,5 +215,3 @@ footer {
   padding-top: 2em;
   text-align: center;
 } */
-
->>>>>>> 138651a6ba12a745f6d5f1d7f5827be23abce045
