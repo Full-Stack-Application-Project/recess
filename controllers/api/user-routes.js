@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { response } = require("express");
 const { User, Activity, Schedule } = require("../../models");
 // const sequelize = require('../../config/connection');
 
@@ -17,8 +18,8 @@ router.get("/", (req, res) => {
 router.get("/loggedIn", (req, res) => {
   User.findAll({
     where: {
-      loggedIn: "false"
-    }
+      loggedIn: "false",
+    },
   })
     .then((dbUserData) => {
       console.log(dbUserData);
@@ -47,7 +48,7 @@ router.get("/:id", (req, res) => {
           "work_start",
           "work_end",
           "sleep_start",
-          "sleep_end"
+          "sleep_end",
         ],
       },
       {
@@ -74,6 +75,22 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.get("/loggedIn", (req, res) => {
+  User.findAll({
+    where: {
+      loggedIn: "true",
+    },
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData);
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post("/", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -81,6 +98,7 @@ router.post("/", (req, res) => {
     lastname: req.body.lastname,
     email: req.body.email,
     password: req.body.password,
+    loggedIn: "true",
   })
     .then((dbUserData) => {
       req.session.save(() => {
@@ -141,15 +159,21 @@ router.post("/logout", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
   // pass in req.body instead to only update what's passed through
-  User.update(req.body, {
-    individualHooks: true,
-    where: {
-      id: req.params.id,
+  User.update(
+    {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      password: req.body.password,
+      loggedIn: req.body.loggedIn,
     },
-  })
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(404).json({ message: "No user found with this id" });
@@ -183,20 +207,3 @@ router.delete("/:id", (req, res) => {
 });
 
 module.exports = router;
-
-// get all users with /api/users
-router.get("/loggedIn", (req, res) => {
-  User.findAll({
-    where: {
-      loggedIn: "true"
-    }
-  })
-    .then((dbUserData) => {
-      console.log(dbUserData);
-      res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});

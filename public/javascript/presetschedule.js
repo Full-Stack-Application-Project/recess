@@ -1,5 +1,18 @@
-async function addScheduleFormHandler(event) {
+function getUserId(event) {
   event.preventDefault();
+  fetch("/api/users/loggedIn").then(function (response) {
+    return response.json().then(function (response) {
+      console.log(response);
+      console.log("got to presetschedule.js line35");
+      // let user_id = response[0].id;
+      let user_id = 1;
+      console.log(user_id);
+      addScheduleFormHandler(user_id);
+    });
+  });
+}
+
+async function addScheduleFormHandler(user_id) {
   let day;
   let working;
   let workMonday = document.getElementById("monday").checked;
@@ -11,7 +24,6 @@ async function addScheduleFormHandler(event) {
   let workSunday = document.getElementById("sunday").checked;
   let sleep_start = document.querySelector("#sleep_start").value;
   let sleep_end = document.querySelector("#sleep_end").value;
-  let user_id = 1;
 
   console.log(workMonday + " workMonday");
   console.log(workTuesday + " workTuesday");
@@ -22,17 +34,7 @@ async function addScheduleFormHandler(event) {
   console.log(workSunday + " workSunday");
   console.log(sleep_start + " sleep_start");
   console.log(sleep_end + " sleep_end");
-  // console.log(user_id + " user_id");
-
-  fetch("/api/users/loggedIn")
-    .then(function(response) {
-      return response.json().then(function (response) {
-        console.log("got to presetschedule.js line35");
-        user_id = response[0].id;
-        console.log(user_id);
-      })
-    })
-  console.log(user_id);
+  console.log(user_id + " user_id");
 
   for (i = 0; i < 7; i++) {
     let work_start = document.querySelector("#work_start").value;
@@ -119,7 +121,7 @@ async function addScheduleFormHandler(event) {
           work_end,
           sleep_start,
           sleep_end,
-          user_id
+          user_id,
         }),
         headers: { "Content-Type": "application/json" },
       });
@@ -131,9 +133,7 @@ async function addScheduleFormHandler(event) {
       }
     }
   }
-  // document.location.replace("/schedule");
+  document.location.replace("/schedule");
 }
 
-document
-  .getElementById("save")
-  .addEventListener("click", addScheduleFormHandler);
+document.getElementById("save").addEventListener("click", getUserId);
