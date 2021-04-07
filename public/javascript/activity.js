@@ -1,9 +1,6 @@
 // - Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 // - Conditional statement to audit whether the user has enough time to schedule.
 
-// * Capture data from user selecting schedule
-// *
-
 let array = [];
 
 // for start time to end time
