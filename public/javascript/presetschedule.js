@@ -13,7 +13,7 @@ async function signupFormHandler(event) {
   const work_end = document.querySelector("#work_end");
   const sleep_start = document.querySelector("#sleep_start");
   const sleep_end = document.querySelector("#sleep_end");
-  const user_id;
+  const user_id = 1;
 
   for (i = 0; i < 7; i++) {
     if (i === 1) {
