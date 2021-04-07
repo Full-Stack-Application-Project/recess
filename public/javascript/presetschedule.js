@@ -22,8 +22,8 @@ async function addScheduleFormHandler(user_id) {
   let workFriday = document.getElementById("friday").checked;
   let workSaturday = document.getElementById("saturday").checked;
   let workSunday = document.getElementById("sunday").checked;
-  let sleep_start = document.querySelector("#sleep_start").value;
-  let sleep_end = document.querySelector("#sleep_end").value;
+  let sleep_start = document.querySelector("#sleepStartTime").value;
+  let sleep_end = document.querySelector("#sleepEndTime").value;
 
   console.log(workMonday + " workMonday");
   console.log(workTuesday + " workTuesday");
@@ -37,8 +37,8 @@ async function addScheduleFormHandler(user_id) {
   console.log(user_id + " user_id");
 
   for (i = 0; i < 7; i++) {
-    let work_start = document.querySelector("#work_start").value;
-    let work_end = document.querySelector("#work_end").value;
+    let work_start = document.querySelector("#workStartTime").value;
+    let work_end = document.querySelector("#workEndTime").value;
     if (i === 0) {
       day = "Sunday";
       if (workSunday) {
