@@ -26,6 +26,12 @@ router.get("/categories", (req, res)=>{
 router.get("/activity-form", (req, res)=>{
     res.render("activity-form", {title: "Activity"});
 });
+router.get("/schedule", (req, res)=>{
+    res.render("schedule", {title: "schedule"});
+});
+router.get("/presetschedule", (req, res)=>{
+    res.render("presetschedule", {title: "Presetschedule"});
+});
 
     
 module.exports = router;

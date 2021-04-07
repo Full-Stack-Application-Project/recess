@@ -1,0 +1,42 @@
+div#week {
+    margin-top: 2em;
+}
+.accordion-item {
+    background-color: transparent;
+}
+.accordion-button {
+    font-size: 1em;
+    color: snow;
+    font-weight: bold;
+    background-color: rgba(252, 142, 243, 0.789);
+}
+
+div button[aria-expanded="true"]{
+    background-color: #42DCA3;
+}
+
+tbody {
+    background-color: rgba(255, 255, 255, 0.138);
+}
+td.time {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    width: 20%;
+}
+td.has-activity {
+    background-color: rgba(31, 204, 187, 0.912);
+    color: rgb(55, 55, 55);
+    font-size: 1em;
+    font-weight: bold;
+} 
+div.activity{
+    color: #fff;
+    font-weight: lighter;
+}
+div.btns {
+    display: flexbox;
+    margin-top: .5em;
+    margin-left: .5em;
+    margin-bottom: 1em;
+}

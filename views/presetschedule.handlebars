@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="stylesheets/presetschedule.css">
+
+<div class="form-content">
+    <div class="form-header">
+        <h2 class="form-title">Enter Sleep &#38 Work Schedule</h2>
+    </div>
+    <div class="form-body">
+        <form action="">
+
+            <div class="days">
+                <div class="day">
+                    <label class="day-label" for="sunday">Sunday
+                        <input type="checkbox" class="checkbox" id="sunday" name="sunday">
+                    </label>
+                </div>
+                <div class="day">
+                    <label class="day-label" for="monday">Monday
+                        <input type="checkbox" class="checkbox" id="monday" name="monday">
+                    </label>
+                </div>
+
+                <div class="day">
+                    <label class="day-label" for="tuesday">Tuesday
+                        <input type="checkbox" class="checkbox" id="tuesday" name="tuesday">
+                    </label>
+                </div>
+
+                <div class="day">
+                    <label class="day-label" for="wednesday">Wednesday
+                        <input type="checkbox" class="checkbox" id="wednesday" name="wednesday">
+                    </label>
+                </div>
+
+                <div class="day">
+                    <label class="day-label" for="thursday">Thursday
+                        <input type="checkbox" class="checkbox" id="thursday" name="thursday">
+                    </label>
+                </div>
+
+                <div class="day">
+                    <label class="day-label" for="friday">Friday
+                        <input type="checkbox" class="checkbox" id="friday" name="friday">
+                    </label>
+                </div>
+
+                <div class="day">
+                    <label class="day-label" for="saturday">Saturday
+                        <input type="checkbox" class="checkbox" id="saturday" name="saturday">
+                    </label>
+                </div>
+            </div>
+            {{> sleep }}
+            {{> work }}
+            <div>
+                <!--after submitting form redirect to categories page-->
+                <div class="btns">
+                    <button type="submit" class="btn btn-info" id="save" href="/categories">Save Changes</button>
+                    <button type="submit" class="btn btn-info" id="back" href="/dashboard">Go Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{{!-- 
+{{>footer}} --}}
