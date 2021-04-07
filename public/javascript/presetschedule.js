@@ -9,40 +9,34 @@ async function addScheduleFormHandler(event) {
   let workFriday = document.getElementById("friday").checked;
   let workSaturday = document.getElementById("saturday").checked;
   let workSunday = document.getElementById("sunday").checked;
-  let work_start = document.querySelector("#work_start").value;
-  let work_end = document.querySelector("#work_end").value;
   let sleep_start = document.querySelector("#sleep_start").value;
   let sleep_end = document.querySelector("#sleep_end").value;
-  let logged_user_id = 0;
-  user_id = 1;
+  let user_id = 1;
 
   console.log(workMonday + " workMonday");
-  console.log(workMonday + " workTuesday");
-  console.log(workMonday + " workWednesday");
-  console.log(workMonday + " workThursday");
-  console.log(workMonday + " workFriday");
-  console.log(workMonday + " workSaturday");
-  console.log(workMonday + " workSunday");
-  console.log(work_start + " work_start");
-  console.log(work_end + " work_end");
+  console.log(workTuesday + " workTuesday");
+  console.log(workWednesday + " workWednesday");
+  console.log(workThursday + " workThursday");
+  console.log(workFriday + " workFriday");
+  console.log(workSaturday + " workSaturday");
+  console.log(workSunday + " workSunday");
   console.log(sleep_start + " sleep_start");
   console.log(sleep_end + " sleep_end");
-  console.log(user_id + " user_id");
+  // console.log(user_id + " user_id");
 
   fetch("/api/users/loggedIn")
     .then(function(response) {
       return response.json().then(function (response) {
         console.log("got to presetschedule.js line35");
-        logged_user_id = response.id;
-        console.log(response);
-        console.log("this is line 36 above")
-        console.log(logged_user_id);
-        console.log("this is line 38 above");
+        user_id = response[0].id;
+        console.log(user_id);
       })
     })
-  
+  console.log(user_id);
 
   for (i = 0; i < 7; i++) {
+    let work_start = document.querySelector("#work_start").value;
+    let work_end = document.querySelector("#work_end").value;
     if (i === 0) {
       day = "Sunday";
       if (workSunday) {
@@ -52,6 +46,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("sunday happened");
     } else if (i === 1) {
       day = "Monday";
       if (workMonday) {
@@ -61,6 +56,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("monday happened");
     } else if (i === 2) {
       day = "Tuesday";
       if (workTuesday) {
@@ -70,6 +66,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("tuesday happened");
     } else if (i === 3) {
       day = "Wednesday";
       if (workWednesday) {
@@ -79,6 +76,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("wednesday happened");
     } else if (i === 4) {
       day = "Thursday";
       if (workThursday) {
@@ -88,6 +86,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("thursday happened");
     } else if (i === 5) {
       day = "Friday";
       if (workFriday) {
@@ -97,6 +96,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("friday happened");
     } else if (i === 6) {
       day = "Saturday";
       if (workSaturday) {
@@ -106,6 +106,7 @@ async function addScheduleFormHandler(event) {
         work_start = null;
         work_end = null;
       }
+      console.log("saturday happened");
     }
 
     if (sleep_start && sleep_end) {
@@ -118,7 +119,7 @@ async function addScheduleFormHandler(event) {
           work_end,
           sleep_start,
           sleep_end,
-          user_id,
+          user_id
         }),
         headers: { "Content-Type": "application/json" },
       });
@@ -130,7 +131,7 @@ async function addScheduleFormHandler(event) {
       }
     }
   }
-  document.location.replace("/schedule");
+  // document.location.replace("/schedule");
 }
 
 document
