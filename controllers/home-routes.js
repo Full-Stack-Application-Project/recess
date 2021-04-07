@@ -30,4 +30,10 @@ router.get("/dashboard", (req, res) => {
   });
 });
 
+router.get("/schedule", (req, res) => {
+  res.render("schedule", {
+    title: "Activity-Schedule Page",
+  });
+});
+
 module.exports = router;
