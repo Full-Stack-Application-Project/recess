@@ -27,14 +27,10 @@ router.get("/:id", (req, res) => {
           "id",
           "day",
           "working",
-          "work_start_hour",
-          "work_start_minute",
-          "work_end_hour",
-          "work_end_minute",
-          "sleep_start_hour",
-          "sleep_start_minute",
-          "sleep_end_hour",
-          "sleep_end_minute",
+          "work_start",
+          "work_end",
+          "sleep_start",
+          "sleep_end"
         ],
       },
       {
