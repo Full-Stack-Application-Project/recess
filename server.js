@@ -40,6 +40,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 app.listen(PORT, () => console.log('Now listening: '+PORT));
+
+app.get('/presetschedule', (req, res) => {
+  res.render('presetschedule', { 
+      title: 'ScheduleAbout' 
+  });
+})
+
 /*
 sequelize.sync({ force: false }).then(() => {
   
