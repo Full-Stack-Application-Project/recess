@@ -1,23 +1,11 @@
 {{>activityformcss}}
 
-<div class="main" method="post" action="login">
-    <p class="sign" align="center">Select Duration</p>
-    <form class="flex-column" action="">
-        {{!-- <div class="activity-form-content dropdown">
-            <h5>Select Category</h5>
-            <select class="form-select select-category form-select-lg mb-3" aria-label=".form-select-lg" required>
-                <option selected>Category</option>
-                <option value="1">Exercise</option>
-                <option value="2">Mindfulness</option>
-                <option value="3">Relaxation</option>
-                <option value="4">Relaxation</option>
-                <option value="5">Academic</option>
-                <option value="6">Other</option>
-            </select>
-        </div> --}}
-        <div class="activity-form-content dropdown">
-            <h5>Select Duration</h5>
-            <select class="dropdown" aria-label=".form-select-lg" required>
+<div class="main" style="height: 450px;" method="post" action="login">
+    <p class="sign" style="margin-bottom: 40px;" align="center">Select Duration</p>
+    <form class="column" style="column-gap: 40px;" action="">
+        <div class="activityform">
+            <span style="margin-left: 40%; font-size:large; color:#8C55AA; margin-top:60px;">Activity Duration</span>
+            <select class="un" style="border-radius: 5px; max-width: 500px; margin-left:70px" aria-label=".form-select-lg" required>
                 <option selected>Duration</option>
                 <option value="0015">15 MIN</option>
                 <option value="0030">30 MIN</option>
@@ -29,16 +17,16 @@
                 <option value="0200">2 HR</option>
             </select>
         </div>
-        <div class="activity-form-content">
-            <h5>
-                <label for="activity-type" class="col-sm-2 col-form-label-lg">
+        <div class="activityform">
+            <span>
+                <label for="activity-type" class="label" style="margin-left: 230px; font-size:large; color:#8C55AA;">
                     Enter activity type:
                 </label>
-                <input type="text" id="activity-type" name="activity-type" placeholder="ex: running" required>
-            </h5>
+                <input type="text" class="un" style="margin-left: 70px;" id="activity-type" name="activity-type" style="margin-bottom: 30px;" placeholder="ex: running" required>
+            </span>
         </div>
 
-        <button type="submit" class="btn" href="/categories" value="submit">Save Activity</button>
+        <button type="submit" class="btn" style="margin-left:100px;" href="/categories" value="submit">Save Activity</button>
         <button type="submit" class="btn" href="/schedule" value="submit">View Schedule</button>
 
     </form>
