@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   font-family: sans-serif;
   background-image: url('./assets/gradient.png');
+  /*background: linear-gradient(47deg, rgba(227,1,164,0.9230288461538462) 0%, rgba(7,171,242,0.989233193277311) 49%, rgba(227,1,164,1) 100%);*/
   background-size:cover;
   background-position: fixed;
   width: 100%;
@@ -104,9 +105,6 @@ form, ul, h3 {
   cursor: pointer;
 }
 */
-/* footer {
-  margin-top: 5em;
-  padding-top: 2em;
-  text-align: center;
-} */
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+footer {

@@ -1,37 +1,36 @@
-<div class="container">
-    <div class="row">
-        <!-- navigation here -->
-        <div class="col">
-            <ul class="list flex-column">
-                <li class="list-item">
-                    <h2>Select Activity Category</h2>
-                </li>
-                <li class="list-item">
-                    <!--connect to modal-->
-                    <a class="btn btn-info btn-lg mt-4" role="button"href="/activity-form">Exercise</a>
-                </li>
-                <li class="list-item">
-                    <a class="btn btn-info btn-lg mt-4" role="button" href="/activity-form">Mindfulness</a>
-                </li>
-                <li class="list-item">
-                    <a class="btn btn-info btn-lg mt-4" role="button" href="/activity-form">Relaxation</a>
-                </li>
-                <li class="list-item">
-                    <a class="btn btn-info btn-lg mt-4" role="button" href="/activity-form">Academic</a>
-                </li>
-                <li class="list-item">
-                    <a class="btn btn-info btn-lg mt-4" role="button" href="/activity-form">Other</a>
-                </li>
-                <li class="list-item">
-                    <a class="btn btn-primary btn-lg mt-4" href="/schedule" role="button">View Schedule</a>
-                </li>
-                <li class="list-item">
-                    {{>backtodash}}
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-</div>
+{{>categoriescss}}
 
-{{>footer}}
+<body>
+   <header>
+    <h1>Choose a Category</h1>
+  </header>
+  <div class="container">
+    <div class="card card-1">
+      <div class="card-tags">
+        <a href="#" class="btn">Exercise</a>
+      </div>
+    </div>
+    <div class="card card-2"> 
+      <div class="card-tags">
+        <a href="#" class="btn">Mindfulness</a>
+      </div>
+    </div>
+    <div class="card card-3">    
+      <div class="card-tags">
+        <a href="#" class="btn">Academics</a>
+      </div>
+    </div>
+    <div class="card card-4">   
+      <div class="card-tags">
+        <a href="#" class="btn">Relaxation</a>
+      </div>
+    </div>
+    <div class="card card-5">   
+      <div class="card-tags">
+        <a href="#" class="btn">Other</a>
+      </div>
+    </div>
+  </div>
+      {{>backtodash}}
+</body>
+</html>

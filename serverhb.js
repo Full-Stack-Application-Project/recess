@@ -1,4 +1,4 @@
-//const sequelize = require('./config/connection');
+/* //const sequelize = require('./config/connection');
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -103,4 +103,4 @@ app.get('/modal', (req, res) => {
 // set server -- delete when merging
 app.listen(3001, () => {
     console.log('Server listening on port ', 3001);
-})
+}) */
