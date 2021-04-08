@@ -15,7 +15,7 @@ app.engine('handlebars',exphbs({
     layoutsDir: __dirname+'/views/layouts',
     partialsDir:  __dirname+'/views/partials',
 }));
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3006;
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -39,8 +39,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-app.listen(PORT, () => console.log('Now listening: '+PORT));
+
 
 sequelize.sync({ force: false }).then(() => {
-  
+  app.listen(PORT, () => console.log('Now listening: '+PORT));
 });
