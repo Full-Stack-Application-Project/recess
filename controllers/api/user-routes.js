@@ -119,6 +119,7 @@ router.post("/login", (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   console.log(req.body.email);
   console.log(req.body.password);
+  console.log(req.body.loggedIn);
   User.findOne({
     where: {
       email: req.body.email,
@@ -149,6 +150,7 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log("route hit");
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

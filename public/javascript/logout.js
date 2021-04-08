@@ -5,6 +5,9 @@ function getUserId(event) {
       let id = response[0].id;
       console.log(id);
       editUser(id);
+      
+    }).catch(err => {
+      console.log(err);
     });
   });
 }
