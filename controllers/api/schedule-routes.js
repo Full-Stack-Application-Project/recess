@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require('../../config/connection');
 const { User, Schedule } = require("../../models");
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 router.get("/", (req, res) => {
   Schedule.findAll({
@@ -66,7 +66,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Schedule.create({
     day: req.body.day,
     working: req.body.working,
@@ -83,7 +83,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Schedule.update(
     {
       day: req.body.day,
@@ -113,7 +113,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   console.log("id", req.params.id);
   Schedule.destroy({
     where: {
