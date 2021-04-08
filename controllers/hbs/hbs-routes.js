@@ -1,35 +1,49 @@
+const withAuth = require("../../utils/auth");
+
 const router = require("express").Router();
 
 
 router.get("/home", (req, res)=>{
+    if (req.session.loggedIn) {
+        res.redirect("/dashboard");
+        return;
+      }
     res.render("home", {title: "Home"});
 });
 router.get("/login", (req, res)=>{
+    if (req.session.loggedIn) {
+        res.redirect("/dashboard");
+        return;
+      }
     res.render("login", {title: "Home"});
 });
 router.get("/signup", (req, res)=>{
+    if (req.session.loggedIn) {
+        res.redirect("/dashboard");
+        return;
+      }
     res.render("signup", {title: "Sign Up"});
 });
-router.get("/dashboard", (req, res)=>{
+router.get("/dashboard", withAuth, (req, res)=>{
     res.render("dashboard", {title: "Dashboard"});
 });
- router.get("/activity", (req, res)=>{
+ router.get("/activity", withAuth, (req, res)=>{
     res.render("activity", {title: "Activities"});
 });
  router.get("/about", (req, res)=>{
     // console.log ("about");
     res.render("about", {title: "About Us"});
 });
-router.get("/categories", (req, res)=>{
+router.get("/categories", withAuth, (req, res)=>{
     res.render("categories", {title: "categories"});
 });
-router.get("/activity-form", (req, res)=>{
+router.get("/activity-form", withAuth, (req, res)=>{
     res.render("activity-form", {title: "Activity"});
 });
-router.get("/schedule", (req, res)=>{
+router.get("/schedule", withAuth, (req, res)=>{
     res.render("schedule", {title: "schedule"});
 });
-router.get("/presetschedule", (req, res)=>{
+router.get("/presetschedule", withAuth, (req, res)=>{
     res.render("presetschedule", {title: "Presetschedule"});
 });
 
