@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { response } = require("express");
 const { User, Activity, Schedule } = require("../../models");
 // const sequelize = require('../../config/connection');
 
@@ -8,6 +9,23 @@ router.get("/", (req, res) => {
     attributes: { exclude: ["password"] },
   })
     .then((dbUserData) => res.json(dbUserData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/loggedIn", (req, res) => {
+  User.findAll({
+    where: {
+      loggedIn: "true",
+    },
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData);
+      console.log("that is user-routes line 24");
+      res.json(dbUserData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -27,14 +45,10 @@ router.get("/:id", (req, res) => {
           "id",
           "day",
           "working",
-          "work_start_hour",
-          "work_start_minute",
-          "work_end_hour",
-          "work_end_minute",
-          "sleep_start_hour",
-          "sleep_start_minute",
-          "sleep_end_hour",
-          "sleep_end_minute",
+          "work_start",
+          "work_end",
+          "sleep_start",
+          "sleep_end",
         ],
       },
       {
@@ -61,6 +75,22 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.get("/loggedIn", (req, res) => {
+  User.findAll({
+    where: {
+      loggedIn: "true",
+    },
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData);
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post("/", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -68,6 +98,7 @@ router.post("/", (req, res) => {
     lastname: req.body.lastname,
     email: req.body.email,
     password: req.body.password,
+    loggedIn: "true",
   })
     .then((dbUserData) => {
       req.session.save(() => {
@@ -88,6 +119,7 @@ router.post("/login", (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   console.log(req.body.email);
   console.log(req.body.password);
+  console.log(req.body.loggedIn);
   User.findOne({
     where: {
       email: req.body.email,
@@ -107,17 +139,38 @@ router.post("/login", (req, res) => {
     }
     console.log("hit line 108 in user-routes");
 
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.email = dbUserData.email;
-      req.session.loggedIn = true;
+    User.update(
+      {
+        loggedIn: req.body.loggedIn,
+      },
+      {
+        where: {
+          id: dbUserData.id,
+        },
+      }
+    )
+      .then((result) => {
+        if (!dbUserData) {
+          res.status(404).json({ message: "No user found with this id" });
+          return;
+        }
+        req.session.save(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.email = dbUserData.email;
+          req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: "You are now logged in!" });
-    });
+          res.json({ user: dbUserData, message: "You are now logged in!" });
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
 });
 
 router.post("/logout", (req, res) => {
+  console.log("route hit");
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -127,16 +180,18 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
+router.patch("/:id", (req, res) => {
   // pass in req.body instead to only update what's passed through
-  User.update(req.body, {
-    individualHooks: true,
-    where: {
-      id: req.params.id,
+  User.update(
+    {
+      loggedIn: req.body.loggedIn,
     },
-  })
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(404).json({ message: "No user found with this id" });

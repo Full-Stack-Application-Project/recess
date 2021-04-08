@@ -9,16 +9,12 @@ router.get("/", (req, res) => {
       "id",
       "day",
       "working",
-      "work_start_hour",
-      "work_start_minute",
-      "work_end_hour",
-      "work_end_minute",
-      "sleep_start_hour",
-      "sleep_start_minute",
-      "sleep_end_hour",
-      "sleep_end_minute",
-      "user_id"
-    ]
+      "work_start",
+      "work_end",
+      "sleep_start",
+      "sleep_end",
+      "user_id",
+    ],
     // ,
     // include: [
     //   {
@@ -43,16 +39,12 @@ router.get("/:id", (req, res) => {
       "id",
       "day",
       "working",
-      "work_start_hour",
-      "work_start_minute",
-      "work_end_hour",
-      "work_end_minute",
-      "sleep_start_hour",
-      "sleep_start_minute",
-      "sleep_end_hour",
-      "sleep_end_minute",
-      "user_id"
-    ]
+      "work_start",
+      "work_end",
+      "sleep_start",
+      "sleep_end",
+      "user_id",
+    ],
     // ,
     // include: [
     //   {
@@ -78,15 +70,11 @@ router.post("/", (req, res) => {
   Schedule.create({
     day: req.body.day,
     working: req.body.working,
-    work_start_hour: req.body.work_start_hour,
-    work_start_minute: req.body.work_start_minute,
-    work_end_hour: req.body.work_end_hour,
-    work_end_minute: req.body.work_end_minute,
-    sleep_start_hour: req.body.sleep_start_hour,
-    sleep_start_minute: req.body.sleep_start_minute,
-    sleep_end_hour: req.body.sleep_end_hour,
-    sleep_end_minute: req.body.sleep_end_minute,
-    user_id: req.body.user_id
+    work_start: req.body.work_start,
+    work_end: req.body.work_end,
+    sleep_start: req.body.sleep_start,
+    sleep_end: req.body.sleep_end,
+    user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -99,16 +87,12 @@ router.put("/:id", (req, res) => {
   Schedule.update(
     {
       day: req.body.day,
-    working: req.body.working,
-    work_start_hour: req.body.work_start_hour,
-    work_start_minute: req.body.work_start_minute,
-    work_end_hour: req.body.work_end_hour,
-    work_end_minute: req.body.work_end_minute,
-    sleep_start_hour: req.body.sleep_start_hour,
-    sleep_start_minute: req.body.sleep_start_minute,
-    sleep_end_hour: req.body.sleep_end_hour,
-    sleep_end_minute: req.body.sleep_end_minute,
-    user_id: req.body.user_id
+      working: req.body.working,
+      work_start: req.body.work_start,
+      work_end: req.body.work_end,
+      sleep_start: req.body.sleep_start,
+      sleep_end: req.body.sleep_end,
+      user_id: req.body.user_id,
     },
     {
       where: {
