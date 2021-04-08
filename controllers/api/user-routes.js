@@ -139,13 +139,33 @@ router.post("/login", (req, res) => {
     }
     console.log("hit line 108 in user-routes");
 
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.email = dbUserData.email;
-      req.session.loggedIn = true;
+    User.update(
+      {
+        loggedIn: req.body.loggedIn,
+      },
+      {
+        where: {
+          id: dbUserData.id,
+        },
+      }
+    )
+      .then((result) => {
+        if (!dbUserData) {
+          res.status(404).json({ message: "No user found with this id" });
+          return;
+        }
+        req.session.save(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.email = dbUserData.email;
+          req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: "You are now logged in!" });
-    });
+          res.json({ user: dbUserData, message: "You are now logged in!" });
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
 });
 
@@ -164,7 +184,7 @@ router.patch("/:id", (req, res) => {
   // pass in req.body instead to only update what's passed through
   User.update(
     {
-      loggedIn: req.body.loggedIn
+      loggedIn: req.body.loggedIn,
     },
     {
       where: {

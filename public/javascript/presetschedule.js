@@ -4,8 +4,8 @@ function getUserId(event) {
     return response.json().then(function (response) {
       console.log(response);
       console.log("got to presetschedule.js line35");
-      // let user_id = response[0].id;
-      let user_id = 1;
+      let user_id = response[0].id;
+      // let user_id = 1;
       console.log(user_id);
       addScheduleFormHandler(user_id);
     });
