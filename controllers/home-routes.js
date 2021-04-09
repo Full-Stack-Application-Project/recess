@@ -70,6 +70,30 @@ router.get('/activity-form', withAuth, (req, res) => {
   });
 }) 
 
+router.get('/mindfulnes-form', withAuth, (req, res) => {
+  res.render('mindfulnes-form', { 
+      title: 'Enter Activity Details' 
+  });
+}) 
+
+router.get('/academics-form', withAuth, (req, res) => {
+  res.render('academics-form', { 
+      title: 'Enter Activity Details' 
+  });
+}) 
+
+router.get('/relaxation-form', withAuth, (req, res) => {
+  res.render('relaxation-form', { 
+      title: 'Enter Activity Details' 
+  });
+}) 
+
+router.get('/other-form', withAuth, (req, res) => {
+  res.render('other-form', { 
+      title: 'Enter Activity Details' 
+  });
+}) 
+
 // calendar route
 router.get('/calendar', withAuth, (req, res) => {
   res.render('calendar', { 
