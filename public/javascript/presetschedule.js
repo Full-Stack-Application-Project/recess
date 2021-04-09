@@ -1,14 +1,26 @@
-function getUserId(event) {
+async function checkActivitiesTable(event) {
   event.preventDefault();
+  console.log("got to checkActivitiesTable")
+  const response = fetch("api/schedules/1").then(function (response) {
+    return response.json().then(function (response) {
+      if (response.message) {
+        console.log("got to line 7 of preset schedule")
+      }
+    });
+  });
+
+  getUserId();
+}
+
+function getUserId() {
   fetch("/api/users/loggedIn").then(function (response) {
     return response.json().then(function (response) {
       console.log(response);
-      console.log("got to presetschedule.js line35");
+      console.log("got to presetschedule.js line 6");
       let user_id = response[0].id;
       // let user_id = 1;
       console.log(user_id);
-      addScheduleFormHandler(user_id);
-    });
+      addScheduleFormHandler(user_id)    });
   });
 }
 
@@ -134,7 +146,7 @@ async function addScheduleFormHandler(user_id) {
       }
     }
   }
-  document.location.replace("/schedule");
+  // document.location.replace("/schedule");
 }
 
-document.getElementById("save").addEventListener("click", getUserId);
+document.getElementById("save").addEventListener("click", checkActivitiesTable);
