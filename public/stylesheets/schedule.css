@@ -33,7 +33,7 @@ header {
     font-size: 1em;
     color: snow;
     font-weight: bold;
-    background-color: rgba(252, 142, 243, 0.789);
+    background-color: rgba(247, 184, 242, 0.611);
 }
 header {
     text-align: center;
@@ -61,23 +61,23 @@ td.has-activity {
 } 
 td.exercise {
     color: rgb(55, 55, 55);
-    background-color: rgba(31, 204, 187, 0.912);
+    background-color: rgba(31, 204, 187, 0.83);
 }
 td.mindful {
     color: rgb(223, 221, 221);
-    background-color: rgba(31, 115, 204, 0.912);
+    background-color: rgba(31, 158, 204, 0.83);
 }
 td.academic {
     color: rgb(223, 221, 221);
-    background-color: rgba(169, 31, 204, 0.912);
+    background-color: rgba(204, 31, 190, 0.83);
 }
 td.relax{
     color: rgb(55, 55, 55);
-    background-color: rgba(148, 223, 244, 0.912);
+    background-color: rgba(188, 226, 151, 0.912);
 }
 td.other {
     color: rgb(55, 55, 55);
-    background-color: rgba(204, 149, 31, 0.912);
+    background-color: rgba(226, 203, 151, 0.912);
 }
 
 div.activity{
