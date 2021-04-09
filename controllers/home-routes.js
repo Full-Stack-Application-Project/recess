@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   res.render("home");
 });
 
+// Login Page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
@@ -20,13 +21,14 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//ABOUT
+// About Page
 router.get('/about', (req, res) => {
   res.render('about', { 
       title: 'About' 
   });
 })
 
+// Signup Page
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
@@ -37,77 +39,66 @@ router.get("/signup", (req, res) => {
   });
 });
 
+// Home/dashboard Page
 router.get("/dashboard", withAuth, (req, res) => {
   res.render("dashboard", {
-    title: "Activity-Schedule Page",
+    title: "Home Page",
   });
 });
 
-// SLEEP/WORK route
+// SLEEP/WORK Form
 router.get('/presetschedule', withAuth, (req, res) => {
   res.render('presetschedule', { 
       title: 'Your Work & Sleep Schedule' 
   });
 })
-// SCHEDULE
+// Weekly Schedule Page
 router.get('/schedule', withAuth, (req, res) => {
   res.render('schedule', { 
       title: 'Your Schedule' 
   });
 })
 
-// CATEGORIES
+// Categories
 router.get('/categories', withAuth, (req, res) => {
   res.render('categories', { 
       title: 'Categories' 
   });
 })
 
-// ACTIVITIES FORM 
-router.get('/activity-form', withAuth, (req, res) => {
-  res.render('activity-form', { 
-      title: 'Enter Activity Details' 
+// Activity Forms 
+router.get('/exercise-form', withAuth, (req, res) => {
+  res.render('exercise-form', { 
+      title: 'Exercise Form' 
   });
 }) 
-
-router.get('/mindfulnes-form', withAuth, (req, res) => {
-  res.render('mindfulnes-form', { 
-      title: 'Enter Activity Details' 
+router.get('/mindfulness-form', withAuth, (req, res) => {
+  res.render('mindfulness-form', { 
+      title: 'Mindfulness Form' 
   });
 }) 
-
 router.get('/academics-form', withAuth, (req, res) => {
   res.render('academics-form', { 
-      title: 'Enter Activity Details' 
+      title: 'Academic Form' 
   });
 }) 
-
 router.get('/relaxation-form', withAuth, (req, res) => {
   res.render('relaxation-form', { 
-      title: 'Enter Activity Details' 
+      title: 'Relaxation Form' 
   });
 }) 
-
 router.get('/other-form', withAuth, (req, res) => {
   res.render('other-form', { 
-      title: 'Enter Activity Details' 
+      title: 'Other Form' 
   });
 }) 
 
-// calendar route
+// Calendar Page
 router.get('/calendar', withAuth, (req, res) => {
   res.render('calendar', { 
       title: 'Calendar' 
   });
 })
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 module.exports = router;
