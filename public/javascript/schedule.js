@@ -3,6 +3,8 @@
 
 let array = [];
 
+const academicForm = document.querySelector(".activityLength").value;
+
 // for start time to end time
 
 // end time - start time = total time (8:15 - 6:00) = (2:15 total time available)
