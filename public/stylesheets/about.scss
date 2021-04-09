@@ -13,3 +13,123 @@ body {
     font-size: x-large;
     padding-bottom: 30px;
 }
+/
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+    position: relative;
+    right: 20px;
+  }
+  
+  .title {
+    font-family: 'Recursive', sans-serif;
+  }
+  
+  .sub-title {
+    font-family: 'Raleway', sans-serif;
+  }
+   
+  .btn1 {
+    outline: none;
+    border: 0;
+    background: #1e1e1e;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 150px;
+    color: #fff;
+    transition: 0.5s;
+    margin-top: 15%;
+  
+    &:hover {
+      background: #000;
+    }
+  }
+  
+  .price_cards {
+    width: 100%;
+    padding: 5vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    .card {
+      width: 20%;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 10px;
+      border-radius: 5px;
+      position: relative;
+      transition: 0.5s;
+      text-align: center;
+      padding-bottom: 5px;
+      box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+  
+      .tag {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        padding: 3px 5px;
+        text-align: center;
+        background: #f04e4e;
+        color: #fff;
+        font-size: 12px;
+      }
+    }
+  
+    section {
+      padding: 30px 0;
+      background: #36cccb;
+      margin: auto;
+      text-align: center;
+    }
+  
+    .price {
+      box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+      padding: 25px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      text-align: center;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: -10vh;
+      background: #fff;
+    }
+  
+    &:hover > .price_icon {
+      box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    }
+  
+    .price b {
+      font-size: 11px;
+      color: gray;
+      display: block;
+      position: absolute;
+      bottom: 20px;
+      right: 35%;
+    }
+  
+    .card ul li {
+      padding: 5px 0;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .price_cards {
+      width: 100%;
+      display: block;
+  
+      .card {
+        width: 90%;
+      }
+    }
+  }

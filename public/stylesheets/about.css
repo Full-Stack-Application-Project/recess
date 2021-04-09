@@ -13,4 +13,154 @@ body {
   font-size: x-large;
   padding-bottom: 30px;
 }
+
+/*DEFAULT*/
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  right: 20px;
+}
+
+.title {
+  font-family: 'Recursive', sans-serif;
+}
+
+.sub-title {
+  font-family: 'Raleway', sans-serif;
+}
+
+.fa-times {
+  color: #c0392b;
+  margin: 0 10px;
+}
+
+.fa-check {
+  color: #bfc946;
+  margin: 0 10px;
+}
+
+.not_available {
+  color: gray;
+}
+
+.btn1 {
+  outline: none;
+  border: 0;
+  background: #1e1e1e;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: 150px;
+  color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 15%;
+}
+
+.btn1:hover {
+  background: #000;
+}
+
+.price_cards {
+  width: 100%;
+  padding: 5vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.price_cards .card {
+  width: 20%;
+  border-radius: 30px;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 5px;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+  padding-bottom: 5px;
+  -webkit-box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+          box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+}
+
+.price_cards .card .tag {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  padding: 3px 5px;
+  text-align: center;
+  background: #f04e4e;
+  color: #fff;
+  font-size: 12px;
+}
+
+.price_cards section {
+  padding: 30px 0;
+  background: #36cccb;
+  margin: auto;
+  text-align: center;
+}
+
+.price_cards .price {
+  -webkit-box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+          box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+  padding: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: -10vh;
+  background: #fff;
+}
+
+.price_cards:hover > .price_icon {
+  -webkit-box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+          box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+}
+
+.price_cards .price b {
+  font-size: 11px;
+  color: gray;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 35%;
+}
+
+.price_cards .card ul li {
+  padding: 5px 0;
+}
+
+@media (max-width: 900px) {
+  .price_cards {
+    width: 100%;
+    display: block;
+  }
+  .price_cards .card {
+    width: 90%;
+  }
+}
 /*# sourceMappingURL=about.css.map */
