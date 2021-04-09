@@ -4,20 +4,20 @@
 
 
 <div class="main" style="height: 450px;" method="post" action="login">
-    <p class="sign" style="margin-bottom: 40px;" align="center" id="mindfulness">Mindfulnes</p>
+    <p class="sign categoryName" style="margin-bottom: 40px;" align="center" id="mindfulness">Mindfulness</p>
     <form class="column" style="column-gap: 40px;" action="">
         <div class="activityform">
             <span style="margin-left: 40%; font-size:large; color:#8C55AA; margin-top:60px;">Activity Duration</span></br>
-            <select class="un" style="border-radius: 5px; max-width: 500px; margin-left:70px" aria-label=".form-select-lg" required>
+            <select class="un activityLength" style="border-radius: 5px; max-width: 500px; margin-left:70px" aria-label=".form-select-lg" required>
                 <option selected>Duration</option>
-                <option value="0015">15 MIN</option>
-                <option value="0030">30 MIN</option>
-                <option value="0045">45 MIN</option>
-                <option value="0100">1 HR</option>
-                <option value="0115">1 HR 15 MIN</option>
-                <option value="0130">1 HR 30 MIN</option>
-                <option value="0145">1 HR 45 MIN</option>
-                <option value="0200">2 HR</option>
+                <option value="15">15 MIN</option>
+                <option value="30">30 MIN</option>
+                <option value="45">45 MIN</option>
+                <option value="60">1 HR</option>
+                <option value="75">1 HR 15 MIN</option>
+                <option value="90">1 HR 30 MIN</option>
+                <option value="105">1 HR 45 MIN</option>
+                <option value="120">2 HR</option>
             </select>
         </div>
         <div class="activityform">
@@ -30,9 +30,11 @@
             </span>
         </div>
 
-        <button type="submit" class="btn" style="margin-left:38%;" href="/categories" value="submit">Save Activity</button>
+        <button type="submit" class="btn" style="margin-left:38%;" href="/categories" id="activities" value="submit">Save Activity</button>
 
     </form>
         <a type="submit" class="btn" style="margin-left:40%" href="/schedule" value="submit">View Schedule</a>
 
 </div>
+
+<script src="/javascript/activity.js"></script>

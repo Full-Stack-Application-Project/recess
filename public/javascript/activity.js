@@ -1,44 +1,45 @@
-// - Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
-// - Conditional statement to audit whether the user has enough time to schedule.
+function fetchUserId(event) {
+    event.preventDefault();
+    fetch("/api/users/loggedIn").then(function (response) {
+      return response.json().then(function (response) {
+        console.log(response);
+        console.log("got to presetschedule.js line35");
+        let user_id = response[0].id;
+        console.log(user_id);
+        addActivityFormHandler(user_id);
+      });
+    });
+  }
 
-let array = [];
+  async function addActivityFormHandler(user_id) {
+  
+    const activity_category = document.querySelector(".categoryName").innerHTML;
+    const activity_length = document.querySelector(".activityLength").value;
+    const activity_name = document.getElementById("activity-type").value.trim();
 
-// for start time to end time
+    console.log(activity_category);
+    console.log(activity_name);
+    console.log(activity_length);
+    console.log(user_id);
 
-// end time - start time = total time (8:15 - 6:00) = (2:15 total time available)
-// total time / 15 = length of array (2:15 / 15 = 9)
+    if (activity_name && activity_length) {
+      const response = await fetch("/api/activities", {
+        method: "post",
+        body: JSON.stringify({
+          activity_category,
+          activity_name,
+          activity_length,
+          user_id
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      
+      if (response.ok) {
+        document.location.replace("/categories");
+      } else {
+        alert(response.statusText);
+      }
+    }
+  }
 
-// let array = length of 9
-
-// depending on length of activity
-
-// let activity = 30 minutes;
-
-// let flag = true;
-// while(flag)
-
-// function setTime() {
-// Math.random()*(length of array - length of activity) + 1
-// Math.random()*(9 - 2) + 1 -> Math.random() * 7 + 1 -> 0-7
-
-// number = 4
-
-// array = [0, 1, 2, 3, x, x, 7, 8]
-
-// arrayTemp = array;
-
-// let flag = true;
-// for (let i = number picked; i <number picked + activity length; i++) {
-// if(if array [i] is not occupied) {
-// GTG, block it off
-// arrayTemp[i] = {activity id, occupied: true}
-// } else {
-//     pick another random number (aka setTime())
-//    }
-//   }
-// return arrayTemp;
-//  }
-// }
-// array = arrayTemp <-- the array where we block off the time.
-
-// - we need a foreign key that is associated to a table of activities. The user will be tracked to the table of activities that they have.
+document.getElementById("activities").addEventListener("click", fetchUserId);
