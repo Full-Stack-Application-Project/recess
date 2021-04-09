@@ -35,7 +35,7 @@ function fetchUserId(event) {
       });
       
       if (response.ok) {
-        // document.location.replace("/categories");
+        document.location.replace("/categories");
       } else {
         alert(response.statusText);
       }
