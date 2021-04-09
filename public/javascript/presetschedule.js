@@ -1,13 +1,32 @@
 async function checkActivitiesTable(event) {
   event.preventDefault();
-  console.log("got to checkActivitiesTable")
-  const response = fetch("api/schedules/1").then(function (response) {
+  console.log("got to checkActivitiesTable");
+  fetch("api/schedules/1").then(function (response) {
     return response.json().then(function (response) {
-      if (response.message) {
-        console.log("got to line 7 of preset schedule")
+      console.log(response.message);
+      console.log("above is line 6");
+      if (!response.message) {
+        console.log("got to line 7 of preset schedule");
+        deleteSchedules();
+      } else {
+        getUserId();
       }
     });
   });
+}
+
+function deleteSchedules() {
+  for (i = 1; i <= 7; i++) {
+    const response = fetch(`/api/schedules/${i}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      console.log("got to line 13 of presetschedule");
+    } else {
+      alert(response.statusText);
+    }
+    console.log("line 25 of preset schedule");
+  }
 
   getUserId();
 }
@@ -16,11 +35,12 @@ function getUserId() {
   fetch("/api/users/loggedIn").then(function (response) {
     return response.json().then(function (response) {
       console.log(response);
-      console.log("got to presetschedule.js line 6");
+      console.log("got to presetschedule.js line 35");
       let user_id = response[0].id;
       // let user_id = 1;
       console.log(user_id);
-      addScheduleFormHandler(user_id)    });
+      addScheduleFormHandler(user_id);
+    });
   });
 }
 
@@ -141,7 +161,7 @@ async function addScheduleFormHandler(user_id) {
       if (response.ok) {
         console.log(day + " was added");
       } else {
-        alert('Please select start and end times.');
+        alert("Please select start and end times.");
         return;
       }
     }
