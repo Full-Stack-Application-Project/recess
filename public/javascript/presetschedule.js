@@ -129,7 +129,8 @@ async function addScheduleFormHandler(user_id) {
       if (response.ok) {
         console.log(day + " was added");
       } else {
-        alert(response.statusText);
+        alert('Please select start and end times.');
+        return;
       }
     }
   }
