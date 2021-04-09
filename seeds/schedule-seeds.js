@@ -4,86 +4,65 @@ const scheduleData = [
   {
     day: "Monday",
     working: "yes",
-    work_start_hour: 8,
-    work_start_minute: 0,
-    work_end_hour: 5,
-    work_end_minute: 0,
-    sleep_start_hour: 22,
-    sleep_start_minute: 30,
-    sleep_end_hour: 6,
-    sleep_end_minute: 15
+    work_start: 0800,
+    work_end: 0500,
+    sleep_start: 2215,
+    sleep_end: 0600,
+    user_id: 1
   },
   {
     day: "Tuesday",
     working: "yes",
-    work_start_hour: 8,
-    work_start_minute: 0,
-    work_end_hour: 5,
-    work_end_minute: 0,
-    sleep_start_hour: 22,
-    sleep_start_minute: 30,
-    sleep_end_hour: 6,
-    sleep_end_minute: 15
+    work_start: 0800,
+    work_end: 0500,
+    sleep_start: 2215,
+    sleep_end: 0600,
+    user_id: 1
   },
   {
     day: "Wednesday",
     working: "yes",
-    work_start_hour: 8,
-    work_start_minute: 0,
-    work_end_hour: 5,
-    work_end_minute: 0,
-    sleep_start_hour: 22,
-    sleep_start_minute: 30,
-    sleep_end_hour: 6,
-    sleep_end_minute: 15
+    work_start: 0800,
+    work_end: 0500,
+    sleep_start: 2215,
+    sleep_end: 0600,
+    user_id: 1
   },
   {
     day: "Thursday",
     working: "yes",
-    work_start_hour: 8,
-    work_start_minute: 0,
-    work_end_hour: 5,
-    work_end_minute: 0,
-    sleep_start_hour: 22,
-    sleep_start_minute: 30,
-    sleep_end_hour: 6,
-    sleep_end_minute: 15
+    work_start: 0800,
+    work_end: 0500,
+    sleep_start: 2215,
+    sleep_end: 0600,
+    user_id: 1
   },
   {
     day: "Friday",
     working: "yes",
-    work_start_hour: 8,
-    work_start_minute: 0,
-    work_end_hour: 5,
-    work_end_minute: 0,
-    sleep_start_hour: 22,
-    sleep_start_minute: 30,
-    sleep_end_hour: 6,
-    sleep_end_minute: 15
+    work_start: 0800,
+    work_end: 0500,
+    sleep_start: 2215,
+    sleep_end: 0600,
+    user_id: 1
   },
   {
     day: "Saturday",
     working: "no",
-    work_start_hour: null,
-    work_start_minute: null,
-    work_end_hour: null,
-    work_end_minute: null,
-    sleep_start_hour: 22,
-    sleep_start_minute: 45,
-    sleep_end_hour: 6,
-    sleep_end_minute: 45
+    work_start: null,
+    work_end: null,
+    sleep_start: 2245,
+    sleep_end: 0645,
+    user_id: 1
   },
   {
     day: "Sunday",
     working: "no",
-    work_start_hour: null,
-    work_start_minute: null,
-    work_end_hour: null,
-    work_end_minute: null,
-    sleep_start_hour: 22,
-    sleep_start_minute: 45,
-    sleep_end_hour: 6,
-    sleep_end_minute: 45
+    work_start: null,
+    work_end: null,
+    sleep_start: 2245,
+    sleep_end: 0645,
+    user_id: 1
   }
 ];
 

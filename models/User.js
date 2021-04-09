@@ -45,6 +45,11 @@ User.init(
       validate: {
         len: [4],
       }
+    },
+    loggedIn: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "false"
     }
   },
   {

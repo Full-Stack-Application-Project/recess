@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="stylesheets/presetschedule.css">
- <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 <div class="main">
     <div class="form-header">
         <h2 class="form-title" style="margin-bottom: 20px;">Enter Sleep &#38 Work Schedule</h2>
     </div>
-    <div class="form-body" >
+    <div class="form-body">
         <form action="" align="center">
 
             <div class="days" style="margin-left: 30px;">
@@ -51,21 +51,23 @@
                     </label>
                 </div>
             </div>
-            <div >
-            {{> sleep }}
-            <br/>
-            {{> work }}
+            <div>
+                {{> sleepHrs }}
+                <br />
+                {{> workHrs }}
             </div>
-            <br/>
+            <br />
             <div class='buttonDiv'>
                 <!--after submitting form redirect to categories page-->
                 <div class="btns">
                     <button type="submit" class="btn" id="save" href="/categories">Save Changes</button>
-                    <button type="submit" class="btn" id="back" href="/dashboard">Go Back</button>
+                    <a type="submit" class="btn" id="back" href="/dashboard">Go Back</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+<script src="/javascript/presetschedule.js"></script>
 
 {{!-- {{>footer}} --}}

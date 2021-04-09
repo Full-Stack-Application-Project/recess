@@ -18,10 +18,9 @@
     </h2>
     <div id="collapseSunday" class="accordion-collapse collapse" aria-labelledby="headingSunday" data-bs-parent="#week">
       <div class="accordion-body">
-        {{>sundayHours}}
+        {{>sundayHrs}}
       </div>
     </div>
-  </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingMonday">
@@ -32,25 +31,23 @@
     </h2>
     <div id="collapseMonday" class="accordion-collapse collapse" aria-labelledby="headingMonday" data-bs-parent="#week">
       <div class="accordion-body">
-        {{>mondayHours}}
+        {{>mondayHrs}}
       </div>
     </div>
-  </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTuesday">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapseTuesday" aria-expanded="false" aria-controls="collapseTuesday">
-        Tueday
+        Tuesday
       </button>
     </h2>
     <div id="collapseTuesday" class="accordion-collapse collapse" aria-labelledby="headingTuesday"
       data-bs-parent="#week">
       <div class="accordion-body">
-        {{>tuesdayHours}}
+        {{>tuesdayHrs}}
       </div>
     </div>
-  </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingWednesday">
@@ -62,10 +59,9 @@
     <div id="collapseWednesday" class="accordion-collapse collapse" aria-labelledby="headingWednesday"
       data-bs-parent="#week">
       <div class="accordion-body">
-        {{>wednesdayHours}}
+        {{>wednesdayHrs}}
       </div>
     </div>
-  </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThursday">
@@ -77,10 +73,9 @@
     <div id="collapseThursday" class="accordion-collapse collapse" aria-labelledby="headingThursday"
       data-bs-parent="#week">
       <div class="accordion-body">
-        {{>thursdayHours}}
+        {{>thursdayHrs}}
       </div>
     </div>
-  </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingFriday">
@@ -91,10 +86,9 @@
     </h2>
     <div id="collapseFriday" class="accordion-collapse collapse" aria-labelledby="headingFriday" data-bs-parent="#week">
       <div class="accordion-body">
-        {{>fridayHours}}
+        {{>fridayHrs}}
       </div>
     </div>
-  </div>
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSaturday">
@@ -106,14 +100,13 @@
     <div id="collapseSaturday" class="accordion-collapse collapse" aria-labelledby="headingSaturday"
       data-bs-parent="#week">
       <div class="accordion-body">
-        {{>saturdayHours}}
+        {{>saturdayHrs}}
       </div>
     </div>
-  </div>
 </div>
 
 <div class="btns">
-  <button class="btn btn-info" id="save" href="/calendar">View Calendar</button>
-  <button class="btn btn-info" id="back" href="/categories">Go Back</button>
-  <button class="btn btn-info" id="home" href="/dashboard">Go Home</button>
+  <a class="btn btn-info" id="save" href="/calendar">View Calendar</a>
+  <a class="btn btn-info" id="back" href="/categories">View Categories</a>
+  <a class="btn btn-info" id="home" href="/dashboard">Home</a>
 </div>

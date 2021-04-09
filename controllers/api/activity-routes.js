@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Activity } = require("../../models");
 // const sequelize = require("../../config/connection");
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
   Activity.findAll({
@@ -60,7 +60,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Activity.create({
     activity_category: req.body.activity_category,
     activity_name: req.body.activity_name,
@@ -74,7 +74,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Activity.update(
     {
       activity_category: req.body.activity_category,
@@ -100,7 +100,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   console.log("id", req.params.id);
   Activity.destroy({
     where: {
