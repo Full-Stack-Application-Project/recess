@@ -49,6 +49,21 @@ router.get('/presetschedule', withAuth, (req, res) => {
       title: 'Your Work & Sleep Schedule' 
   });
 })
+
+// SLEEP route
+router.get('/sleepschedule', withAuth, (req, res) => {
+  res.render('sleepschedule', { 
+      title: 'Your Sleep Schedule' 
+  });
+})
+
+// WORK route
+router.get('/workschedule', withAuth, (req, res) => {
+  res.render('workschedule', { 
+      title: 'Your Work Schedule' 
+  });
+})
+
 // SCHEDULE
 router.get('/schedule', withAuth, (req, res) => {
   res.render('schedule', { 

@@ -46,6 +46,12 @@ router.get("/schedule", withAuth, (req, res)=>{
 router.get("/presetschedule", withAuth, (req, res)=>{
     res.render("presetschedule", {title: "Presetschedule"});
 });
+router.get("/sleepschedule", withAuth, (req, res)=>{
+    res.render("sleepschedule", {title: "Sleepschedule"});
+});
+router.get("/workschedule", withAuth, (req, res)=>{
+    res.render("workschedule", {title: "Workschedule"});
+});
 
     
 module.exports = router;
