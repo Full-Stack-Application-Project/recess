@@ -13,7 +13,8 @@ Schedule.init(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      autoIncrement: true,
     },
     day: {
       type: DataTypes.STRING,

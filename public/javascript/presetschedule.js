@@ -38,7 +38,6 @@ function getUserId() {
 }
 
 async function addScheduleFormHandler(user_id) {
-  let id;
   let day;
   let working;
   let workMonday = document.getElementById("monday").checked;
@@ -65,29 +64,29 @@ async function addScheduleFormHandler(user_id) {
   for (i = 0; i < 7; i++) {
     let work_start = document.querySelector("#workStartTime").value;
     let work_end = document.querySelector("#workEndTime").value;
+    let newid;
+
     console.log(work_start + " work_start");
     console.log(work_end + " work_end");
     if (i === 0) {
       day = "Sunday";
       if (workSunday) {
-        id = 1;
+        newid = 1;
         working = "yes";
-        console.log(id + " id");
       } else {
-        id = 1;
+        newid = 1;
         working = "no";
         work_start = null;
         work_end = null;
-        console.log(id + " id");
       }
       console.log("sunday happened");
     } else if (i === 1) {
       day = "Monday";
       if (workMonday) {
-        id = 2;
+        newid = 2;
         working = "yes";
       } else {
-        id = 2;
+        newid = 2;
         working = "no";
         work_start = null;
         work_end = null;
@@ -96,10 +95,10 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 2) {
       day = "Tuesday";
       if (workTuesday) {
-        id = 3;
+        newid = 3;
         working = "yes";
       } else {
-        id = 3;
+        newid = 3;
         working = "no";
         work_start = null;
         work_end = null;
@@ -108,10 +107,10 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 3) {
       day = "Wednesday";
       if (workWednesday) {
-        id = 4;
+        newid = 4;
         working = "yes";
       } else {
-        id = 4;
+        newid = 4;
         working = "no";
         work_start = null;
         work_end = null;
@@ -120,10 +119,10 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 4) {
       day = "Thursday";
       if (workThursday) {
-        id = 5;
+        newid = 5;
         working = "yes";
       } else {
-        id = 5;
+        newid = 5;
         working = "no";
         work_start = null;
         work_end = null;
@@ -132,10 +131,10 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 5) {
       day = "Friday";
       if (workFriday) {
-        id = 6;
+        newid = 6;
         working = "yes";
       } else {
-        id = 6;
+        newid = 6;
         working = "no";
         work_start = null;
         work_end = null;
@@ -144,10 +143,10 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 6) {
       day = "Saturday";
       if (workSaturday) {
-        id = 7;
+        newid = 7;
         working = "yes";
       } else {
-        id = 7;
+        newid = 7;
         working = "no";
         work_start = null;
         work_end = null;
@@ -159,7 +158,7 @@ async function addScheduleFormHandler(user_id) {
       const response = await fetch("/api/schedules", {
         method: "post",
         body: JSON.stringify({
-          id,
+          newid,
           day,
           working,
           work_start,

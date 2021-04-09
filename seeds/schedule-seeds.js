@@ -2,7 +2,7 @@ const { Schedule } = require("../models");
 
 const scheduleData = [
   {
-    id: 1,
+    id: 2,
     day: "Monday",
     working: "yes",
     work_start: 0800,
@@ -11,7 +11,7 @@ const scheduleData = [
     sleep_end: 0600,
     user_id: 1
   },
-  { id: 7,
+  { id: 3,
     day: "Tuesday",
     working: "yes",
     work_start: 0800,
@@ -21,7 +21,7 @@ const scheduleData = [
     user_id: 1
   },
   {
-    id: 2,
+    id: 4,
     day: "Wednesday",
     working: "yes",
     work_start: 0800,
@@ -31,7 +31,7 @@ const scheduleData = [
     user_id: 1
   },
   {
-    id: 3,
+    id: 5,
     day: "Thursday",
     working: "yes",
     work_start: 0800,
@@ -41,7 +41,7 @@ const scheduleData = [
     user_id: 1
   },
   {
-    id: 4,
+    id: 6,
     day: "Friday",
     working: "yes",
     work_start: 0800,
@@ -51,7 +51,7 @@ const scheduleData = [
     user_id: 1
   },
   {
-    id: 5,
+    id: 7,
     day: "Saturday",
     working: "no",
     work_start: null,
@@ -60,7 +60,7 @@ const scheduleData = [
     sleep_end: 0645,
     user_id: 1
   },
-  { id:6,
+  { id: 1,
     day: "Sunday",
     working: "no",
     work_start: null,
