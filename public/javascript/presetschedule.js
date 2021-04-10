@@ -71,10 +71,8 @@ async function addScheduleFormHandler(user_id) {
     if (i === 0) {
       day = "Sunday";
       if (workSunday) {
-        newid = 1;
         working = "yes";
       } else {
-        newid = 1;
         working = "no";
         work_start = null;
         work_end = null;
@@ -83,10 +81,8 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 1) {
       day = "Monday";
       if (workMonday) {
-        newid = 2;
         working = "yes";
       } else {
-        newid = 2;
         working = "no";
         work_start = null;
         work_end = null;
@@ -95,10 +91,8 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 2) {
       day = "Tuesday";
       if (workTuesday) {
-        newid = 3;
         working = "yes";
       } else {
-        newid = 3;
         working = "no";
         work_start = null;
         work_end = null;
@@ -107,10 +101,8 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 3) {
       day = "Wednesday";
       if (workWednesday) {
-        newid = 4;
         working = "yes";
       } else {
-        newid = 4;
         working = "no";
         work_start = null;
         work_end = null;
@@ -119,10 +111,8 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 4) {
       day = "Thursday";
       if (workThursday) {
-        newid = 5;
         working = "yes";
       } else {
-        newid = 5;
         working = "no";
         work_start = null;
         work_end = null;
@@ -131,10 +121,8 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 5) {
       day = "Friday";
       if (workFriday) {
-        newid = 6;
         working = "yes";
       } else {
-        newid = 6;
         working = "no";
         work_start = null;
         work_end = null;
@@ -143,10 +131,8 @@ async function addScheduleFormHandler(user_id) {
     } else if (i === 6) {
       day = "Saturday";
       if (workSaturday) {
-        newid = 7;
         working = "yes";
       } else {
-        newid = 7;
         working = "no";
         work_start = null;
         work_end = null;
@@ -178,7 +164,7 @@ async function addScheduleFormHandler(user_id) {
       }
     }
   }
-  // document.location.replace("/schedule");
+  document.location.replace("/schedule");
 }
 
 document.getElementById("save").addEventListener("click", checkActivitiesTable);
