@@ -25,7 +25,7 @@ var saturday_working;
 var preset_work_time;
 var preset_sleep_time;
 
-var sundayEl = document.getElementById("sunday");
+var hiddenTimesArr = [];
 
 let activityArray = [];
 
@@ -83,12 +83,15 @@ window.onload = function getScheduleData() {
         }
       }
 
-      var sundayScheduleEl = document.createElement("tr");
-      var sundayTimesEl = document.createElement("td");
-      
+      for (i=0; i < hiddenTimesArr.length; i++) {
+        
+        let hiddenTime = document.getElementById(hiddenTimesArr[i]);
+        console.log(hiddenTimesArr[i]);
+        console.log(hiddenTime);
+        hiddenTime.classList = "hidden";
+      }
 
       // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
-      sundayEl.appendChild(sunday_schedule);
 
 
       //   I think the best move is to use the sleep/work time logic within the fetch api/schedules function (right after the last else if, line 78), then call getActivityData when applicable.
