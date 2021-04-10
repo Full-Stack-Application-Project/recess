@@ -37,7 +37,7 @@
                 <li>SMTP Serer</li>
                 <li>Usabale Template's</li>
             </ul>
-            <button class="btn1">Portfolio</button>
+            <button class="btn1" onClick='aboutLink(0)'>Portfolio</button>
     </div>
 
     <div class="card">
@@ -51,7 +51,7 @@
                 <li>SMTP Server</li>
                 <li>Usable Template's</li>
             </ul>
-            <button class="btn1">Portfolio</button>
+            <button class="btn1"  onClick='aboutLink(1)'>Portfolio</button>
     </div>
 
     <div class="card">
@@ -65,7 +65,7 @@
                 <li> Server</li>
                 <li>Usable Template's</li>
             </ul>
-            <button class="btn1">Portfolio</button>
+            <button class="btn1" onClick='aboutLink(2)'>Portfolio</button>
     </div>
 
     <div class="card">
@@ -79,7 +79,7 @@
                 <li>Partials</li>
                 <li></li>
             </ul>
-            <button class="btn1">Portfolio</button>
+            <button class="btn1"  onClick='aboutLink(3)'>Portfolio</button>
     </div>
 
     <div class="card">
@@ -91,12 +91,27 @@
             <li>Handlebars</li>
             <li>Partials</li>
         </ul>
-        <button class="btn1">Portfolio</button>
+        <button class="btn1" onClick='aboutLink(4)'>Portfolio</button>
     </div>
 </div>
-
+<script>
+    const GC_LINKS =[
+        '',
+        '',
+        '',
+        'Idzel.html',
+        'http://google.com',
+    ]
+    function aboutLink (idx)
+    {
+        alert(GC_LINKS[idx]);
+        //window.open (GC_LINKS[idx]);
+        window.location.replace (GC_LINKS[idx]);
+    }
+</script>
+<div style='margin-left:200px'>
 {{>backtohome}}
-
+</div>
 {{!-- {{>footer}} --}}
 
 <!--  <script src="/javascript/about.js"></script> -->
