@@ -1,9 +1,17 @@
-function getUserId(event) {
+async function checkActivitiesTable(event) {
   event.preventDefault();
+        fetch(`/api/schedules/`, {
+          method: "DELETE",
+        });        
+        getUserId();
+}
+
+
+function getUserId() {
   fetch("/api/users/loggedIn").then(function (response) {
     return response.json().then(function (response) {
       console.log(response);
-      console.log("got to presetschedule.js line35");
+      console.log("got to presetschedule.js line 35");
       let user_id = response[0].id;
       // let user_id = 1;
       console.log(user_id);
@@ -39,6 +47,10 @@ async function addScheduleFormHandler(user_id) {
   for (i = 0; i < 7; i++) {
     let work_start = document.querySelector("#workStartTime").value;
     let work_end = document.querySelector("#workEndTime").value;
+    let newid;
+
+    console.log(work_start + " work_start");
+    console.log(work_end + " work_end");
     if (i === 0) {
       day = "Sunday";
       if (workSunday) {
@@ -115,6 +127,7 @@ async function addScheduleFormHandler(user_id) {
       const response = await fetch("/api/schedules", {
         method: "post",
         body: JSON.stringify({
+          newid,
           day,
           working,
           work_start,
@@ -125,11 +138,11 @@ async function addScheduleFormHandler(user_id) {
         }),
         headers: { "Content-Type": "application/json" },
       });
-
+      console.log(response);
       if (response.ok) {
         console.log(day + " was added");
       } else {
-        alert('Please select start and end times.');
+        alert("Please select start and end times.");
         return;
       }
     }
@@ -137,4 +150,4 @@ async function addScheduleFormHandler(user_id) {
   document.location.replace("/schedule");
 }
 
-document.getElementById("save").addEventListener("click", getUserId);
+document.getElementById("save").addEventListener("click", checkActivitiesTable);
