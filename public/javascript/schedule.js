@@ -78,7 +78,7 @@ window.onload = function getScheduleData() {
         }
       }
 
-      // create if statement to determine times
+      // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
 
       //   I think the best move is to use logic within the schedule fetch / function (right after the last else if), then call getActivityData when applicable.
     });
@@ -128,5 +128,20 @@ window.onload = function getActivityData() {
 // ("1/31/2009");
 // randomDate();
 // ("6/14/2001");
+
+// * Second option to use for randomization
+
+// var yourRandomGenerator = function (rangeOfDays, startHour, hourRange) {
+//   var today = new Date(Date.now());
+//   return new Date(
+//     today.getYear() + 1900,
+//     today.getMonth(),
+//     today.getDate() + Math.random() * rangeOfDays,
+//     Math.random() * hourRange + startHour,
+//     Math.random() * 60
+//   );
+// };
+
+// console.log(yourRandomGenerator(2, 8, 2));
 
 // TODO we need a foreign key that is associated to a table of activities. The user will be tracked to the table of activities that they have.
