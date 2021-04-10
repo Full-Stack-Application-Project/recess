@@ -55,50 +55,50 @@ window.onload = function getScheduleData() {
           console.log(sunday_work_start + " sunday_work_start");
           console.log(sunday_work_end + " sunday_work_end");
         } else if (i === 1) {
-          monday_sleep_start = response[1].sleep_start;
-          monday_sleep_end = response[1].sleep_end;
-          monday_work_start = response[1].work_start;
-          monday_work_end = response[1].work_end;
+          monday_sleep_start = response[1].sleep_start + 96;
+          monday_sleep_end = response[1].sleep_end + 96;
+          monday_work_start = response[1].work_start + 96;
+          monday_work_end = response[1].work_end + 96;
           monday_working = response[1].working;
           console.log(monday_work_start + " monday_work_start");
           console.log(monday_work_end + " monday_work_end");
         } else if (i === 2) {
-          tuesday_sleep_start = response[2].sleep_start;
-          tuesday_sleep_end = response[2].sleep_end;
-          tuesday_work_start = response[2].work_start;
-          tuesday_work_end = response[2].work_end;
+          tuesday_sleep_start = response[2].sleep_start + 192;
+          tuesday_sleep_end = response[2].sleep_end + 192;
+          tuesday_work_start = response[2].work_start + 192;
+          tuesday_work_end = response[2].work_end + 192;
           tuesday_working = response[2].working;
           console.log(tuesday_work_start + " tuesday_work_start");
           console.log(tuesday_work_end + " tuesday_work_end");
         } else if (i === 3) {
-          wednesday_sleep_start = response[3].sleep_start;
-          wednesday_sleep_end = response[3].sleep_end;
-          wednesday_work_start = response[3].work_start;
-          wednesday_work_end = response[3].work_end;
+          wednesday_sleep_start = response[3].sleep_start + 288;
+          wednesday_sleep_end = response[3].sleep_end + 288;
+          wednesday_work_start = response[3].work_start + 288;
+          wednesday_work_end = response[3].work_end + 288;
           wednesday_working = response[3].working;
           console.log(wednesday_work_start + " wednesday_work_start");
           console.log(wednesday_work_end + " wednesday_work_end");
         } else if (i === 4) {
-          thursday_sleep_start = response[4].sleep_start;
-          thursday_sleep_end = response[4].sleep_end;
-          thursday_work_start = response[4].work_start;
-          thursday_work_end = response[4].work_end;
+          thursday_sleep_start = response[4].sleep_start + 384;
+          thursday_sleep_end = response[4].sleep_end + 384;
+          thursday_work_start = response[4].work_start + 384;
+          thursday_work_end = response[4].work_end + 384;
           thursday_working = response[4].working;
           console.log(thursday_work_start + " thursday_work_start");
           console.log(thursday_work_end + " thursday_work_end");
         } else if (i === 5) {
-          friday_sleep_start = response[5].sleep_start;
-          friday_sleep_end = response[5].sleep_end;
-          friday_work_start = response[5].work_start;
-          friday_work_end = response[5].work_end;
+          friday_sleep_start = response[5].sleep_start + 480;
+          friday_sleep_end = response[5].sleep_end + 480;
+          friday_work_start = response[5].work_start + 480;
+          friday_work_end = response[5].work_end + 480;
           friday_working = response[5].working;
           console.log(friday_work_start + " friday_work_start");
           console.log(friday_work_end + " friday_work_end");
         } else if (i === 6) {
-          saturday_sleep_start = response[6].sleep_start;
-          saturday_sleep_end = response[6].sleep_end;
-          saturday_work_start = response[6].work_start;
-          saturday_work_end = response[6].work_end;
+          saturday_sleep_start = response[6].sleep_start + 576;
+          saturday_sleep_end = response[6].sleep_end + 576;
+          saturday_work_start = response[6].work_start + 576;
+          saturday_work_end = response[6].work_end + 576;
           saturday_working = response[6].working;
           console.log(saturday_work_start + " saturday_work_start");
           console.log(saturday_work_end + " saturday_work_end");
@@ -188,6 +188,8 @@ window.onload = function getScheduleData() {
       for (i=672; i >= saturday_sleep_start - 1; i--) {
         hiddenTimesArr.push(i);
       }
+
+      console.log(hiddenTimesArr);
 
       for (i=0; i < hiddenTimesArr.length; i++) {
         let hiddenTime = document.getElementById(hiddenTimesArr[i]);
