@@ -1,22 +1,28 @@
 // - Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 // - Conditional statement to audit whether the user has enough time to schedule.
-let sleep_start;
-let sleep_end;
-let sunday_work_start;
-let sunday_work_end;
-let monady_work_start;
-let monday_work_end;
-let tuesday_work_start;
-let tuesday_work_end;
-let wednesday_work_start;
-let wednesday_work_end;
-let thursday_work_start;
-let thursday_work_end;
-let friday_work_start;
-let friday_work_end;
-let saturday_work_start;
-let saturday_work_end;
-
+var sleep_start;
+var sleep_end;
+var sunday_work_start;
+var sunday_work_end;
+var monday_work_start;
+var monday_work_end;
+var tuesday_work_start;
+var tuesday_work_end;
+var wednesday_work_start;
+var wednesday_work_end;
+var thursday_work_start;
+var thursday_work_end;
+var friday_work_start;
+var friday_work_end;
+var saturday_work_start;
+var saturday_work_end;
+var sunday_working;
+var monday_working;
+var tuesday_working;
+var wednesday_working;
+var thursday_working;
+var friday_working;
+var saturday_working;
 
 window.onload = function getScheduleData() {
     fetch("api/schedules").then(response => {
@@ -30,36 +36,43 @@ window.onload = function getScheduleData() {
                 if (i === 0) {
                     sunday_work_start = response[0].work_start;
                     sunday_work_end = response[0].work_end;
+                    sunday_working = response[0].working;
                     console.log(sunday_work_start + " sunday_work_start");
                     console.log(sunday_work_end + " sunday_work_end");
                 } else if (i === 1) {
                     monday_work_start = response[1].work_start;
                     monday_work_end = response[1].work_end;
+                    monday_working = response[1].working;
                     console.log(monday_work_start + " monday_work_start");
                     console.log(monday_work_end + " monday_work_end");
                 } else if (i === 2) {
                     tuesday_work_start = response[2].work_start;
                     tuesday_work_end = response[2].work_end;
+                    tuesday_working = response[2].working;
                     console.log(tuesday_work_start + " tuesday_work_start");
                     console.log(tuesday_work_end + " tuesday_work_end");
                 } else if (i === 3) {
                     wednesday_work_start = response[3].work_start;
                     wednesday_work_end = response[3].work_end;
+                    wednesday_working = response[3].working;
                     console.log(wednesday_work_start + " wednesday_work_start");
                     console.log(wednesday_work_end + " wednesday_work_end");
                 } else if (i === 4) {
                     thursday_work_start = response[4].work_start;
                     thursday_work_end = response[4].work_end;
+                    thursday_working = response[4].working;
                     console.log(thursday_work_start + " thursday_work_start");
                     console.log(thursday_work_end + " thursday_work_end");
                 } else if (i === 5) {
                     friday_work_start = response[5].work_start;
                     friday_work_end = response[5].work_end;
+                    friday_working = response[5].working;
                     console.log(friday_work_start + " friday_work_start");
                     console.log(friday_work_end + " friday_work_end");
                 } else if (i === 6) {
                     saturday_work_start = response[6].work_start;
                     saturday_work_end = response[6].work_end;
+                    saturday_working = response[6].working;
                     console.log(saturday_work_start + " saturday_work_start");
                     console.log(saturday_work_end + " saturday_work_end");
                 }
@@ -68,6 +81,26 @@ window.onload = function getScheduleData() {
     })
 }
 
+window.onload = function getActivityData() {
+    fetch("api/activities").then(response => {
+        return response.json().then(function (response) {
+            console.log(response);
+            var activity_category;
+            var activity_name;
+            var activity_length;
+            var user_id;
+            for (i = 0; i < response.length; i++) {
+                activity_category = response[i].activity_category;
+                activity_name = response[i].activity_name;
+                activity_length = response[i].activity_length;
+                user_id = response[i].user_id;
+                
+                
+
+            }
+        })
+    })
+}
 //  fetch("api/schedules/1").then(function (response) {
 //     return response.json().then(function (response) {
 //       console.log(response.message);
