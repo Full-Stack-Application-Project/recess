@@ -113,12 +113,9 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
-router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
+router.delete("/", (req, res) => {
   Schedule.destroy({
-    where: {
-      id: req.params.id,
-    },
+    where: {},
   })
     .then((dbPostData) => {
       if (!dbPostData) {
