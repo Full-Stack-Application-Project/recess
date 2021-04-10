@@ -1,28 +1,11 @@
 async function checkActivitiesTable(event) {
   event.preventDefault();
-  console.log("got to checkActivitiesTable");
-  fetch("api/schedules/1").then(function (response) {
-    return response.json().then(function (response) {
-      console.log(response.message);
-      console.log("above is line 6");
-      if (!response.message) {
-        console.log("got to line 7 of preset schedule");
-        deleteSchedules();
-      } else {
+        fetch(`/api/schedules/`, {
+          method: "DELETE",
+        });        
         getUserId();
-      }
-    });
-  });
 }
 
-function deleteSchedules() {
-  for (i = 1; i <= 7; i++) {
-    const response = fetch(`/api/schedules/${i}`, {
-      method: "DELETE",
-    });
-  }
-  getUserId();
-}
 
 function getUserId() {
   fetch("/api/users/loggedIn").then(function (response) {
