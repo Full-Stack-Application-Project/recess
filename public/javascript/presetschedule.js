@@ -1,33 +1,8 @@
 async function checkActivitiesTable(event) {
   event.preventDefault();
-  console.log("got to checkActivitiesTable");
-  fetch("api/schedules/1").then(function (response) {
-    return response.json().then(function (response) {
-      console.log(response.message);
-      console.log("above is line 6");
-      if (!response.message) {
-        console.log("got to line 7 of preset schedule");
-        deleteSchedules();
-      } else {
-        getUserId();
-      }
-    });
+  fetch(`/api/schedules/`, {
+    method: "DELETE",
   });
-}
-
-function deleteSchedules() {
-  for (i = 1; i <= 7; i++) {
-    const response = fetch(`/api/schedules/${i}`, {
-      method: "DELETE",
-    });
-    if (response.ok) {
-      console.log("got to line 13 of presetschedule");
-    } else {
-      alert(response.statusText);
-    }
-    console.log("line 25 of preset schedule");
-  }
-
   getUserId();
 }
 
@@ -71,6 +46,10 @@ async function addScheduleFormHandler(user_id) {
   for (i = 0; i < 7; i++) {
     let work_start = document.querySelector("#workStartTime").value;
     let work_end = document.querySelector("#workEndTime").value;
+    let newid;
+
+    console.log(work_start + " work_start");
+    console.log(work_end + " work_end");
     if (i === 0) {
       day = "Sunday";
       if (workSunday) {
@@ -147,6 +126,7 @@ async function addScheduleFormHandler(user_id) {
       const response = await fetch("/api/schedules", {
         method: "post",
         body: JSON.stringify({
+          newid,
           day,
           working,
           work_start,
@@ -157,7 +137,7 @@ async function addScheduleFormHandler(user_id) {
         }),
         headers: { "Content-Type": "application/json" },
       });
-
+      console.log(response);
       if (response.ok) {
         console.log(day + " was added");
       } else {
@@ -166,7 +146,7 @@ async function addScheduleFormHandler(user_id) {
       }
     }
   }
-  // document.location.replace("/schedule");
+  document.location.replace("/schedule");
 }
 
 document.getElementById("save").addEventListener("click", checkActivitiesTable);
