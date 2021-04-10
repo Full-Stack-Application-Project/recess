@@ -1,9 +1,9 @@
 // - Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 // - Conditional statement to audit whether the user has enough time to schedule.
 
-let array = [];
+// fetch to obtain data from user input for sleep/work times.
 
-const academicForm = document.querySelector(".activityLength").value;
+let array = [];
 
 // for start time to end time
 
