@@ -50,7 +50,8 @@ li {
 .btn1 {
   outline: none;
   border: 0;
-  background: #1e1e1e;
+  background: #c165dd;
+
   padding: 10px 20px;
   border-radius: 20px;
   text-align: center;
@@ -62,7 +63,8 @@ li {
 }
 
 .btn1:hover {
-  background: #000;
+  background: #5936cc;
+
 }
 
 .price_cards {
@@ -108,7 +110,7 @@ li {
 
 .price_cards section {
   padding: 30px 0;
-  background: #36cccb;
+  background: #5936cc;
   margin: auto;
   text-align: center;
 }
