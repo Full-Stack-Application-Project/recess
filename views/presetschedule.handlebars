@@ -4,12 +4,11 @@
 
 <div class="main">
     <div class="form-header">
-        <h2 class="form-title" style="margin-bottom: 20px;">Enter Sleep &#38 Work Schedule</h2>
+        <h2 class="form-title">Enter Work Schedule</h2>
     </div>
     <div class="form-body">
-        <form action="" align="center">
-
-            <div class="days" style="margin-left: 30px;">
+        <form>
+            <div class="days">
                 <div class="day">
                     <label class="day-label" for="sunday">Sunday
                         <input type="checkbox" class="checkbox" id="sunday" name="sunday">
@@ -52,9 +51,11 @@
                 </div>
             </div>
             <div>
-                {{> sleepHrs }}
-                <br />
                 {{> workHrs }}
+                <div class="form-header">
+                    <h2 class="form-title">Enter Sleep Schedule</h2>
+                </div>
+                {{> sleepHrs }}
             </div>
             <br />
             <div class='buttonDiv'>
