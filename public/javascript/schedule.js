@@ -82,12 +82,21 @@ window.onload = function getScheduleData() {
           console.log(saturday_work_end + " saturday_work_end");
         }
       }
+      
+      for (i=1; i < sleep_end - 1; i++) {
+        hiddenTimesArr.push(i);
+      }
+
+      for (i=sunday_work_start - 1; i < sunday_work_end - 1; i++) {
+        hiddenTimesArr.push(i);
+      }
+
+      for (i=96; i >= sleep_start - 1; i--) {
+        hiddenTimesArr.push(i);
+      }
 
       for (i=0; i < hiddenTimesArr.length; i++) {
-        
         let hiddenTime = document.getElementById(hiddenTimesArr[i]);
-        console.log(hiddenTimesArr[i]);
-        console.log(hiddenTime);
         hiddenTime.classList = "hidden";
       }
 
