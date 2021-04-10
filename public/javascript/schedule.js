@@ -80,7 +80,7 @@ window.onload = function getScheduleData() {
 
       // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
 
-      //   I think the best move is to use logic within the schedule fetch / function (right after the last else if), then call getActivityData when applicable.
+      //   I think the best move is to use the sleep/work time logic within the fetch api/schedules function (right after the last else if, line 78), then call getActivityData when applicable.
     });
   });
 };
