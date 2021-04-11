@@ -7,6 +7,7 @@ html{
   height: 100%;
 }
 body {
+  text-align: center;
   color: whitesmoke;
   font-family: 'Ubuntu', sans-serif;
   background-repeat: no-repeat;
@@ -40,17 +41,6 @@ form, ul, h3 {
 
 div.container {
   align-content: center;
-}
-
-.container {
-  margin-left: 10%;
- 
-  /* -ms-grid-column-align: center;
-      justify-self: center;
-  text-align: center;
-  width: auto;
-  margin-top: 1rem;
-  padding-bottom: 0; */
 }
 
 .nav-icon{
@@ -108,7 +98,6 @@ body a {
 #signup {
   width: 25em; 
   height: 30em;
-
 }
 .form-title{
   padding-top: 40px;
@@ -146,7 +135,7 @@ input:focus {
 .submit {
   cursor: pointer;
   border-radius: 5em;
-  color: #fff;
+  color: whitesmoke;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1rem;
   border: none;
@@ -179,7 +168,7 @@ div.nav-back{
 #back {
   cursor: pointer;
   border-radius: 5em;
-  color: #fff;
+  color: whitesmoke;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1rem;
   border: none;
@@ -190,14 +179,104 @@ div.nav-back{
   -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04); 
           box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
-#back:hover{
+#back:hover, 
+#add-activity:hover, 
+#view-schedule:hover,
+#back-to-dash:hover {
   background: linear-gradient(to left, #7e27b0, #b640fb);
   filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .5));
 }
 
+.activity-form {
+  width: 25em; 
+  height: 31em;
+  color:#8C55AA;;
+}
+#activity-intake-form {
+  height: 20em;
+}
+label {
+  font-weight: 600;
+  font-size: large;
+}
+div.duration {
+  margin: 2em 0 1em;
+}
+select {
+  width: 30%;
+  margin: 1em;
+}
+#activity-type {
+  margin: 1em 0 1em;
+}
+div.activity {
+  padding-bottom: 0;
+}
+#activities {
+  font-weight: bold;
+}
+div.nav-buttons {
+  padding-top: .3em;
+}
+div.btn-wrapper {
+  margin-top: 2em;
+}
+#add-activity, 
+#view-schedule, 
+#back-to-dash {
+  font-weight: bold;
+  color: whitesmoke;
+  background: linear-gradient(to right, #7e27b0, #b640fb);
+  filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .2));
+}
 
 
-@media (max-width: 600px) {
+
+
+
+div.ws-form {
+  width: 50em;
+  height: 33em;
+}
+div.days {
+  display: inline-block;
+} 
+.day-label{
+  padding: 0.3em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: black; 
+}
+.checkbox {
+  width: 1em;
+  height: 1em;
+  vertical-align: -3px;
+}
+.day {
+  font-size: 1.2em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+.span5 {
+  color: gray;
+  font-size: 1.3em;
+  /* border-radius: 30%; */
+}
+#sleep {
+  padding-top: .5em;
+}
+div.timedropdown{
+  margin: .5em 0;
+}
+select.browser-default {
+  width: 20%;
+}
+#save, #back-to-dash {
+  font-weight: bold;
+}
+
+
+/* @media (max-width: 600px) {
   .main {
     border-radius: 20px;
     width: 300px;
@@ -209,7 +288,7 @@ div.nav-back{
     height: 30em;
   
   }
-}
+} */
 
 
 
