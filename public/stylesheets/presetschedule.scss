@@ -7,6 +7,10 @@ body {
     display: flex;
   }
   
+  .btn-wrapper{
+    margin-left:25%;
+  }
+
   .main {
     background-color: whitesmoke;
     width: 60%;
@@ -22,7 +26,7 @@ body {
     align-content: center;
     width: 100%;
     margin-bottom: 30px;
-    margin-left: 7%;
+    margin-left: 10%;
   }
   
   h5, label {
@@ -73,6 +77,9 @@ body {
     margin-left: 10%;
   }
   
+  .timedropdown1{
+    margin-left: 50px;
+  }
   .span5 {
     color: gray;
     font-size: 20px;
@@ -114,6 +121,14 @@ body {
     
   }
 
+  .formheader1{
+    
+      color:#8C55AA ;
+      margin-left: 25%;
+  
+  }
+
+
   @media (max-width: 900px) {
     
     .formheader {
@@ -141,6 +156,22 @@ body {
     .btns{
       margin-left: -3%;
     }
+    .btn-wrapper{
+      margin-left: auto;
+    }
+    .submit{
+      max-width: 180px;
+      height: 35.17px;
+      font-size: smaller;
+      margin-right: 4%;
+      
+    }
+    .formheader1{
+    
+      color:#8C55AA ;
+      margin-left: auto;
+  
+  }
   }
 
   @media (max-width: 600px) {
@@ -156,6 +187,13 @@ body {
       font-size: smaller;
 
     }
+    .formheader1{
+    
+      color:#8C55AA ;
+      margin-left: auto;
+      margin-top: 10%;
+  
+  }
     .day{
       padding-bottom: 0;
       max-height: 30px;
@@ -168,7 +206,7 @@ body {
       margin-left: 40%;
       font-size: large;
       display: inline;
-      margin-top: 10%;
+      margin-top: 5%;
       margin-left:-3%;
     }
     .header {
@@ -179,7 +217,19 @@ body {
       align-content: center;
       width: 100%;
     }
-    .btns{
-      margin-left: -3%;
+    .form-title{
+      margin-top: -10%;
     }
+    .btn-wrapper{
+      padding: 0% 0% 0% 0%;
+      margin-left: auto;
+    }
+    .submit{
+      max-width: 180px;
+      height: 35.17px;
+      font-size: smaller;
+      margin-right: 4%;
+      
+    }
+    
   }

@@ -243,6 +243,7 @@ div.days {
 }
 div.timedropdown{
   margin: .5em 0;
+  margin-left: 30%;
 }
 select.browser-default {
   width: 20%;
@@ -274,23 +275,33 @@ select.browser-default {
 
 
 
-/* @media (max-width: 600px) {
+
+
+
+@media (max-width: 900px) {
+    
+  div.timedropdown{
+    margin: .5em 0;
+    margin-left: auto;
+  }
+  
+  #signup {
+    width: auto; 
+    height: 30em;
+  }
+
+}
+
+@media (max-width: 600px) {
   .main {
     border-radius: 20px;
-    width: 300px;
-    height: auto;
+    width: auto;
+    height: 400px;
     margin: 10% 10% 10% 10%;
+    margin-bottom: 1%;
   }
-  #signup {
-    width: 20em; 
-    height: 30em;
   
-  }
-} */
-
-
-
-
+}
 
 
 
