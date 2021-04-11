@@ -1,31 +1,20 @@
-<link rel='stylesheet' type='text/css' media='screen' href="stylesheets/login.css">
-
-<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-<center>
-<div class="main" method="post" action="login">
+<div class="main"  method="post" action="login">
     <h2 class="form-title">Log in</h2>
     <form class="login-form">
         <div>
-            {{!-- <label for="email-login">email:</label> --}}
-            <input class="un" type="text" align="center" id="email-login" placeholder="Email" />
+            <input class="input-field" type="text" align="center" id="email-login" placeholder="Email" />
         </div>
         <div>
-            {{!-- <label for="password-login">password:</label> --}}
-            <input class="pass" type="password" align="center" id="password-login" placeholder="Password" />
+            <input class="input-field" type="password" align="center" id="password-login" placeholder="Password" />
         </div>
         <div>
-            <button class="submit" type="submit" style="margin-left:auto;" >login</button>
+            <button class="submit" type="submit">login</button>
         </div>
-        <div class="createprofile">
-            <br/>
-            <a href="/signup" style="margin-left:auto;color:#9C27B0">Not a user? Create profile</a>
+        <div class="nav-back">
+             <a class="nav" href="/signup">Not a user? Create profile</a>
         </div>
+       
     </form>
 </div>
-</center>
-
-
-
 
 <script src="/javascript/login.js"></script>

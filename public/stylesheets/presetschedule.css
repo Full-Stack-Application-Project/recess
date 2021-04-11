@@ -1,5 +1,5 @@
 body {
-  background-color: #F3EBF6;
+  /* background-color: #F3EBF6; */
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -10,7 +10,6 @@ div.form-body {
 }
 
 .main {
-  background-color: whitesmoke;
   width: 60%;
   height: 60%;
   margin: 7em auto;
