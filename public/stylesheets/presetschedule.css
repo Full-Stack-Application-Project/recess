@@ -2,16 +2,6 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-div.form-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.btn-wrapper {
-  margin-left: 25%;
-}
-
 .main {
   background-color: whitesmoke;
   width: 60%;
@@ -30,7 +20,6 @@ div.form-body {
       align-content: center;
   width: 100%;
   margin-bottom: 30px;
-  margin-left: 10%;
 }
 
 h5, label {
@@ -67,23 +56,13 @@ button {
 }
 
 #save {
-  /* margin-left: 1em; */
   font-weight: bold;
   margin-left: 1em;
 }
 
 #back {
-  /* margin-left: .3em; */
   font-weight: bold;
   margin-left: .3em;
-}
-
-.marginLeft10 {
-  margin-left: 10%;
-}
-
-.timedropdown1 {
-  margin-left: 50px;
 }
 
 .span5 {

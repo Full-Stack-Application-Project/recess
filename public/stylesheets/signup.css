@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #F3EBF6;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -101,9 +101,9 @@ a {
 
 .back-arrow {
   margin-left: auto;
-}
+} */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .main {
     border-radius: 20px;
     height: auto;
@@ -119,5 +119,5 @@ a {
   .createprofile {
     font-size: small;
   }
-}
+} */
 /*# sourceMappingURL=signup.css.map */

@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #F3EBF6;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -97,14 +97,14 @@ a {
   text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
   color: #E1BEE7;
   text-decoration: none;
-}
+} */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .main {
     border-radius: 20px;
     width: 300px;
     height: auto;
     margin: 10% 10% 10% 10%;
   }
-}
+} */
 /*# sourceMappingURL=login.css.map */

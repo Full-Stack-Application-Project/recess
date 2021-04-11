@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #F3EBF6;
   font-family: 'Ubuntu', sans-serif;
   color: whitesmoke;
@@ -46,10 +46,10 @@ body {
 .button:hover {
   background-color: #575757;
   /* Green */
-  color: white;
-}
+  /* color: white; */
+/* }
 
 .buttonlogout {
   text-decoration: none;
-}
+} */ 
 /*# sourceMappingURL=dashboard.css.map */
