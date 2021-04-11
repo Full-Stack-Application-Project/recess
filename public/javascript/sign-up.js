@@ -1,3 +1,4 @@
+// add the users information to the user table
 async function signupFormHandler(event) {
     event.preventDefault();
     const firstname = document.querySelector("#first-name").value.trim();
@@ -24,7 +25,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
         document.location.replace("/dashboard");
       } else {
-        alert(response.statusText);
+        alert("There is already a user with this email address, please enter a new email address or go to the login page.");
       }
     }
   }

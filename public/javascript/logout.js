@@ -1,3 +1,4 @@
+// gets the current logged in user id before they log out and passes that to editUser
 function getUserId(event) {
   event.preventDefault();
   fetch("/api/users/loggedIn").then(function (response) {
@@ -12,6 +13,7 @@ function getUserId(event) {
   });
 }
 
+// change the logged in parameter for the user that is currently logged in back to false
 async function editUser(id) {
   console.log(id);
   const response = await fetch(`/api/users/${id}`, {
@@ -31,6 +33,7 @@ async function editUser(id) {
   }
 }
 
+// logs out user
 async function logout() {
   const response = await fetch("/api/users/logout", {
     method: "post",

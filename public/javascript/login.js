@@ -1,3 +1,4 @@
+// this function logs the user into the app 
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -18,44 +19,10 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      alert("Either the email address or password is not entered correctly");
     }
   }
 }
-
-// function userId() {
-//   fetch("/api/users/loggedIn").then(function (response) {
-//     return response.json().then(function (response) {
-//       console.log(response);
-//       console.log("above is line 28");
-//       let id = response[0].id;
-//       console.log(id);
-//       changeLoggedIn(id);
-      
-//     }).catch(err => {
-//       console.log(err);
-//     });
-//   });
-// }
-
-// async function changeLoggedIn(id) {
-//   console.log(id);
-//   const response = await fetch(`/api/users/${id}`, {
-//     method: 'PATCH',
-//     body: JSON.stringify({
-//       loggedIn: "true"
-//     }),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-
-//   if (response.ok) {
-//     document.location.replace("/dashboard");
-//   } else {
-//     alert(response.statusText);
-//   }
-// }
 
 document
   .querySelector(".login-form")

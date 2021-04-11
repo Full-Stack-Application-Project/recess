@@ -1,3 +1,4 @@
+// deletes the current schedule if there is one there
 async function checkActivitiesTable(event) {
   event.preventDefault();
   fetch(`/api/schedules/`, {
@@ -6,19 +7,20 @@ async function checkActivitiesTable(event) {
   getUserId();
 }
 
+// get the logged in users id and passes it to addScheduleFormHandler
 function getUserId() {
   fetch("/api/users/loggedIn").then(function (response) {
     return response.json().then(function (response) {
       console.log(response);
       console.log("got to presetschedule.js line 35");
       let user_id = response[0].id;
-      // let user_id = 1;
       console.log(user_id);
       addScheduleFormHandler(user_id);
     });
   });
 }
 
+// adds the selected schedule information to the schedule tabel
 async function addScheduleFormHandler(user_id) {
   let day;
   let working;

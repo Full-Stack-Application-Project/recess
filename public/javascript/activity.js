@@ -1,3 +1,4 @@
+// this function gets the user id from the logged in user and passes it to addActivityFormHandler
 function fetchUserId(event) {
   event.preventDefault();
   fetch("/api/users/loggedIn").then(function (response) {
@@ -11,6 +12,7 @@ function fetchUserId(event) {
   });
 }
 
+// this function posts the activity the user selected to the activity table
 async function addActivityFormHandler(user_id) {
   const activity_category = document.querySelector(".categoryName").innerHTML;
   const activity_length = document.querySelector(".activityLength").value;

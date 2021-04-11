@@ -39,6 +39,7 @@ var preset_sleep_time;
 
 var hiddenTimesArr = [];
 
+// this array has every available 15 minute time window in it
 let activityArray = [];
 
 window.onload = function getScheduleData() {
@@ -54,150 +55,244 @@ window.onload = function getScheduleData() {
           sunday_working = response[0].working;
           console.log(sunday_work_start + " sunday_work_start");
           console.log(sunday_work_end + " sunday_work_end");
+          console.log(sunday_working + " sunday working");
+          console.log(sunday_sleep_start + " sunday sleep start");
+          console.log(sunday_sleep_end + " sunday sleep end");
         } else if (i === 1) {
-          monday_sleep_start = response[1].sleep_start + 96;
-          monday_sleep_end = response[1].sleep_end + 96;
-          monday_work_start = response[1].work_start + 96;
-          monday_work_end = response[1].work_end + 96;
+          monday_sleep_start = response[1].sleep_start + 95;
+          monday_sleep_end = response[1].sleep_end + 95;
+          monday_work_start = response[1].work_start + 95;
+          monday_work_end = response[1].work_end + 95;
           monday_working = response[1].working;
           console.log(monday_work_start + " monday_work_start");
           console.log(monday_work_end + " monday_work_end");
         } else if (i === 2) {
-          tuesday_sleep_start = response[2].sleep_start + 192;
-          tuesday_sleep_end = response[2].sleep_end + 192;
-          tuesday_work_start = response[2].work_start + 192;
-          tuesday_work_end = response[2].work_end + 192;
+          tuesday_sleep_start = response[2].sleep_start + 191;
+          tuesday_sleep_end = response[2].sleep_end + 191;
+          tuesday_work_start = response[2].work_start + 191;
+          tuesday_work_end = response[2].work_end + 191;
           tuesday_working = response[2].working;
           console.log(tuesday_work_start + " tuesday_work_start");
           console.log(tuesday_work_end + " tuesday_work_end");
         } else if (i === 3) {
-          wednesday_sleep_start = response[3].sleep_start + 288;
-          wednesday_sleep_end = response[3].sleep_end + 288;
-          wednesday_work_start = response[3].work_start + 288;
-          wednesday_work_end = response[3].work_end + 288;
+          wednesday_sleep_start = response[3].sleep_start + 287;
+          wednesday_sleep_end = response[3].sleep_end + 287;
+          wednesday_work_start = response[3].work_start + 287;
+          wednesday_work_end = response[3].work_end + 287;
           wednesday_working = response[3].working;
           console.log(wednesday_work_start + " wednesday_work_start");
           console.log(wednesday_work_end + " wednesday_work_end");
         } else if (i === 4) {
-          thursday_sleep_start = response[4].sleep_start + 384;
-          thursday_sleep_end = response[4].sleep_end + 384;
-          thursday_work_start = response[4].work_start + 384;
-          thursday_work_end = response[4].work_end + 384;
+          thursday_sleep_start = response[4].sleep_start + 383;
+          thursday_sleep_end = response[4].sleep_end + 383;
+          thursday_work_start = response[4].work_start + 383;
+          thursday_work_end = response[4].work_end + 383;
           thursday_working = response[4].working;
           console.log(thursday_work_start + " thursday_work_start");
           console.log(thursday_work_end + " thursday_work_end");
         } else if (i === 5) {
-          friday_sleep_start = response[5].sleep_start + 480;
-          friday_sleep_end = response[5].sleep_end + 480;
-          friday_work_start = response[5].work_start + 480;
-          friday_work_end = response[5].work_end + 480;
+          friday_sleep_start = response[5].sleep_start + 479;
+          friday_sleep_end = response[5].sleep_end + 479;
+          friday_work_start = response[5].work_start + 479;
+          friday_work_end = response[5].work_end + 479;
           friday_working = response[5].working;
           console.log(friday_work_start + " friday_work_start");
           console.log(friday_work_end + " friday_work_end");
         } else if (i === 6) {
-          saturday_sleep_start = response[6].sleep_start + 576;
-          saturday_sleep_end = response[6].sleep_end + 576;
-          saturday_work_start = response[6].work_start + 576;
-          saturday_work_end = response[6].work_end + 576;
+          saturday_sleep_start = response[6].sleep_start + 575;
+          saturday_sleep_end = response[6].sleep_end + 575;
+          saturday_work_start = response[6].work_start + 575;
+          saturday_work_end = response[6].work_end + 575;
           saturday_working = response[6].working;
           console.log(saturday_work_start + " saturday_work_start");
           console.log(saturday_work_end + " saturday_work_end");
         }
       }
-      
-      for (i=1; i < sunday_sleep_end - 1; i++) {
+
+      for (i = 1; i < sunday_sleep_end - 1; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=sunday_work_start - 1; i < sunday_work_end - 1; i++) {
+      for (i = sunday_work_start - 1; i < sunday_work_end - 1; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=96; i >= sunday_sleep_start - 1; i--) {
+      for (i = 96; i >= sunday_sleep_start - 1; i--) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=97; i < monday_sleep_end - 1; i++) {
+      for (i = 97; i < monday_sleep_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=monday_work_start - 1; i < monday_work_end - 1; i++) {
+      for (i = monday_work_start; i < monday_work_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=192; i >= monday_sleep_start - 1; i--) {
+      for (i = 192; i >= monday_sleep_start; i--) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=193; i < tuesday_sleep_end - 1; i++) {
+      for (i = 193; i < tuesday_sleep_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=tuesday_work_start - 1; i < tuesday_work_end - 1; i++) {
+      for (i = tuesday_work_start; i < tuesday_work_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=288; i >= tuesday_sleep_start - 1; i--) {
+      for (i = 288; i >= tuesday_sleep_start; i--) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=289; i < wednesday_sleep_end - 1; i++) {
+      for (i = 289; i < wednesday_sleep_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=wednesday_work_start - 1; i < wednesday_work_end - 1; i++) {
+      for (i = wednesday_work_start; i < wednesday_work_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=384; i >= wednesday_sleep_start - 1; i--) {
+      for (i = 384; i >= wednesday_sleep_start; i--) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=385; i < thursday_sleep_end - 1; i++) {
+      for (i = 385; i < thursday_sleep_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=thursday_work_start - 1; i < thursday_work_end - 1; i++) {
+      for (i = thursday_work_start; i < thursday_work_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=480; i >= thursday_sleep_start - 1; i--) {
+      for (i = 480; i >= thursday_sleep_start; i--) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=481; i < friday_sleep_end - 1; i++) {
+      for (i = 481; i < friday_sleep_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=friday_work_start - 1; i < friday_work_end - 1; i++) {
+      for (i = friday_work_start; i < friday_work_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=576; i >= friday_sleep_start - 1; i--) {
+      for (i = 576; i >= friday_sleep_start; i--) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=577; i < saturday_sleep_end - 1; i++) {
+      for (i = 577; i < saturday_sleep_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=saturday_work_start - 1; i < saturday_work_end - 1; i++) {
+      for (i = saturday_work_start; i < saturday_work_end; i++) {
         hiddenTimesArr.push(i);
       }
 
-      for (i=672; i >= saturday_sleep_start - 1; i--) {
+      for (i = 672; i >= saturday_sleep_start; i--) {
         hiddenTimesArr.push(i);
       }
 
       console.log(hiddenTimesArr);
 
-      for (i=0; i < hiddenTimesArr.length; i++) {
+      for (i = 0; i < hiddenTimesArr.length; i++) {
         let hiddenTime = document.getElementById(hiddenTimesArr[i]);
         hiddenTime.classList = "hidden";
       }
 
-      // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
+      if (sunday_working === "yes") {
+        for (i = sunday_sleep_end - 1; i > sunday_work_start - 1; i++) {
+          activityArray.push(i);
+        }
+        for (i = sunday_work_end - 1; i > sunday_sleep_start - 1; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = sunday_sleep_end - 1; i < sunday_sleep_start - 1; i++) {
+          activityArray.push(i);
+        }
+      }
 
+      if (monday_working === "yes") {
+        for (i = monday_sleep_end; i < monday_work_start; i++) {
+          activityArray.push(i);
+        }
+        for (i = monday_work_end; i < monday_sleep_start ; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = monday_sleep_end; i < monday_sleep_start; i++) {
+          activityArray.push(i);
+        }
+      }
+
+      if (tuesday_working === "yes") {
+        for (i = tuesday_sleep_end; i < tuesday_work_start; i++) {
+          activityArray.push(i);
+        }
+        for (i = tuesday_work_end; i < tuesday_sleep_start ; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = tuesday_sleep_end; i < tuesday_sleep_start; i++) {
+          activityArray.push(i);
+        }
+      }
+
+      if (wednesday_working === "yes") {
+        for (i = wednesday_sleep_end; i < wednesday_work_start; i++) {
+          activityArray.push(i);
+        }
+        for (i = wednesday_work_end; i < wednesday_sleep_start ; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = wednesday_sleep_end; i < wednesday_sleep_start; i++) {
+          activityArray.push(i);
+        }
+      }
+
+      if (thursday_working === "yes") {
+        for (i = thursday_sleep_end; i < thursday_work_start; i++) {
+          activityArray.push(i);
+        }
+        for (i = thursday_work_end; i < thursday_sleep_start ; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = thursday_sleep_end; i < thursday_sleep_start; i++) {
+          activityArray.push(i);
+        }
+      }
+
+      if (friday_working === "yes") {
+        for (i = friday_sleep_end; i < friday_work_start; i++) {
+          activityArray.push(i);
+        }
+        for (i = friday_work_end; i < friday_sleep_start ; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = friday_sleep_end; i < friday_sleep_start; i++) {
+          activityArray.push(i);
+        }
+      }
+
+      if (saturday_working === "yes") {
+        for (i = saturday_sleep_end; i < saturday_work_start; i++) {
+          activityArray.push(i);
+        }
+        for (i = saturday_work_end; i < saturday_sleep_start ; i++) {
+          activityArray.push(i);
+        }
+      } else {
+        for (i = saturday_sleep_end; i < saturday_sleep_start; i++) {
+          activityArray.push(i);
+        }
+      }
+
+      console.log(activityArray);
+      // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
 
       //   I think the best move is to use the sleep/work time logic within the fetch api/schedules function (right after the last else if, line 78), then call getActivityData when applicable.
     });
