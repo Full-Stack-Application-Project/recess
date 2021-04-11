@@ -24,29 +24,18 @@ h2 {
   padding-top: 0.75em;
   text-align: center;
 }
-/* h3 {
-  padding: 1em 0 1em;
-} */
-/* h4 {
-  text-align: left;
-  padding: 2em 0;
-} */
 
 form, ul, h3 {
   text-align: center;
   list-style: none;
   padding-top: 2em;
 }
-
-
 div.container {
   align-content: center;
 }
-
 .nav-icon{
   margin: 0;
 }
-
 body a {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
@@ -55,7 +44,6 @@ body a {
   font-size: larger;
   margin: 0.5rem 0;
 }
-
 .nav-btn {
   display: inline-block;
   font-size: 1rem;
@@ -85,7 +73,6 @@ body a {
   color: whitesmoke;
   filter: drop-shadow( 4px 4px 3px rgba(244, 244, 244, 0.2));
 }
-
 .main {
   width: 27em; 
   height: 23em;
@@ -104,12 +91,10 @@ body a {
   color: #8C55AA;
   font-size: 1.6em;
 }
-
 form {
   padding: 0;
   margin: 2em 0;
 }
-
 input {
   width: 70%;
   color: #263238;
@@ -127,11 +112,9 @@ input {
   margin-bottom: 1.5rem;
   font-family: 'Ubuntu', sans-serif;
 }
-
 input:focus {
   border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
-
 .submit {
   cursor: pointer;
   border-radius: 5em;
@@ -146,22 +129,26 @@ input:focus {
   -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
           box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
-
 .submit:hover {
   background: linear-gradient(to left, #9C27B0, #E040FB);
   filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .5));
 }
-
 a.nav:hover{
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
 }
-
-a.nav{
+/* a.nav{
   color: #9C27B0;
   text-decoration: none;
-  margin-top: 5em;
+  margin-top: 20em;
+} */
+div.nav-button {
+  margin-top: 2em;
 }
-
+#back-to-signup{
+  color: #9C27B0;
+  text-decoration: none;
+  margin-top: 20em;
+}
 div.nav-back{
   margin-top: 2em;
 }
@@ -186,7 +173,6 @@ div.nav-back{
   background: linear-gradient(to left, #7e27b0, #b640fb);
   filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .5));
 }
-
 .activity-form {
   width: 25em; 
   height: 31em;
@@ -229,10 +215,6 @@ div.btn-wrapper {
   background: linear-gradient(to right, #7e27b0, #b640fb);
   filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .2));
 }
-
-
-
-
 
 div.ws-form {
   width: 50em;
