@@ -34,56 +34,56 @@
         <section>
             <h1 class="title">Nate Schroeder</h1>
         </section>
-        <ul>
-            <li>10GB Disk Space</li>
-            <li>5GB Band Width</li>
-            <li>Bootstrap Plugin</li>
-            <li>SMTP Serer</li>
-            <li>Usabale Template's</li>
-        </ul>
-        <button class="btn1">Portfolio</button>
+            <ul>
+                <li>10GB Disk Space</li>
+                <li>5GB Band Width</li>
+                <li>Bootstrap Plugin</li>
+                <li>SMTP Serer</li>
+                <li>Usabale Template's</li>
+            </ul>
+            <button class="btn1" onClick='aboutLink(0)'>Portfolio</button>
     </div>
 
     <div class="card">
         <section>
             <h1 class="title">Connor Phillips</h1>
         </section>
-        <ul>
-            <li>Disk Space 100GB</li>
-            <li>Band Width 20GB</li>
-            <li>Wordpress Plugins</li>
-            <li>SMTP Server</li>
-            <li>Usable Template's</li>
-        </ul>
-        <button class="btn1">Portfolio</button>
+            <ul>
+                <li>Disk Space 100GB</li>
+                <li>Band Width 20GB</li>
+                <li>Wordpress Plugins</li>
+                <li>SMTP Server</li>
+                <li>Usable Template's</li>
+            </ul>
+            <button class="btn1"  onClick='aboutLink(1)'>Portfolio</button>
     </div>
 
     <div class="card">
-        <section>
-            <h1 class="title">Noah Sherman</h1>
-        </section>
-        <ul>
-            <li>Disk Space 100GB</li>
-            <li> Width 20GB</li>
-            <li>Wordpress Plugins</li>
-            <li> Server</li>
-            <li>Usable Template's</li>
-        </ul>
-        <button class="btn1">Portfolio</button>
+            <section>
+                <h1 class="title">Noah Sherman</h1>
+            </section>
+            <ul>
+                <li>Disk Space 100GB</li>
+                <li> Width 20GB</li>
+                <li>Wordpress Plugins</li>
+                <li> Server</li>
+                <li>Usable Template's</li>
+            </ul>
+            <button class="btn1" onClick='aboutLink(2)'>Portfolio</button>
     </div>
 
     <div class="card">
-        <section>
-            <h1 class="title">Idzel Jaimes</h1>
-        </section>
-        <ul>
-            <li>Disk Space 100GB</li>
-            <li>Band Width 20GB</li>
-            <li>Wordpress Plugins</li>
-            <li>SMTP Server</li>
-            <li>Usable Template's</li>
-        </ul>
-        <button class="btn1">Portfolio</button>
+            <section>
+                <h1 class="title">Idzel Jaimes</h1>
+            </section>
+            <ul>
+                <li>Handlebars</li>
+                <li>Bootstrap</li>
+                <li>Css</li>
+                <li>Partials</li>
+                <li></li>
+            </ul>
+            <button class="btn1"  onClick='aboutLink(3)'>Portfolio</button>
     </div>
 
     <div class="card">
@@ -93,14 +93,29 @@
         <ul style="margin-bottom: 30%;">
             <li>SCSS and CSS</li>
             <li>Handlebars</li>
-
+            <li>Partials</li>
         </ul>
-        <button class="btn1">Portfolio</button>
+        <button class="btn1" onClick='aboutLink(4)'>Portfolio</button>
     </div>
 </div>
-
+<script>
+    const GC_LINKS =[
+        '',
+        '',
+        '',
+        'Idzel.html',
+        'http://google.com',
+    ]
+    function aboutLink (idx)
+    {
+        alert(GC_LINKS[idx]);
+        //window.open (GC_LINKS[idx]);
+        window.location.replace (GC_LINKS[idx]);
+    }
+</script>
+<center>
 {{>backtohome}}
-
-{{!-- {{!-- {{>footer}} -- --}}
+</center>
+{{!-- {{>footer}} --}}
 
 <!--  <script src="/javascript/about.js"></script> -->
