@@ -136,11 +136,6 @@ input:focus {
 a.nav:hover{
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
 }
-/* a.nav{
-  color: #9C27B0;
-  text-decoration: none;
-  margin-top: 20em;
-} */
 div.nav-button {
   margin-top: 2em;
 }
@@ -242,7 +237,6 @@ div.days {
 .span5 {
   color: gray;
   font-size: 1.3em;
-  /* border-radius: 30%; */
 }
 #sleep {
   padding-top: .5em;
@@ -256,6 +250,28 @@ select.browser-default {
 #save, #back-to-dash {
   font-weight: bold;
 }
+
+.btn {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .2));
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.btn:hover {
+  background-color: #575757;
+  color:  whitesmoke;
+  filter: drop-shadow( 4px 4px 3px rgba(244, 244, 244, 0.2));
+}
+
+
 
 
 /* @media (max-width: 600px) {
