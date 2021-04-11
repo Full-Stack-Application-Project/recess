@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="stylesheets/presetschedule.css">
 <center>
-    <div class="main ws-form">
+    <div class="main">
         <div class="formheader">
             <h2 class="form-title">Enter Work Schedule</h2>
         </div>
@@ -37,19 +37,19 @@
                 </div>
                 <div>
                     {{> workHrs }}
-                    <div class="formheader">
-                        <h2 class="form-title" id="sleep">Enter Sleep Schedule</h2>
+                    <div class="formheader1">
+                        <h2 class="form-title" style="margin-bottom: 5%;" id="sleep">Enter Sleep Schedule</h2>
                     </div>
                     {{> sleepHrs }}
                 </div>
                 <div class='buttonDiv'>
                     <!--after submitting form redirect to categories page-->
-                    <div class="nav-buttons">
+                    {{!-- <div class="nav-buttons"> --}}
                         <div class="btn-wrapper">
                             <button type="submit" class="submit" id="save" href="/categories">Save Changes</button>
                             <a class="submit" id="back-to-dash" type="submit" href="/dashboard">Go Back</a>
                         </div>
-                    </div>
+                    {{!-- </div> --}}
                 </div>
         </div>
         </form>
