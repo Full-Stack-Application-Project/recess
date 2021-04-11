@@ -38,11 +38,10 @@
   }
   .phone {
     display: inline;
-    max-height: 70%;
+    max-height: 60%;
     max-width: 70%;
     margin-left: 25%;
     margin-top: auto;
-    margin-bottom: 90%;
   }
   .container1 {
     display: -webkit-inline-box;
@@ -68,7 +67,7 @@
     max-width: 50%;
     margin-left: 25%;
     margin-top: auto;
-    margin-bottom: 90%;
+    margin-bottom: 50%;
   }
   .container1 {
     display: -webkit-inline-box;

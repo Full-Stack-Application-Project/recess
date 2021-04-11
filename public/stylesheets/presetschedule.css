@@ -1,5 +1,4 @@
 body {
-  /* background-color: #F3EBF6; */
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -10,6 +9,7 @@ div.form-body {
 }
 
 .main {
+  background-color: whitesmoke;
   width: 60%;
   height: 60%;
   margin: 7em auto;
@@ -25,7 +25,7 @@ div.form-body {
   -ms-flex-line-pack: center;
       align-content: center;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-left: 7%;
 }
 
@@ -119,12 +119,6 @@ button {
 }
 
 @media (max-width: 900px) {
-  .main {
-    border-radius: 20px;
-    width: auto;
-    height: auto;
-    margin: 10% 10% 10% 10%;
-  }
   .formheader {
     color: #8C55AA;
     background: whitesmoke;
@@ -135,6 +129,7 @@ button {
     display: inline;
     margin-top: 3%;
     margin-left: -3%;
+    margin-bottom: 20%;
   }
   .header {
     border-radius: 20px;
@@ -143,8 +138,7 @@ button {
     display: inherit;
     -ms-flex-line-pack: center;
         align-content: center;
-    width: 100%;
-    margin-bottom: 5px;
+    margin-top: 0;
     margin-left: auto;
   }
   .btns {
@@ -156,8 +150,17 @@ button {
   .main {
     border-radius: 20px;
     width: auto;
-    height: auto;
+    height: 600px;
     margin: 10% 10% 10% 10%;
+    margin-bottom: 1%;
+  }
+  .timedropdown {
+    margin-left: 2%;
+    font-size: smaller;
+  }
+  .day {
+    padding-bottom: 0;
+    max-height: 30px;
   }
   .formheader {
     color: #8C55AA;
@@ -178,8 +181,6 @@ button {
     -ms-flex-line-pack: center;
         align-content: center;
     width: 100%;
-    margin-bottom: 50px;
-    margin-left: auto;
   }
   .btns {
     margin-left: -3%;
