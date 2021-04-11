@@ -322,17 +322,19 @@ window.onload = function getScheduleData() {
           activity_length = response[i].activity_length;
           user_id = response[i].user_id;
           console.log(activity_length);
-          randomNumber = activityArray[Math.floor(Math.random() * activityArray.length)];
+          randomNumber =
+            activityArray[Math.floor(Math.random() * activityArray.length)];
           console.log(randomNumber);
           let timeId = document.getElementById(randomNumber);
           console.log(timeId);
           timeId.innerHTML = "";
           console.log(timeId);
-          // timeId.innerHtml = "<td class="time activity"  value="0600">6:00 am</td>
+          timeId.innerHTML = `<td>${timeId.parentNode.firstChild.id}</td><td>${activity_category}</td>`;
+          // timeId.innerHtml = `<td class="time activity"  value="0600">6:00 am</td>
           // <td class="has-activity mindful" rowspan="2">
-          //     <span class="description">Mindfulness - Yoga - 30 mins</span>
-          // </td>"
-          
+          //     <span class="description">${activity_category} - Yoga - ${activity_length} minutes</span>
+          // </td>`;
+
           // rowspan = "activity-length / 15"
         }
       });
