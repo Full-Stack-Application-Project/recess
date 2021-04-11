@@ -3,11 +3,11 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 <div class="main" style="height: 450px;" method="post" action="login">
-    <p class="sign categoryName" style="margin-bottom: 40px;" align="center" id="Exercise">Exercise</p>
+    <p class="sign categoryName" style="margin-bottom: 20px;" align="center" id="Exercise">Exercise</p>
     <form class="column" style="column-gap: 40px;" action="">
         <div class="activityform">
-            <span style="margin-left: 40%; font-size:large; color:#8C55AA; margin-top:60px;">Activity Duration</span></br>
-            <select class="un activityLength" style="border-radius: 5px; max-width: 500px; margin-left:70px" aria-label=".form-select-lg" required>
+            <span style=" font-size:large; color:#8C55AA; margin-top:60px;">Activity Duration</span></br>
+            <select class="un activityLength" style="border-radius: 5px; max-width: 500px;" aria-label=".form-select-lg" required>
                 <option selected>Duration</option>
                 <option value="15">15 MIN</option>
                 <option value="30">30 MIN</option>
@@ -21,19 +21,19 @@
         </div>
         <div class="activityform">
             <span>
-                <label for="activity-type" class="label" style="margin-left: 230px; font-size:large; color:#8C55AA;">
+                <label for="activity-type" class="label" style=" font-size:large; color:#8C55AA;">
                     Enter activity type:
                 </label>
                 </br>
-                <input type="text" class="un" style="margin-left: 70px;" id="activity-type" name="activity-type" style="margin-bottom: 30px;" placeholder="ex: running" required>
+                <input type="text" class="un"  id="activity-type" name="activity-type" style="margin-bottom: 30px;" placeholder="ex: running" required>
             </span>
         </div>
 
-        <button type="submit" class="btn" style="margin-left:38%;" href="/categories" id="activities" value="submit">Save Activity</button>
+        <button type="submit" class="btn"  href="/categories" id="activities" value="submit">Save Activity</button>
 
     </form>
         <div class="abtn">
-        <a type="submit" class="abtn" style="margin-left: center;" href="/schedule" value="submit">View Schedule</a>
+        <a type="submit" class="abtn"  href="/schedule" value="submit">View Schedule</a>
         </div>
 </div>
 
