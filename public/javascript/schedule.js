@@ -329,7 +329,7 @@ window.onload = function getScheduleData() {
           console.log(timeId);
           timeId.innerHTML = "";
           console.log(timeId);
-          timeId.innerHTML = `<td>${timeId.parentNode.firstChild.id}</td><td>${activity_category}</td>`;
+          timeId.innerHTML = `<td>${timeId.parentNode.firstChild.id}</td><td>${activity_name}</td>`;
           // timeId.innerHtml = `<td class="time activity"  value="0600">6:00 am</td>
           // <td class="has-activity mindful" rowspan="2">
           //     <span class="description">${activity_category} - Yoga - ${activity_length} minutes</span>
