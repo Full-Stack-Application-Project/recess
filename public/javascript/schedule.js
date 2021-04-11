@@ -329,11 +329,11 @@ window.onload = function getScheduleData() {
           timeId.innerHTML = "";
           console.log(timeId);
           // timeId.innerHtml = "<td class="time activity"  value="0600">6:00 am</td>
-          // <td class="has-activity mindful" rowspan="2">
+          // <td class="has-activity mindful" rowspan="${activity-length} / 15">
           //     <span class="description">Mindfulness - Yoga - 30 mins</span>
           // </td>"
           
-          // rowspan = "activity-length / 15"
+          // note rowspan = "activity-length / 15"
         }
       });
     });
