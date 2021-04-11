@@ -60,6 +60,7 @@ div.container {
 body a {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
+  text-decoration: none;
   color: whitesmoke;
   font-size: larger;
   margin: 0.5rem 0;
