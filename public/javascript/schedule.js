@@ -34,13 +34,23 @@ var thursday_working;
 var friday_working;
 var saturday_working;
 
+var randomNumber;
+
 var preset_work_time;
 var preset_sleep_time;
+
+var activity_category;
+var activity_name;
+var activity_length;
+var user_id;
 
 var hiddenTimesArr = [];
 
 // this array has every available 15 minute time window in it
 var activityArray = [];
+
+// this array holds all activities
+var allActivities = [];
 
 window.onload = function getScheduleData() {
   fetch("api/schedules").then((response) => {
@@ -217,7 +227,7 @@ window.onload = function getScheduleData() {
         for (i = monday_sleep_end; i < monday_work_start; i++) {
           activityArray.push(i);
         }
-        for (i = monday_work_end; i < monday_sleep_start ; i++) {
+        for (i = monday_work_end; i < monday_sleep_start; i++) {
           activityArray.push(i);
         }
       } else {
@@ -230,7 +240,7 @@ window.onload = function getScheduleData() {
         for (i = tuesday_sleep_end; i < tuesday_work_start; i++) {
           activityArray.push(i);
         }
-        for (i = tuesday_work_end; i < tuesday_sleep_start ; i++) {
+        for (i = tuesday_work_end; i < tuesday_sleep_start; i++) {
           activityArray.push(i);
         }
       } else {
@@ -243,7 +253,7 @@ window.onload = function getScheduleData() {
         for (i = wednesday_sleep_end; i < wednesday_work_start; i++) {
           activityArray.push(i);
         }
-        for (i = wednesday_work_end; i < wednesday_sleep_start ; i++) {
+        for (i = wednesday_work_end; i < wednesday_sleep_start; i++) {
           activityArray.push(i);
         }
       } else {
@@ -256,7 +266,7 @@ window.onload = function getScheduleData() {
         for (i = thursday_sleep_end; i < thursday_work_start; i++) {
           activityArray.push(i);
         }
-        for (i = thursday_work_end; i < thursday_sleep_start ; i++) {
+        for (i = thursday_work_end; i < thursday_sleep_start; i++) {
           activityArray.push(i);
         }
       } else {
@@ -269,7 +279,7 @@ window.onload = function getScheduleData() {
         for (i = friday_sleep_end; i < friday_work_start; i++) {
           activityArray.push(i);
         }
-        for (i = friday_work_end; i < friday_sleep_start ; i++) {
+        for (i = friday_work_end; i < friday_sleep_start; i++) {
           activityArray.push(i);
         }
       } else {
@@ -282,7 +292,7 @@ window.onload = function getScheduleData() {
         for (i = saturday_sleep_end; i < saturday_work_start; i++) {
           activityArray.push(i);
         }
-        for (i = saturday_work_end; i < saturday_sleep_start ; i++) {
+        for (i = saturday_work_end; i < saturday_sleep_start; i++) {
           activityArray.push(i);
         }
       } else {
@@ -292,29 +302,43 @@ window.onload = function getScheduleData() {
       }
 
       console.log(activityArray);
+
+      createActivities(activityArray);
+
       // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
 
       //   I think the best move is to use the sleep/work time logic within the fetch api/schedules function (right after the last else if, line 78), then call getActivityData when applicable.
     });
   });
-  fetch("api/activities").then((response) => {
-    return response.json().then(function (response) {
-      console.log(response);
-      var activity_category;
-      var activity_name;
-      var activity_length;
-      var user_id;
-      for (i = 0; i < response.length; i++) {
-        activity_category = response[i].activity_category;
-        activity_name = response[i].activity_name;
-        activity_length = response[i].activity_length;
-        user_id = response[i].user_id;
-      }
+  function createActivities(activityArray) {
+    fetch("api/activities").then((response) => {
+      return response.json().then(function (response) {
+        console.log(activityArray);
+        console.log(response);
+
+        for (i = 0; i < response.length; i++) {
+          activity_category = response[i].activity_category;
+          activity_name = response[i].activity_name;
+          activity_length = response[i].activity_length;
+          user_id = response[i].user_id;
+          console.log(activity_length);
+          randomNumber = activityArray[Math.floor(Math.random() * activityArray.length)];
+          console.log(randomNumber);
+          let timeId = document.getElementById(randomNumber);
+          console.log(timeId);
+          timeId.innerHTML = "";
+          console.log(timeId);
+          // timeId.innerHtml = "<td class="time activity"  value="0600">6:00 am</td>
+          // <td class="has-activity mindful" rowspan="2">
+          //     <span class="description">Mindfulness - Yoga - 30 mins</span>
+          // </td>"
+          
+          // rowspan = "activity-length / 15"
+        }
+      });
     });
-  });
+  }
 };
-
-
 
 //TODO Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 //TODO Conditional statement to audit whether the user has enough time to schedule.
