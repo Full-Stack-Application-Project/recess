@@ -1,9 +1,12 @@
+<<<<<<< HEAD
+=======
 body {
     color: whitesmoke;
     font-family: 'Ubuntu', sans-serif;
 }
+>>>>>>> 5b0cbb41f14836f3945593ab420bc1aa03e1e681
 div#week {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 /* header {
     text-align: center;
@@ -15,35 +18,64 @@ div#week {
 } */
 
 .accordion-item {
-    background-color: transparent;
+  background-color: transparent;
 }
 .accordion-button {
+<<<<<<< HEAD
+  font-size: 1em;
+  color: snow;
+  font-weight: bold;
+  background-color: rgba(252, 142, 243, 0.789);
+=======
     font-size: 1em;
     color: snow;
     font-weight: bold;
     background-color: rgba(247, 184, 242, 0.611);
+>>>>>>> bb5952a092469037fb8e864c75393f4e7125cade
 }
+<<<<<<< HEAD
+
+div button[aria-expanded="true"] {
+  background-color: #42dca3;
+=======
 header {
     text-align: center;
     /* padding: 1.5rem; */
     margin: 0.7rem;
     font-size: 1.2rem;
     line-height: 2.3rem;
+>>>>>>> 5b0cbb41f14836f3945593ab420bc1aa03e1e681
 }
 /* div button[aria-expanded="true"]{
     background-color: #42DCA3;
 } */
 
 tbody {
-    background-color: rgba(255, 255, 255, 0.138);
+  background-color: rgba(255, 255, 255, 0.138);
 }
 td.time {
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    width: 20%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  width: 20%;
 }
 td.has-activity {
+<<<<<<< HEAD
+  background-color: rgba(31, 204, 187, 0.912);
+  color: rgb(55, 55, 55);
+  font-size: 1em;
+  font-weight: bold;
+}
+div.activity {
+  color: #fff;
+  font-weight: lighter;
+}
+div.btns {
+  display: flexbox;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+=======
     font-size: 1em;
     font-weight: bold;
 } 
@@ -77,6 +109,7 @@ div.btns {
     margin-top: .5em;
     margin-left: .5em;
     margin-bottom: 1em;
+>>>>>>> 5b0cbb41f14836f3945593ab420bc1aa03e1e681
 }
 
 .btn {

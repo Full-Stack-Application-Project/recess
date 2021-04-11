@@ -1,11 +1,10 @@
 async function checkActivitiesTable(event) {
   event.preventDefault();
-        fetch(`/api/schedules/`, {
-          method: "DELETE",
-        });        
-        getUserId();
+  fetch(`/api/schedules/`, {
+    method: "DELETE",
+  });
+  getUserId();
 }
-
 
 function getUserId() {
   fetch("/api/users/loggedIn").then(function (response) {
