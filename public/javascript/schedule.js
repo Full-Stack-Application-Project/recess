@@ -40,7 +40,7 @@ var preset_sleep_time;
 var hiddenTimesArr = [];
 
 // this array has every available 15 minute time window in it
-let activityArray = [];
+var activityArray = [];
 
 window.onload = function getScheduleData() {
   fetch("api/schedules").then((response) => {
@@ -297,9 +297,6 @@ window.onload = function getScheduleData() {
       //   I think the best move is to use the sleep/work time logic within the fetch api/schedules function (right after the last else if, line 78), then call getActivityData when applicable.
     });
   });
-};
-
-/* window.onload = function getActivityData() {
   fetch("api/activities").then((response) => {
     return response.json().then(function (response) {
       console.log(response);
@@ -315,7 +312,9 @@ window.onload = function getScheduleData() {
       }
     });
   });
-}; */
+};
+
+
 
 //TODO Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 //TODO Conditional statement to audit whether the user has enough time to schedule.
