@@ -33,6 +33,33 @@
     margin-bottom: 500%;
 }
 
+@media (max-width: 900px) {
+    .logo {
+      display: none;
+    }
+    .phone {
+        display: inline;
+        max-height: 70%;
+        max-width: 70%;
+        margin-left: 25%;
+        margin-top: auto;
+        margin-bottom: 90%;
+    }
+    .container1 {
+        display:inline-flex;
+        margin-top: 28%;
+        display: inline;
+        
+
+      }
+    .btn {
+        padding: 10px 26px;
+        width: 55%;
+        margin-left: 13%;
+
+    }
+  }
+
 @media (max-width: 600px) {
     .logo {
       display: none;
