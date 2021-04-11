@@ -171,7 +171,7 @@ div.nav-back{
 .activity-form {
   width: 25em; 
   height: 31em;
-  color:#8C55AA;;
+  color:#8C55AA;
 }
 #activity-intake-form {
   height: 20em;
@@ -243,7 +243,6 @@ div.days {
 }
 div.timedropdown{
   margin: .5em 0;
-  margin-left: 30%;
 }
 select.browser-default {
   width: 20%;
@@ -252,56 +251,28 @@ select.browser-default {
   font-weight: bold;
 }
 
-.btn {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: gray;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  background-color: whitesmoke;
-  filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .2));
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-.btn:hover {
-  background-color: #575757;
-  color:  whitesmoke;
-  filter: drop-shadow( 4px 4px 3px rgba(244, 244, 244, 0.2));
-}
 
 
 
 
 
-
-
-@media (max-width: 900px) {
-    
-  div.timedropdown{
-    margin: .5em 0;
-    margin-left: auto;
-  }
-  
-  #signup {
-    width: auto; 
-    height: 30em;
-  }
-
-}
-
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .main {
     border-radius: 20px;
-    width: auto;
-    height: 400px;
+    width: 300px;
+    height: auto;
     margin: 10% 10% 10% 10%;
-    margin-bottom: 1%;
   }
+  #signup {
+    width: 20em; 
+    height: 30em;
   
-}
+  }
+} */
+
+
+
+
 
 
 

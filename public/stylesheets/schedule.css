@@ -1,40 +1,36 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     background: transparent;
-    display: flex;
 }
 div.btn-wrapper {
     color: rgb(104, 104, 104);
-    
-}
-#week {
-    
 }
 header {
     text-align: center;
-    color: rgb(70, 69, 69);
+    font-weight: bolder;
+    color: whitesmoke
 }
 center.schedule {
-    background: rgba(185, 186, 186, 0.453);
+    background: none;
     margin: 1%;
-    width: 90%;
-}
-.accordion {
-    
+    width: auto;
 }
 .accordion-header {
     padding-top: 0;
 }
 div.accordion-item, .accordion {
-    border: 1px solid rgb(70, 69, 69) ;
+    border: 1px solid rgb(132, 86, 184) ; 
 }
 .accordion-button {
     font-size: 1em;
-    color: snow;
+    color:  rgb(132, 86, 184);
     font-weight: bold;
-    background-color: rgba(247, 184, 242, 0.611);
+    background-color: rgba(170, 127, 218, 0.542);
 }
-tbody {
+.accordion-body {
+    background: transparent;
+}
+table {
   background-color: rgba(255, 255, 255, 0.138);
 }
 td.time {
@@ -53,11 +49,11 @@ td.exercise {
     background-color: rgba(31, 204, 187, 0.83);
 }
 td.mindful {
-    color: rgb(223, 221, 221);
+    color: rgb(249, 246, 246);
     background-color: rgba(31, 158, 204, 0.83);
 }
 td.academic {
-    color: rgb(223, 221, 221);
+    color: rgb(249, 246, 246);
     background-color: rgba(204, 31, 190, 0.83);
 }
 td.relax{
@@ -73,4 +69,22 @@ div.activity{
     color: #fff;
     font-weight: lighter;
 }
-
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: gray;
+    padding: .7rem 1rem;
+    margin: .3em .2em;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .2));
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+  }
+  .btn:hover {
+    background-color: #575757;
+    color:  whitesmoke;
+    filter: drop-shadow( 4px 4px 3px rgba(244, 244, 244, 0.5));
+  }
