@@ -1,7 +1,7 @@
 .logo {
   width: 750px;
   height: 300px;
-  margin-left: 25%;
+  margin-left: auto;
   margin-top: 15%;
   margin-bottom: 8%;
   -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
@@ -25,10 +25,11 @@
   background: -webkit-gradient(linear, left top, right top, from(#9C27B0), to(#E040FB));
   background: linear-gradient(to right, #9C27B0, #E040FB);
   font-weight: bolder;
-  margin-left: 18%;
+  margin-left: 7%;
 }
 
 .container1 {
+  margin-left: auto;
   margin-bottom: 500%;
 }
 
@@ -38,10 +39,11 @@
   }
   .phone {
     display: inline;
-    max-height: 60%;
-    max-width: 70%;
-    margin-left: 25%;
+    max-height: 50%;
+    max-width: 60%;
+    margin-left: auto;
     margin-top: auto;
+    margin-bottom: 15%;
   }
   .container1 {
     display: -webkit-inline-box;
@@ -53,7 +55,7 @@
   .btn {
     padding: 10px 26px;
     width: 55%;
-    margin-left: 13%;
+    margin-left: auto;
   }
 }
 
@@ -65,7 +67,7 @@
     display: inline;
     max-height: 50%;
     max-width: 50%;
-    margin-left: 25%;
+    margin-left: auto;
     margin-top: auto;
     margin-bottom: 50%;
   }
@@ -79,7 +81,7 @@
   .btn {
     padding: 10px 26px;
     width: 55%;
-    margin-left: 13%;
+    margin-left: auto;
   }
 }
 /*# sourceMappingURL=home.css.map */
