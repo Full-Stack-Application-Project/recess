@@ -416,3 +416,19 @@ input.add-event-edit:-ms-input-placeholder {
   padding: 2px 5px;
   border-bottom: 1px solid #fff;
 }
+
+
+@media (max-width: 600px) {
+  .calendar{
+    color: #8C55AA;
+    margin: 10px auto;
+    background:whitesmoke;
+    padding: 60px 40px 80px 40px;
+    width: auto;
+    max-width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 6px rgba(2,2,2,0.2);
+    position: relative;
+  }
+}
