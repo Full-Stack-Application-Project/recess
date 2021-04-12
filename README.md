@@ -1,4 +1,4 @@
-# recess
+# Recess
 Recess is fullstack application that keeps track of the user's weekly availability so they can schedule extra-curricular activities.
 Once the user creates an account, they wil be prompted to enter their sleep and work hours to calculate their free time.
 The end user will then be able to select the activity category, length of the activity, the type activity, and Recess will add it to their weekly calendar.
