@@ -5,6 +5,9 @@ const withAuth = require("../../utils/auth");
 // get all activities
 router.get("/", (req, res) => {
   Activity.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
     attributes: [
       "id",
       "activity_category",
@@ -19,10 +22,6 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-router.get("/", (req, res) => {
-  Activity.find
-})
 
 // get one activity with a specific id
 router.get("/:id", (req, res) => {
