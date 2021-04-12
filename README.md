@@ -5,7 +5,7 @@ The end user will then be able to select the activity category, length of the ac
 
 
 * [App Repo](https://github.com/Full-Stack-Application-Project/recess/tree/main)
-* [App Deployed]()
+* [App Deployed](https://pacific-inlet-95494.herokuapp.com/)
 
 
 ### Technologies & Dependencies Used:
