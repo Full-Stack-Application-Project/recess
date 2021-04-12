@@ -334,10 +334,33 @@ window.onload = function getScheduleData() {
           console.log(timeId);
           timeId.innerHTML = "";
           console.log(timeId);
-          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
-          <td class = "has-activity" rowspan="${spanLength}">
+          console.log(activity_category);
+          if (activity_category === "Mindfulness") {
+            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+          <td class = "has-activity mindful" rowspan="${spanLength}">
             <span class="description">${activity_category} - ${activity_name}</span>
           </td>`
+          } else if (activity_category === "Academics"){
+          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+          <td class = "has-activity academic" rowspan="${spanLength}">
+            <span class="description">${activity_category} - ${activity_name}</span>
+          </td>`
+          } else if (activity_category === "Other"){
+            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+            <td class = "has-activity other" rowspan="${spanLength}">
+              <span class="description">${activity_category} - ${activity_name}</span>
+            </td>`
+          } else if (activity_category === "Relaxation"){
+            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+            <td class = "has-activity relax" rowspan="${spanLength}">
+              <span class="description">${activity_category} - ${activity_name}</span>
+            </td>`
+          } else if (activity_category === "Exercise"){
+            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+            <td class = "has-activity exercise" rowspan="${spanLength}">
+              <span class="description">${activity_category} - ${activity_name}</span>
+            </td>`
+          }
           // ${timeId.parentNode.firstChild.id}</td><td>${activity_name}</td>;
           // timeId.innerHtml = `<td class="time activity"  value="0600">6:00 am</td>
           // <td class="has-activity mindful" rowspan="2">
