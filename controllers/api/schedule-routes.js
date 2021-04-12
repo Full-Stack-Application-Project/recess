@@ -3,6 +3,7 @@ const sequelize = require('../../config/connection');
 const { User, Schedule } = require("../../models");
 const withAuth = require('../../utils/auth');
 
+// get all the schedules in the schedule table
 router.get("/", (req, res) => {
   Schedule.findAll({
     attributes: [
@@ -15,13 +16,6 @@ router.get("/", (req, res) => {
       "sleep_end",
       "user_id",
     ],
-    // ,
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: ["user_email"],
-    //   },
-    // ]
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -30,6 +24,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// get a schedule with a specific id
 router.get("/:id", (req, res) => {
   Schedule.findOne({
     where: {
@@ -45,13 +40,6 @@ router.get("/:id", (req, res) => {
       "sleep_end",
       "user_id",
     ],
-    // ,
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: ["user_email"],
-    //   },
-    // ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -66,6 +54,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// add a schedule to the schedule table
 router.post("/", withAuth, (req, res) => {
   Schedule.create({
     day: req.body.day,
@@ -83,6 +72,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
+// edit a schedule with a specific id
 router.put("/:id", withAuth, (req, res) => {
   Schedule.update(
     {
@@ -113,6 +103,7 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
+// delete a schedule with a specific id
 router.delete("/", (req, res) => {
   Schedule.destroy({
     where: {},

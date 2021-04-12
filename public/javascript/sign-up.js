@@ -19,9 +19,7 @@ async function signupFormHandler(event) {
         }),
         headers: { "Content-Type": "application/json" },
       });
-  
-      console.log("user posted");
-  
+    
       if (response.ok) {
         document.location.replace("/dashboard");
       } else {

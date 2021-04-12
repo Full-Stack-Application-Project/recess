@@ -1,10 +1,13 @@
 const router = require("express").Router();
 const { User, Activity } = require("../../models");
-// const sequelize = require("../../config/connection");
 const withAuth = require("../../utils/auth");
 
+// get all activities
 router.get("/", (req, res) => {
   Activity.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
     attributes: [
       "id",
       "activity_category",
@@ -12,13 +15,6 @@ router.get("/", (req, res) => {
       "activity_length",
       "user_id",
     ],
-    // ,
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: ["user_email"],
-    //   },
-    // ],
   })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
@@ -27,6 +23,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// get one activity with a specific id
 router.get("/:id", (req, res) => {
   Activity.findOne({
     where: {
@@ -39,13 +36,6 @@ router.get("/:id", (req, res) => {
       "activity_length",
       "user_id",
     ],
-    // ,
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: ["user_email"],
-    //   },
-    // ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -60,6 +50,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// add an activity to the activities table
 router.post("/", withAuth, (req, res) => {
   Activity.create({
     activity_category: req.body.activity_category,
@@ -74,6 +65,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
+// edit an activity with a specific id in the activities table
 router.put("/:id", withAuth, (req, res) => {
   Activity.update(
     {
@@ -100,8 +92,8 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
+// delete an activity with a specific id
 router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
   Activity.destroy({
     where: {
       id: req.params.id,
