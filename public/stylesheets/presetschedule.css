@@ -6,9 +6,6 @@
 }
 
 @media (max-width: 600px) {
-  div.wrapper {
-    /* height: auto; */
-  }
   div.ws-form {
     width: 90%;
     height: 38em;
