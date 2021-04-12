@@ -335,6 +335,7 @@ window.onload = function getScheduleData() {
           timeId.innerHTML = "";
           console.log(timeId);
           console.log(activity_category);
+          console.log(spanLength);
           if (activity_category === "Mindfulness") {
             timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
           <td class = "has-activity mindful" rowspan="${spanLength}">
@@ -361,6 +362,12 @@ window.onload = function getScheduleData() {
               <span class="description">${activity_category} - ${activity_name}</span>
             </td>`
           }
+          var index = activityArray.indexOf(randomNumber);
+          console.log(index);
+          if (index > -1) {
+            activityArray.splice(index, spanLength);
+          }
+          console.log(activityArray);
           // ${timeId.parentNode.firstChild.id}</td><td>${activity_name}</td>;
           // timeId.innerHtml = `<td class="time activity"  value="0600">6:00 am</td>
           // <td class="has-activity mindful" rowspan="2">
