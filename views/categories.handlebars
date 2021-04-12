@@ -1,38 +1,41 @@
-{{!--
-<link rel='stylesheet' type='text/css' media='screen' href="stylesheets/styles.css"> --}}
-
+{{!-- {{>categoriescss}} --}}
 <link rel='stylesheet' type='text/css' media='screen' href="stylesheets/categories.css">
 
-<header>
-  <h1>Choose a Category</h1>
-</header>
-<div class="container-cat">
-  <div class="card card-1">
-    <div class="card-tags">
-      <a href="/exercise-form" class="btn">Exercise</a>
+
+
+<body>
+   <header>
+    <h1>Choose a Category</h1>
+  </header>
+  <div class="container-cat">
+    <div class="card card-1">
+      <div class="card-tags">
+        <a href="/exercise-form" class="btn">Exercise</a>
+      </div>
+    </div>
+    <div class="card card-2"> 
+      <div class="card-tags">
+        <a href="/mindfulness-form" class="btn">Mindfulness</a>
+      </div>
+    </div>
+    <div class="card card-3">    
+      <div class="card-tags">
+        <a href="/academics-form" class="btn">Academics</a>
+      </div>
+    </div>
+    <div class="card card-4">   
+      <div class="card-tags">
+        <a href="/relaxation-form" class="btn">Relaxation</a>
+      </div>
+    </div>
+    <div class="card card-5">   
+      <div class="card-tags">
+        <a href="/other-form" class="btn">Other</a>
+      </div>
     </div>
   </div>
-  <div class="card card-2">
-    <div class="card-tags">
-      <a href="/mindfulness-form" class="btn">Mindfulness</a>
+  <div style="margin-top: 50px; margin-right:auto; margin bottom 2%;">
+      {{>backtodash}}
     </div>
-  </div>
-  <div class="card card-3">
-    <div class="card-tags">
-      <a href="/academics-form" class="btn">Academics</a>
-    </div>
-  </div>
-  <div class="card card-4">
-    <div class="card-tags">
-      <a href="/relaxation-form" class="btn">Relaxation</a>
-    </div>
-  </div>
-  <div class="card card-5">
-    <div class="card-tags">
-      <a href="/other-form" class="btn">Other</a>
-    </div>
-  </div>
-</div>
-<div style="margin-top: 50px; margin-right:350px">
-  {{>backtodash}}
-</div>
+</body>
+</html>

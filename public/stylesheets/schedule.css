@@ -1,41 +1,37 @@
 body {
-    color: whitesmoke;
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  background: transparent;
 }
-div#week {
-  margin-top: 2em;
-}
-/* header {
-    text-align: center;
-    padding: 1.5rem;
-    margin: 0.7rem;
-    font-size: 1.2rem;
-    line-height: 2.3rem;
-    color: whitesmoke;
-} */
-
-.accordion-item {
-  background-color: transparent;
-}
-.accordion-button {
-    font-size: 1em;
-    color: snow;
-    font-weight: bold;
-    background-color: rgba(247, 184, 242, 0.611);
+div.btn-wrapper {
+  color: rgb(104, 104, 104);
 }
 header {
-    text-align: center;
-    /* padding: 1.5rem; */
-    margin: 0.7rem;
-    font-size: 1.2rem;
-    line-height: 2.3rem;
+  text-align: center;
+  font-weight: bolder;
+  color: whitesmoke
 }
-/* div button[aria-expanded="true"]{
-    background-color: #42DCA3;
-} */
-
-tbody {
-  background-color: rgba(255, 255, 255, 0.138);
+center.schedule {
+  background: none;
+  margin: 1%;
+  width: auto;
+}
+.accordion-header {
+  padding-top: 0;
+}
+div.accordion-item, .accordion {
+  border: 1px solid rgb(132, 86, 184) ; 
+}
+.accordion-button {
+  font-size: 1em;
+  color:  rgb(132, 86, 184);
+  font-weight: bold;
+  background-color: rgba(170, 127, 218, 0.542);
+}
+.accordion-body {
+  background: transparent;
+}
+table {
+background-color: rgba(255, 255, 255, 0.138);
 }
 
 .hidden {
@@ -43,58 +39,57 @@ tbody {
 }
 
 td.time {
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  width: 20%;
+text-align: center;
+color: rgb(101, 99, 99);
+font-weight: bold;
+width: 20%;
 }
 td.has-activity {
-    font-size: 1em;
-    font-weight: bold;
+  font-size: 1em;
+  font-weight: bold;
 } 
+
 td.exercise {
-    color: rgb(55, 55, 55);
-    background-color: rgba(31, 204, 187, 0.83);
+  color: rgb(55, 55, 55);
+  background-color: rgba(31, 204, 187, 0.83);
 }
 td.mindful {
-    color: rgb(223, 221, 221);
-    background-color: rgba(31, 158, 204, 0.83);
+  color: rgb(249, 246, 246);
+  background-color: rgba(31, 158, 204, 0.83);
 }
 td.academic {
-    color: rgb(223, 221, 221);
-    background-color: rgba(204, 31, 190, 0.83);
+  color: rgb(249, 246, 246);
+  background-color: rgba(204, 31, 190, 0.83);
 }
 td.relax{
-    color: rgb(55, 55, 55);
-    background-color: rgba(188, 226, 151, 0.912);
+  color: rgb(55, 55, 55);
+  background-color: rgba(188, 226, 151, 0.912);
 }
 td.other {
-    color: rgb(55, 55, 55);
-    background-color: rgba(226, 203, 151, 0.912);
+  color: rgb(55, 55, 55);
+  background-color: rgba(226, 203, 151, 0.912);
 }
 
 div.activity{
-    color: #fff;
-    font-weight: lighter;
+  color: #fff;
+  font-weight: lighter;
 }
-div.btns {
-    display: flexbox;
-    margin-top: .5em;
-    margin-left: .5em;
-    margin-bottom: 1em;
-}
-
 .btn {
-
-    background-color: whitesmoke; 
-    border: none;
-    color: gray;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    margin-bottom: 0;
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+  padding: .7rem 1rem;
+  margin: .3em .2em;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .2));
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.btn:hover {
+  background-color: #575757;
+  color:  whitesmoke;
+  filter: drop-shadow( 4px 4px 3px rgba(244, 244, 244, 0.5));
 }

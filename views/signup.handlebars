@@ -1,31 +1,27 @@
- <link rel='stylesheet' type='text/css' media='screen' href="stylesheets/signup.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-<div class="main" method="post" action="login">
-    <h2 class="sign" align="center" style="margin-bottom: 30px;">Create Your Account</h2>
-        <form class="signup-form">
-            <div>
-                <input class="un " type="text" align="center" id="first-name" placeholder="Enter your first name"/>
-            </div>
-            <div>
-                <input class="un " type="text" align="center" id="last-name" placeholder="Enter your last name"/>
-            </div>
-            <div>
-                <input class="un " type="text" align="center" id="email-login" placeholder="Enter your Email"/>
-            </div>
-            <div>
-                <input class="pass" type="password" align="center" id="password-login" placeholder=" Create a password"/>
-            </div>
-            <div>
-                <button type="submit" class="submit" align="center">Sign me up!</button>
-            </div>
-        </form>
+<div class="main" id="signup" method="post" action="login">
+    <h2 class="form-title">Create Your Account</h2>
+    <form class="signup-form">
+        <div>
+            <input class="input-field " type="text" align="center" id="first-name"
+                placeholder="Enter your first name" />
+        </div>
+        <div>
+            <input class="input-field " type="text" align="center" id="last-name" placeholder="Enter your last name"/>
+        </div>
+        <div>
+            <input class="input-field " type="text" align="center" id="email-login" placeholder="Enter your Email"/>
+        </div>
+        <div>
+            <input class="input-field" type="password" align="center" id="password-login"
+                placeholder=" Create a password"/>
+        </div>
+        <div>
+            <button type="submit" class="submit" align="center">Sign me up!</button>
+        </div>
+        <div class="nav-button">
+             <a class="nav" id="back" href="/">Home</a>
+        </div>
+    </form>
 </div>
-
-
-{{>backtohome}}
-
-
 
 <script src="/javascript/sign-up.js"></script>
