@@ -52,7 +52,16 @@ var activityArray = [];
 // this array holds all activities
 var allActivities = [];
 
-window.onload = function getScheduleData() {
+function getScheduleData() {
+  for (i = 1; i <= 672; i++) {
+    let timeHtml = document.getElementById(i).textContent.trim();
+    let timeId = document.getElementById(i);
+    var input = timeHtml;
+    var timeName = input.split(' ');
+    timeId.innerHTML = `<td class= "time">${timeName[0] + " " + timeName[1]}</td>
+    <td class = "no-activity"></td>`
+  }
+
   fetch("api/schedules").then((response) => {
     return response.json().then(function (response) {
       console.log(response);
@@ -203,8 +212,6 @@ window.onload = function getScheduleData() {
         hiddenTimesArr.push(i);
       }
 
-      console.log(hiddenTimesArr);
-
       for (i = 0; i < hiddenTimesArr.length; i++) {
         let hiddenTime = document.getElementById(hiddenTimesArr[i]);
         hiddenTime.classList = "hidden";
@@ -301,86 +308,66 @@ window.onload = function getScheduleData() {
         }
       }
 
-      console.log(activityArray);
-
       createActivities(activityArray);
 
-      // We need to set something to calculate the hours / time available for both the work and sleep schedule and store the time available data into an array.
-
-      //   I think the best move is to use the sleep/work time logic within the fetch api/schedules function (right after the last else if, line 78), then call getActivityData when applicable.
     });
   });
-  function createActivities(activityArray) {
-    fetch("api/activities").then((response) => {
-      return response.json().then(function (response) {
-        console.log(activityArray);
-        console.log(response);
-
-        for (i = 0; i < response.length; i++) {
-          activity_category = response[i].activity_category;
-          activity_name = response[i].activity_name;
-          activity_length = response[i].activity_length;
-          user_id = response[i].user_id;
-          console.log(activity_length);
-          let spanLength = activity_length / 15;
-          randomNumber =
-            activityArray[Math.floor(Math.random() * activityArray.length)];
-          console.log(randomNumber);
-          let timeHtmlId = randomNumber;
-          console.log(timeHtmlId); 
-          let timeHtml = document.getElementById(timeHtmlId).textContent.trim();
-          console.log(timeHtml);
-          let timeId = document.getElementById(randomNumber);
-          console.log(timeId);
-          timeId.innerHTML = "";
-          console.log(timeId);
-          console.log(activity_category);
-          console.log(spanLength);
-          if (activity_category === "Mindfulness") {
-            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
-          <td class = "has-activity mindful" rowspan="${spanLength}">
-            <span class="description">${activity_category} - ${activity_name}</span>
-          </td>`
-          } else if (activity_category === "Academics"){
-          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
-          <td class = "has-activity academic" rowspan="${spanLength}">
-            <span class="description">${activity_category} - ${activity_name}</span>
-          </td>`
-          } else if (activity_category === "Other"){
-            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
-            <td class = "has-activity other" rowspan="${spanLength}">
-              <span class="description">${activity_category} - ${activity_name}</span>
-            </td>`
-          } else if (activity_category === "Relaxation"){
-            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
-            <td class = "has-activity relax" rowspan="${spanLength}">
-              <span class="description">${activity_category} - ${activity_name}</span>
-            </td>`
-          } else if (activity_category === "Exercise"){
-            timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
-            <td class = "has-activity exercise" rowspan="${spanLength}">
-              <span class="description">${activity_category} - ${activity_name}</span>
-            </td>`
-          }
-          var index = activityArray.indexOf(randomNumber);
-          console.log(index);
-          if (index > -1) {
-            activityArray.splice(index, spanLength);
-          }
-          console.log(activityArray);
-          // ${timeId.parentNode.firstChild.id}</td><td>${activity_name}</td>;
-          // timeId.innerHtml = `<td class="time activity"  value="0600">6:00 am</td>
-          // <td class="has-activity mindful" rowspan="2">
-          //     <span class="description">${activity_category} - Yoga - ${activity_length} minutes</span>
-          // <span class="description">Mindfulness - Yoga - 30 mins</span>
-          // </td>`;
-
-          // rowspan = "activity-length / 15"
-        }
-      });
-    });
-  }
 };
+
+function createActivities(activityArray) {
+  fetch("api/activities").then((response) => {
+    return response.json().then(function (response) {
+      for (i = 0; i < response.length; i++) {
+        activity_category = response[i].activity_category;
+        activity_name = response[i].activity_name;
+        activity_length = response[i].activity_length;
+        user_id = response[i].user_id;
+        let spanLength = activity_length / 15;
+        randomNumber =
+          activityArray[Math.floor(Math.random() * activityArray.length)];
+        let timeHtmlId = randomNumber;
+        let timeHtml = document.getElementById(timeHtmlId).textContent.trim();
+        let timeId = document.getElementById(randomNumber);
+        timeId.innerHTML = "";
+
+        if (activity_category === "Mindfulness") {
+          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+        <td class = "has-activity mindful" rowspan="${spanLength}">
+          <span class="description">${activity_category} - ${activity_name}</span>
+        </td>`
+        } else if (activity_category === "Academics"){
+        timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+        <td class = "has-activity academic" rowspan="${spanLength}">
+          <span class="description">${activity_category} - ${activity_name}</span>
+        </td>`
+        } else if (activity_category === "Other"){
+          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+          <td class = "has-activity other" rowspan="${spanLength}">
+            <span class="description">${activity_category} - ${activity_name}</span>
+          </td>`
+        } else if (activity_category === "Relaxation"){
+          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+          <td class = "has-activity relax" rowspan="${spanLength}">
+            <span class="description">${activity_category} - ${activity_name}</span>
+          </td>`
+        } else if (activity_category === "Exercise"){
+          timeId.innerHTML = `<td class= "time activity">${timeHtml}</td>
+          <td class = "has-activity exercise" rowspan="${spanLength}">
+            <span class="description">${activity_category} - ${activity_name}</span>
+          </td>`
+        }
+
+        var index = activityArray.indexOf(randomNumber);
+        console.log(index);
+        if (index > -1) {
+          activityArray.splice(index, spanLength);
+        }
+      }
+    });
+  });
+}
+
+document.getElementById("schedule").addEventListener("click", getScheduleData);
 
 //TODO Implement 15 minute increments, we can say time throughout the day in 15 min increments, if we use it as an array of time we can check the available time within the database.
 //TODO Conditional statement to audit whether the user has enough time to schedule.
