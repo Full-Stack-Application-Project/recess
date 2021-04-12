@@ -1,4 +1,3 @@
-
 .container {
   -ms-grid-column-align: center;
       justify-self: center;
@@ -8,44 +7,23 @@
   font-size: x-large;
   padding-bottom: 30px;
 }
-
-/*DEFAULT*/
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style: none;
-  position: relative;
-  right: 20px;
-}
-
 .title {
   font-family: 'Recursive', sans-serif;
 }
-
+h3 {
+  font-size: 2em;
+  padding-top: 1em;
+}
 .sub-title {
   font-family: 'Raleway', sans-serif;
 }
-
-.fa-times {
-  color: #c0392b;
-  margin: 0 10px;
+.nav-btn {
+  margin-top: 1em;
 }
-
-.fa-check {
-  color: #bfc946;
-  margin: 0 10px;
-}
-
-.not_available {
-  color: gray;
-}
-
 .btn1 {
   outline: none;
   border: 0;
-  background: #1e1e1e;
+  background: #c165dd;
   padding: 10px 20px;
   border-radius: 20px;
   text-align: center;
@@ -53,16 +31,16 @@ li {
   color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .btn1:hover {
-  background: #000;
-}
+  background: #5936cc;
 
+}
 .price_cards {
   width: 100%;
-  padding: 5vh 0;
+  padding: 2vh 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,7 +67,6 @@ li {
   -webkit-box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
           box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
 }
-
 .price_cards .card .tag {
   position: absolute;
   top: -5px;
@@ -100,14 +77,12 @@ li {
   color: #fff;
   font-size: 12px;
 }
-
 .price_cards section {
   padding: 30px 0;
-  background: #36cccb;
+  background: #5936cc;
   margin: auto;
   text-align: center;
 }
-
 .price_cards .price {
   -webkit-box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
           box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
@@ -130,12 +105,10 @@ li {
   top: -10vh;
   background: #fff;
 }
-
 .price_cards:hover > .price_icon {
   -webkit-box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
           box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
 }
-
 .price_cards .price b {
   font-size: 11px;
   color: gray;
@@ -144,7 +117,6 @@ li {
   bottom: 20px;
   right: 35%;
 }
-
 .price_cards .card ul li {
   padding: 5px 0;
 }
@@ -155,7 +127,19 @@ li {
     display: block;
   }
   .price_cards .card {
+    width: 50%;
+  }
+  p{ 
+    padding: 0 1em .5em;
+  }
+  .btn1 {
+    margin-bottom: 1em;
+  }
+}
+@media (max-width: 415px) {
+  .price_cards .card {
     width: 90%;
   }
 }
+
 /*# sourceMappingURL=about.css.map */

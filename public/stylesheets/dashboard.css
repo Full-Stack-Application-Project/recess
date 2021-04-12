@@ -1,16 +1,55 @@
+/* body {
+  background-color: #F3EBF6;
+  font-family: 'Ubuntu', sans-serif;
+  color: whitesmoke;
+}
 
-/* .container {
+.container {
   -ms-grid-column-align: center;
       justify-self: center;
   text-align: center;
-  width: auto;
-  margin-top: 1rem;
-  padding-bottom: 0;
+  margin-right: 400px;
+  margin-top: 100px;
+  font-size: x-large;
+  padding-bottom: 30px;
 }
 
 .nav-item {
   max-height: 90px;
 }
- */
 
+.welcome {
+  margin-bottom: 50px;
+  margin-left: 320px;
+  margin-top: 20px;
+}
+
+.btn-p {
+  margin-bottom: 300px;
+  margin-right: 20px;
+}
+
+.button {
+  background-color: whitesmoke;
+  border: none;
+  color: gray;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #575757;
+  /* Green */
+  /* color: white; */
+/* }
+
+.buttonlogout {
+  text-decoration: none;
+} */ 
 /*# sourceMappingURL=dashboard.css.map */

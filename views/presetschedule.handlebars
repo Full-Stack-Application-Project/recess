@@ -1,74 +1,61 @@
 <link rel="stylesheet" href="stylesheets/presetschedule.css">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-<div class="main">
-    <div class="form-header">
-        <h2 class="form-title">Enter Work Schedule</h2>
-    </div>
-    <div class="form-body">
-        <form>
-            <div class="days">
-                <div class="day">
+<center>
+    <div class="main ws-form">
+        <div class="formheader">
+            <h2 class="form-title">Enter Work Schedule</h2>
+        </div>
+        <div class="form-body">
+            <form>
+                <div class="days">
                     <label class="day-label" for="sunday">Sunday
                         <input type="checkbox" class="checkbox" id="sunday" name="sunday">
                     </label>
-                </div>
-                <div class="day">
+
                     <label class="day-label" for="monday">Monday
                         <input type="checkbox" class="checkbox" id="monday" name="monday">
                     </label>
-                </div>
 
-                <div class="day">
                     <label class="day-label" for="tuesday">Tuesday
                         <input type="checkbox" class="checkbox" id="tuesday" name="tuesday">
                     </label>
-                </div>
 
-                <div class="day">
                     <label class="day-label" for="wednesday">Wednesday
                         <input type="checkbox" class="checkbox" id="wednesday" name="wednesday">
                     </label>
-                </div>
 
-                <div class="day">
                     <label class="day-label" for="thursday">Thursday
                         <input type="checkbox" class="checkbox" id="thursday" name="thursday">
                     </label>
-                </div>
 
-                <div class="day">
                     <label class="day-label" for="friday">Friday
                         <input type="checkbox" class="checkbox" id="friday" name="friday">
                     </label>
-                </div>
 
-                <div class="day">
                     <label class="day-label" for="saturday">Saturday
                         <input type="checkbox" class="checkbox" id="saturday" name="saturday">
                     </label>
                 </div>
-            </div>
-            <div>
-                {{> workHrs }}
-                <div class="form-header">
-                    <h2 class="form-title">Enter Sleep Schedule</h2>
+                <div>
+                    {{> workHrs }}
+                    <div class="formheader1">
+                        <h2 class="form-title" style="margin-bottom: 5%;" id="sleep">Enter Sleep Schedule</h2>
+                    </div>
+                    {{> sleepHrs }}
                 </div>
-                {{> sleepHrs }}
-            </div>
-            <br />
-            <div class='buttonDiv'>
-                <!--after submitting form redirect to categories page-->
-                <div class="btns">
-                    <button type="submit" class="btn" id="save" href="/categories">Save Changes</button>
-                    <a type="submit" class="btn" id="back" href="/dashboard">Go Back</a>
+                <div class='buttonDiv'>
+                    <!--after submitting form redirect to categories page-->
+                    {{!-- <div class="nav-buttons"> --}}
+                        <div class="btn-wrapper">
+                            <button type="submit" class="submit" id="save" href="/categories">Save Changes</button>
+                            <a class="submit" id="back-to-dash" type="submit" href="/dashboard">Go Back</a>
+                        </div>
+                    {{!-- </div> --}}
                 </div>
-            </div>
+        </div>
         </form>
     </div>
-</div>
-
+    </div>
+</center>
 <script src="/javascript/presetschedule.js"></script>
 
 {{!-- {{>footer}} --}}
