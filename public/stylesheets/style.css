@@ -256,19 +256,21 @@ select.browser-default {
 
 
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   .main {
     border-radius: 20px;
     width: 300px;
     height: auto;
     margin: 10% 10% 10% 10%;
+
   }
+ 
   #signup {
     width: 20em; 
     height: 30em;
   
   }
-} */
+}
 
 
 
