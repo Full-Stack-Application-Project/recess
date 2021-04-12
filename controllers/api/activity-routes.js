@@ -20,6 +20,10 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+  Activity.find
+})
+
 // get one activity with a specific id
 router.get("/:id", (req, res) => {
   Activity.findOne({
