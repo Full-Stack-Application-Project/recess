@@ -4,7 +4,6 @@ function getUserId(event) {
   fetch("/api/users/loggedIn").then(function (response) {
     return response.json().then(function (response) {
       let id = response[0].id;
-      console.log(id);
       editUser(id);
       
     }).catch(err => {
@@ -15,7 +14,6 @@ function getUserId(event) {
 
 // change the logged in parameter for the user that is currently logged in back to false
 async function editUser(id) {
-  console.log(id);
   const response = await fetch(`/api/users/${id}`, {
     method: 'PATCH',
     body: JSON.stringify({

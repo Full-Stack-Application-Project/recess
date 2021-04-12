@@ -492,7 +492,5 @@ function CalendarApp(date) {
     return true;
   };
   
-  var calendar = new CalendarApp();
-  console.log(calendar);
-  
+  var calendar = new CalendarApp();  
   

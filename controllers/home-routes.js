@@ -72,21 +72,29 @@ router.get('/exercise-form', withAuth, (req, res) => {
       title: 'Exercise Form' 
   });
 }) 
+
+// mindfulness form
 router.get('/mindfulness-form', withAuth, (req, res) => {
   res.render('mindfulness-form', { 
       title: 'Mindfulness Form' 
   });
 }) 
+
+// academics form
 router.get('/academics-form', withAuth, (req, res) => {
   res.render('academics-form', { 
       title: 'Academic Form' 
   });
 }) 
+
+//relaxation form
 router.get('/relaxation-form', withAuth, (req, res) => {
   res.render('relaxation-form', { 
       title: 'Relaxation Form' 
   });
 }) 
+
+// other form
 router.get('/other-form', withAuth, (req, res) => {
   res.render('other-form', { 
       title: 'Other Form' 
